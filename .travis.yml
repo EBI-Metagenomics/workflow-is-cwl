@@ -1,0 +1,13 @@
+#sudo: required
+language: python
+
+python:
+  - '3.6'
+
+before_install:
+  - python -V
+
+install:
+  - pip install cwlref-runner
+
+- cwl-runner
