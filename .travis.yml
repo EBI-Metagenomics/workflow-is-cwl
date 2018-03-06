@@ -5,10 +5,10 @@ python:
   - '3.6'
 
 before_install:
-  - python -V
+  - python --version
 
 install:
   - pip install cwlref-runner
 
 script:
-  - python setup.py test
+  -  cwlref-runner --help
