@@ -10,4 +10,5 @@ before_install:
 install:
   - pip install cwlref-runner
 
-- cwl-runner
+script:
+  - python setup.py test
