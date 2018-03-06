@@ -11,4 +11,4 @@ install:
   - pip install cwlref-runner
 
 script:
-  -  cwlref-runner --help
+  -  python cwlref-runner
