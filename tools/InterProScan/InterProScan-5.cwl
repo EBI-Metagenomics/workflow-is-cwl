@@ -4,8 +4,8 @@ class: CommandLineTool
 label: "InterProScan: protein sequence classifier"
 
 doc: |
-      Version 5.28-67 can be downloaded here:
-      https://github.com/ebi-pf-team/interproscan/wiki/HowToDownload
+      Releases can be downloaded from:
+      ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/
       
       Documentation on how to run InterProScan 5 can be found here:
       https://github.com/ebi-pf-team/interproscan/wiki/HowToRun
@@ -23,7 +23,7 @@ hints:
     packages:
       interproscan:
         specs: [ "https://identifiers.org/rrid/RRID:SCR_005829" ]
-        version: [ "5.28-67" ]
+        version: ["5.21-60", "5.22-61.0", "5.23-62.0", "5.24-63.0", "5.25-64.0", "5.26-65.0", "5.27-66.0", "5.28-67.0"]
 
 inputs:
   proteinFile:
@@ -68,5 +68,5 @@ $schemas:
  - https://schema.org/docs/schema_org_rdfa.html
 
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:copyrightHolder: "EMBL - European Bioinformatics Institute"
+s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
 
