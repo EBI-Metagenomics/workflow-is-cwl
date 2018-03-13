@@ -26,32 +26,34 @@ requirements:
 
 inputs:
   transcriptsFile:
-    label: transcripts.fasta
-    doc: FASTA formatted sequence file containing your transcripts.
+    label: "transcripts.fasta"
     type: File
+    doc: "FASTA formatted sequence file containing your transcripts."
+#    format: edam:format_1929  # FASTA
     inputBinding:
       prefix: -t
   minimumProteinLength:
-    label: minimum protein length (default: 100)
+    label: "minimum protein length"
     type: int?
+    doc: "minimum protein length (default: 100)"
     inputBinding:
       prefix: -m
   geneToTranscriptMap:
-    label: gene-to-transcript mapping
+    label: "gene-to-transcript mapping"
     type: File?
-    doc: gene-to-transcript identifier mapping file (tab-delimited, gene_id<tab>trans_id<return>)
+    doc: "gene-to-transcript identifier mapping file (tab-delimited, gene_id<tab>trans_id<return>)"
     inputBinding:
       prefix: --gene_trans_map
   strandSpecific:
-    label: strand-specific
+    label: "strand-specific"
     type: boolean?
-    doc: strand-specific (only analyzes top strand)
+    doc: "strand-specific (only analyzes top strand)"
     inputBinding:
       prefix: -S
   geneticCode:
-    label: genetic code
+    label: "genetic code"
     type: TransDecoder.LongOrfs-5-genetic_codes.yaml#genetic_codes[]?
-    doc: genetic code (default: universal; see PerlDoc; options: Euplotes, Tetrahymena, Candida, Acetabularia)
+    doc: "genetic code (default: universal; see PerlDoc; options: Euplotes, Tetrahymena, Candida, Acetabularia)"
     inputBinding:
       prefix: -G
 
@@ -61,11 +63,13 @@ outputs:
   workingDir:
     type: Directory
     outputBinding:
-      glob: $(inputs.transcriptsFile.nameroot).transdecoder_dir
+      glob: $(inputs.transcriptsFile.basename).transdecoder_dir
 
 $namespaces:
  s: http://schema.org/
+ edam: http://edamontology.org/
 $schemas:
+ - http://edamontology.org/EDAM_1.20.owl
  - https://schema.org/docs/schema_org_rdfa.html
 
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
