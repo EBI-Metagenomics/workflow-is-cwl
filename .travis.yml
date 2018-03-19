@@ -17,7 +17,7 @@ install:
   - conda create -q -n cwl-environment python=$TRAVIS_PYTHON_VERSION
   - source activate cwl-environment
   - pip install -r requirements.txt
-  # Install Transdecoder
+  # Install TransDecoder 
   - wget https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.0.2.tar.gz
   - tar -xvzf TransDecoder-v5.0.2.tar.gz -C $HOME
   - export PATH="$HOME/TransDecoder-v5.0.2:$PATH"
