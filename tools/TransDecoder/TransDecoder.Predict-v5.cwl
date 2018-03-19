@@ -30,7 +30,7 @@ requirements:
     coresMin: 1
   SchemaDefRequirement:
     types: 
-      - $import: TransDecoder.LongOrfs-5-genetic_codes.yaml
+      - $import: TransDecoder-v5-genetic_codes.yaml
 #hints:
 #  SoftwareRequirement:
 #    packages:
