@@ -1,9 +1,13 @@
-language: python
+matrix:
+  include:
+    - language: python
+      python: 3.6
+      install: ./install-cwl-runner.sh
+      script:
+        - bash run.sh
 
-python:
-  - '3.6'
-
-install: ./install-cwl-runner.sh && ./install-transdecoder.sh
-
-script:
-  - bash run-transdecoder.sh
+    - language: perl
+      perl: 5.24
+      install: ./install-transdecoder.sh
+      script:
+        - bash run-transdecoder.sh
