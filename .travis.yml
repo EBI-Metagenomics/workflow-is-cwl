@@ -8,9 +8,6 @@ matrix:
 
     - language: perl
       perl: 5.24
-      install:
-        - wget https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.0.2.tar.gz
-        - tar -xvzf TransDecoder-v5.0.2.tar.gz -C $HOME
-        - export PATH="$HOME/TransDecoder-TransDecoder-v5.0.2:$PATH"
+      install: travis/install-cwl-runner.sh
       script:
         - bash run-transdecoder.sh
