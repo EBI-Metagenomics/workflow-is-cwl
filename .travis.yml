@@ -2,6 +2,7 @@ sudo: true
 matrix:
   include:
     - language: java
+      jdk: openjdk8
       install:
         - sudo apt-get update
         - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
