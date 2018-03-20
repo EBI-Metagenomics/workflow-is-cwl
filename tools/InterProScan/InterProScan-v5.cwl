@@ -40,7 +40,7 @@ inputs:
       itemSeparator: ','
       prefix: --applications
 
-baseCommand: interproscan.sh
+baseCommand: java --version
 
 arguments:
  - valueFrom: $(inputs.proteinFile.nameroot).i5_annotations
