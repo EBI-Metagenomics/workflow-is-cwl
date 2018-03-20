@@ -10,6 +10,6 @@ conda update -q conda
 # Useful for debugging any issues with conda
 conda info -a
 
-conda create -q -n cwl-environment python=$TRAVIS_PYTHON_VERSION
+conda create -q -n cwl-environment python=3.6.4
 source activate cwl-environment
 pip install -r travis/requirements.txt
