@@ -2,7 +2,7 @@
 
 export PATH="tools/InterProScan:$PATH"
 echo $PATH
-bash interproscan.sh
+#bash interproscan.sh
 
-#cd tools/InterProScan/
-#cwl-runner InterProScan-v5.cwl InterProScan-apps.yaml --proteinFile test_single_protein.fasta
+cd tools/InterProScan/
+cwl-runner InterProScan-v5.cwl InterProScan-apps.yaml --proteinFile test_single_protein.fasta
