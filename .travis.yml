@@ -18,7 +18,7 @@ matrix:
         - pip install -r travis/requirements.txt
 
       script:
-        - bash travis/run.sh
+        - bash travis/run-interproscan5.sh
 
     - language: perl
       perl: 5.24
