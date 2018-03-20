@@ -30,7 +30,7 @@ requirements:
     coresMin: 1
   SchemaDefRequirement:
     types: 
-      - $import: TransDecoder.LongOrfs-5-genetic_codes.yaml
+      - $import: TransDecoder-v5-genetic_codes.yaml
 #hints:
 #  SoftwareRequirement:
 #    packages:
@@ -66,7 +66,7 @@ inputs:
       prefix: -S
   geneticCode:
     label: "genetic code"
-    type: TransDecoder.LongOrfs-5-genetic_codes.yaml#genetic_codes[]?
+    type: TransDecoder-v5-genetic_codes.yaml#genetic_codes[]?
     doc: "genetic code (default: universal; see PerlDoc; options: Euplotes, Tetrahymena, Candida, Acetabularia)"
     inputBinding:
       prefix: -G
