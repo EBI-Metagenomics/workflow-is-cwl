@@ -1,13 +1,13 @@
 matrix:
   include:
     - language: perl
-      python: 5.24
+      perl: 5.24
       install: travis/install-cwl-runner.sh
       script:
         - bash travis/run.sh
 
     - language: perl
       perl: 5.24
-      install: travis/install-cwl-runner.sh
+      install: travis/install-transdecoder.sh
       script:
         - bash travis/run-transdecoder.sh
