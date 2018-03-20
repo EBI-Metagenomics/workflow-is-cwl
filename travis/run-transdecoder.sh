@@ -6,4 +6,4 @@ echo $PATH
 source activate cwl-environment
 
 cd tools/TransDecoder
-cwl-runner TransDecoder.LongOrfs-v5.cwl TransDecoder-v5-genetic_codes.yaml --transcriptsFile test_single_protein.fasta
+cwl-runner TransDecoder.LongOrfs-v5.cwl TransDecoder-v5-genetic_codes.yaml --transcriptsFile test_transcripts.fasta
