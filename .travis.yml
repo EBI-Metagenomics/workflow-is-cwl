@@ -4,10 +4,10 @@ matrix:
       python: 3.6
       install: travis/install-cwl-runner.sh
       script:
-        - bash run.sh
+        - bash travis/run.sh
 
     - language: perl
       perl: 5.24
       install: travis/install-cwl-runner.sh
       script:
-        - bash run-transdecoder.sh
+        - bash travis/run-transdecoder.sh
