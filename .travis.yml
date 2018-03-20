@@ -2,7 +2,7 @@ matrix:
   include:
     - language: python
       python: 3.6
-      install: ./install-cwl-runner.sh
+      install: travis/install-cwl-runner.sh
       script:
         - bash run.sh
 
