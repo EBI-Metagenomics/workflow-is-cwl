@@ -17,7 +17,7 @@ requirements:
 hints:
   SoftwareRequirement:
     packages:
-      transdecoder:
+      hmmer:
         specs: [ "https://identifiers.org/rrid/RRID:SCR_005305" ]
         version: [ "3.1b2" ]
 
