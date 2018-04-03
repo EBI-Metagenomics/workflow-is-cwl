@@ -5,6 +5,6 @@ export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
 cd tools/TransDecoder
-CMD=cwl-runner TransDecoder.Predict-v5.cwl TransDecoder-v5-genetic_codes.yaml --transcriptsFile test-input/test_transcripts.fasta --singleBestOnly
+CMD="cwl-runner TransDecoder.Predict-v5.cwl TransDecoder-v5-genetic_codes.yaml --transcriptsFile test-input/test_transcripts.fasta --singleBestOnly"
 echo $CMD
 $CMD
