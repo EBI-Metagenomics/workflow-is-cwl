@@ -77,7 +77,7 @@ outputs:
   workingDir:
     type: Directory
     outputBinding:
-      glob: $(inputs.transcriptsFile.basename).output
+      glob: $(inputs.transcriptsFile.basename).transdecoder_dir
 
 $namespaces:
  s: http://schema.org/
