@@ -13,3 +13,5 @@ conda info -a
 conda create -q -n cwl-environment python=$TRAVIS_PYTHON_VERSION
 source activate cwl-environment
 pip install -r travis/requirements.txt
+
+mkdir tmp/tmp3cvjxys_
