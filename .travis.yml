@@ -12,4 +12,10 @@ matrix:
       perl: 5.24
       install: travis/install-transdecoder.sh
       script:
-        - bash travis/run-transdecoder.sh
+        - bash travis/run-transdecoder.longorfs.sh
+
+    - language: perl
+      perl: 5.24
+      install: travis/install-transdecoder.sh
+      script:
+        - bash travis/run-transdecoder.predict.sh
