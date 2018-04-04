@@ -23,7 +23,6 @@ requirements:
     coresMin: 1
   SchemaDefRequirement:
     types:
-      - $import: Diamond-output_formats.yaml
       - $import: Diamond-strand_values.yaml
 #hints:
 #  SoftwareRequirement:
@@ -37,21 +36,23 @@ inputs:
     label: "DIAMOND database input file"
     type: File
     doc: "Path to the DIAMOND database file."
-    format: edam:format_2333  # Binary format
+#    TODO: Resolve: Missing required 'format' for File at runtime
+#    format: edam:format_2333  # Binary format
     inputBinding:
       prefix: --db
   queryInputFile:
     label: "Query input file in FASTA"
     type: File
+#    TODO: Resolve: Missing required 'format' for File at runtime
+#    format: edam:format_1929  # FASTA
     doc: |
           Path to the query input file in FASTA or FASTQ format (may be gzip compressed). If this
           parameter is omitted, the input will be read from stdin
-    format: edam:format_1929  # FASTA
     inputBinding:
       prefix: --query
   taxonList:
     label: "Protein accession to taxon identifier NCBI mapping file"
-    type: []?
+    type: int[]?
     doc: |
           Comma-separated list of NCBI taxonomic IDs to filter the database by. Any taxonomic rank
           can be used, and only reference sequences matching one of the specified taxon ids will
@@ -70,7 +71,7 @@ inputs:
       prefix: --query-gencode
   strand:
     label: "Set strand of query to align for translated searches"
-    type: Diamond-strand_values.yaml#strand?
+    type: Diamond-strand_values.yaml#strand[]?
     doc: "Set strand of query to align for translated searches. By default both strands are searched. Valid values are {both, plus, minus}"
     inputBinding:
       prefix: --strand
@@ -85,7 +86,7 @@ inputs:
       prefix: --min-orf
   outputFormat:
     label: "Format of the output file"
-    type: Diamond-output_formats.yaml#output_formats?
+    type: int?
     doc: "The format of the output file."
     inputBinding:
       prefix: --outfmt
@@ -101,7 +102,7 @@ inputs:
 baseCommand: [diamond, blastx]
 
 arguments:
- - valueFrom: $(inputs.proteinFile.nameroot).i5_annotations
+ - valueFrom: $(runtime.outdir)
    prefix: --out
 
 outputs:
