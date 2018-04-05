@@ -4,7 +4,6 @@ matrix:
     - language: java
       jdk: openjdk8
       install: travis/install-interproscan5.sh
-
       script:
         - bash travis/run-interproscan5.sh
 
@@ -13,6 +12,12 @@ matrix:
       install: travis/install-transdecoder.sh
       script:
         - bash travis/run-transdecoder.longorfs.sh
+
+    - language: perl
+      perl: 5.24
+      install: travis/install-transdecoder.sh
+      script:
+        - bash travis/run-transdecoder.predict.sh
 
     - language: cpp
       compiler: clang
