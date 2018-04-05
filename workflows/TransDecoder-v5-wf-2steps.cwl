@@ -3,7 +3,7 @@ class: Workflow
 label: TransDecoder 2 step workflow, running TransDecoder.LongOrfs (step 1) followed by TransDecoder.Predict (step2)
 
 requirements:
- - class: SubworkflowFeatureRequirement
+# - class: SubworkflowFeatureRequirement
  - class: SchemaDefRequirement
    types:
     - $import: ../tools/TransDecoder/TransDecoder-v5-genetic_codes.yaml
@@ -13,6 +13,7 @@ inputs:
     type: File
 #   TODO: Resolve: Missing required 'format' for File at runtime
 #    format: edam:format_1929  # FASTA
+  singleBestOnly: boolean?
 
 outputs:
   peptide_sequences:
@@ -37,10 +38,14 @@ steps:
     out: [ workingDir ]
 
   TransDecoderPredict:
+#    requirements:
+#      - class: InitialWorkDirRequirement
+#        listing: TransDecoderLongOrfs.workingDir
     label: Predicts the likely coding regions
     run: ../tools/TransDecoder/TransDecoder.Predict-v5.cwl
     in:
       transcriptsFile: transcriptsFile
+      singleBestOnly: singleBestOnly
     out: [ peptide_sequences, coding_regions, gff3_output, bed_output ]
 
 $namespaces:
