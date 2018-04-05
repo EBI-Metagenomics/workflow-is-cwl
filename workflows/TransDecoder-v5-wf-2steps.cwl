@@ -11,7 +11,8 @@ requirements:
 inputs:
   transcriptsFile:
     type: File
-    format: edam:format_1929  # FASTA
+#   TODO: Resolve: Missing required 'format' for File at runtime
+#    format: edam:format_1929  # FASTA
 
 outputs:
   peptide_sequences:
