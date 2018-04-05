@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-export PATH="tools/diamond-v0.9.18:$PATH"
+export PATH="$HOME/diamond-v0.9.18:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
-#echo $PATH
+echo $PATH
 source activate cwl-environment
 
 cd tools/Diamond
