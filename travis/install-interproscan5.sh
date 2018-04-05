@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 travis/install-cwl-runner.sh
-# Install InterProScan5
+mkdir $HOME/interproscan5
+cd $HOME/interproscan5
+wget https://raw.githubusercontent.com/mscheremetjew/workflow-is-cwl/master/tools/InterProScan/interproscan.sh
