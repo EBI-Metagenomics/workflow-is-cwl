@@ -106,10 +106,26 @@ inputs:
 baseCommand: TransDecoder.Predict
 
 outputs:
-  workingDir:
-    type: Directory
+  peptide_sequences:
+    type: File
+    format: edam:format_1929  # FASTA
     outputBinding:
-      glob: $(inputs.transcriptsFile.basename).transdecoder_dir
+      glob: $(inputs.transcriptsFile.basename).transdecoder.pep
+  coding_regions:
+    type: File
+    format: edam:format_1929  # FASTA
+    outputBinding:
+      glob: $(inputs.transcriptsFile.basename).transdecoder.cds
+  gff3_output:
+    type: File
+    format: edam:format_1975  # GFF3
+    outputBinding:
+      glob: $(inputs.transcriptsFile.basename).transdecoder.gff3
+  bed_output:
+    type: File
+    format: edam:format_3003  # BED
+    outputBinding:
+      glob: $(inputs.transcriptsFile.basename).transdecoder.bed
 
 $namespaces:
  s: http://schema.org/
