@@ -6,4 +6,6 @@ export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
 cd tools/Diamond
-cwl-runner cwl-runner Diamon.blastx-v0.9.18.cwl Diamond-strand_values.yaml --databaseFile nr.dmnd --queryInputFile test_transcripts.fasta --strand plus
+CMD="cwl-runner Diamon.blastx-v0.9.18.cwl Diamond-strand_values.yaml --databaseFile nr.dmnd --queryInputFile test_transcripts.fasta --strand plus"
+echo $CMD
+$CMD
