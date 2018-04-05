@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-export PATH="$HOME/InterProScan:$PATH"
+ls -l $HOME/interproscan5
+export PATH="$HOME/interproscan5:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
-echo $PATH
 bash interproscan.sh
 source activate cwl-environment
 

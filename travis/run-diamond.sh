@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+ls -l $HOME/diamond-v0.9.18
 export PATH="$HOME/diamond-v0.9.18:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
 echo $PATH
