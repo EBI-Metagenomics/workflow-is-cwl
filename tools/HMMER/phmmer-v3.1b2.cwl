@@ -10,11 +10,14 @@ doc: |
       Please visit https://github.com/EddyRivasLab/hmmer for full documentation.
       
       Releases can be downloaded from https://github.com/EddyRivasLab/hmmer/releases
+      TODO: Write test for example command:
+      phmmer ../tutorial/HBB_HUMAN ../tutorial/globins45.fa
 
 requirements:
   ResourceRequirement:
-    ramMin: 1024
-    coresMin: 2
+    ramMin: 1024 # just a default, could be lowered
+    coresMin: 2 # TODO: not really sure about that
+    coresMax: 4 # TODO: not really sure about that
   
 hints:
   SoftwareRequirement:
@@ -24,21 +27,36 @@ hints:
         version: [ "3.1b2" ]
 
 inputs:
-  transcriptsFile:
-    label: "transcripts.fasta"
+  query:
     type: File
-    doc: "FASTA formatted sequence file containing your transcripts."
-#    format: edam:format_1929  # FASTA
     inputBinding:
-      prefix: -t
+      position: 1
+    format: edam:format_1370  # HMMER
 
-baseCommand: phmmer
+  sequences:
+    type: File
+    inputBinding:
+      position: 2
+
+  bitscore_threshold:
+    type: int?
+    label: report sequences >= this bit score threshold in output
+    inputBinding:
+      prefix: -T
+
+baseCommand: [ phmmer ]
+
+arguments:
+ - --tblout
+ - per_target_summary.txt
+ - valueFrom: $(runtime.cores)
+   prefix: --cpu
 
 outputs:
-  workingDir:
-    type: Directory
+  per_target_summary:
+    type: File
     outputBinding:
-      glob: $(inputs.transcriptsFile.basename)
+      glob: per_target_summary.txt
 
 $namespaces:
  s: http://schema.org/
