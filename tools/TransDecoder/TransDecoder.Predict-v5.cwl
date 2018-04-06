@@ -26,7 +26,7 @@ doc: |
 requirements:
   InitialWorkDirRequirement:
     listing:
-      - entry: $(inputs.r)
+      - entry: $(inputs.workingDir)
         entryname: inp
         writable: true
   ResourceRequirement:
@@ -43,7 +43,7 @@ requirements:
 #        version: [ "5.0.0", "5.0.1", "5.0.2" ]
 
 inputs:
-  r: Directory
+  workingDir: Directory
   transcriptsFile:
     label: "transcripts.fasta"
     type: File
