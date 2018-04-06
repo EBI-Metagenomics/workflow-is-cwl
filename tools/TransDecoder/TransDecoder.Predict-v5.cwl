@@ -24,6 +24,11 @@ doc: |
       Releases can be downloaded from https://github.com/TransDecoder/TransDecoder/releases
 
 requirements:
+  InitialWorkDirRequirement:
+    listing:
+      - entry: $(inputs.r)
+        entryname: inp
+        writable: true
   ResourceRequirement:
     ramMin: 1024
     coresMin: 1
@@ -38,6 +43,7 @@ requirements:
 #        version: [ "5.0.0", "5.0.1", "5.0.2" ]
 
 inputs:
+  r: Directory
   transcriptsFile:
     label: "transcripts.fasta"
     type: File
