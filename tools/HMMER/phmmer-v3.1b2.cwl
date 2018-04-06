@@ -1,18 +1,20 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: "??"
+label: "Search a single protein sequence against a protein sequence database. (BLASTP-like)"
 
 doc: |
-      phmmer is a ...
-      Please visit ?? for full documentation.
+      The phmmer and jackhmmer programs search a single protein sequence against a protein sequence
+      database, akin to BLASTP and PSIBLAST, respectively. (Internally, they just produce a profile HMM from
+      the query sequence, then run HMM searches.)
+      Please visit https://github.com/EddyRivasLab/hmmer for full documentation.
       
-      Releases can be downloaded from ??
+      Releases can be downloaded from https://github.com/EddyRivasLab/hmmer/releases
 
 requirements:
   ResourceRequirement:
     ramMin: 1024
-    coresMin: 1
+    coresMin: 2
   
 hints:
   SoftwareRequirement:
