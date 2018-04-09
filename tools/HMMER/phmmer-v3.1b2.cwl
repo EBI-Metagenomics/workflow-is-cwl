@@ -10,8 +10,6 @@ doc: |
       Please visit https://github.com/EddyRivasLab/hmmer for full documentation.
       
       Releases can be downloaded from https://github.com/EddyRivasLab/hmmer/releases
-      TODO: Write test for example command:
-      phmmer ../tutorial/HBB_HUMAN ../tutorial/globins45.fa
 
 requirements:
   ResourceRequirement:
@@ -24,21 +22,32 @@ hints:
     packages:
       hmmer:
         specs: [ "https://identifiers.org/rrid/RRID:SCR_005305" ]
-        version: [ "3.1b2" ]
+        version: [ "3.1b2", "3.1b3" ]
 
 inputs:
-  query:
+  seqFile:
+    label: "Query sequence(s) file"
+    doc: |
+          Search one or more query protein sequences against a protein sequence database.
     type: File
     inputBinding:
       position: 1
-    format: edam:format_1370  # HMMER
 
-  sequences:
+  seqdb:
+    label: "Target database of sequences"
     type: File
     inputBinding:
       position: 2
 
-  bitscore_threshold:
+  outputFile:
+    label: "Output file"
+    type: File?
+    doc: |
+          Direct output to file <f>, not stdout
+    inputBinding:
+      prefix: -o
+
+  bitscoreThreshold:
     type: int?
     label: report sequences >= this bit score threshold in output
     inputBinding:
@@ -47,16 +56,21 @@ inputs:
 baseCommand: [ phmmer ]
 
 arguments:
- - --tblout
- - per_target_summary.txt
- - valueFrom: $(runtime.cores)
-   prefix: --cpu
+ - valueFrom: $(inputs.seqfile.nameroot).tblout
+   prefix: --tblout
+# TODO: Roll back if needed
+# - valueFrom: $(runtime.cores)
+#   prefix: --cpu
 
 outputs:
-  per_target_summary:
+  perTargetSummary:
     type: File
     outputBinding:
-      glob: per_target_summary.txt
+      glob: $(inputs.seqfile.nameroot).tblout
+  programOutput:
+    type: File
+    outputBinding:
+      glob: $(inputs.seqfile.nameroot).out
 
 $namespaces:
  s: http://schema.org/
