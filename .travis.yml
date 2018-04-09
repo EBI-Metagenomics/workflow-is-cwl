@@ -24,3 +24,9 @@ matrix:
       install: travis/install-diamond.sh
       script:
         - bash travis/run-diamond.sh
+
+    - language: cpp
+      compiler: clang
+      install: travis/install-phmmer.sh
+      script:
+        - bash travis/run-phmmer.sh
