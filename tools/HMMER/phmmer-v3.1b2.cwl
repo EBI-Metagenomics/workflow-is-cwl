@@ -56,7 +56,7 @@ inputs:
 baseCommand: [ phmmer ]
 
 arguments:
- - valueFrom: $(inputs.seqfile.nameroot).tblout
+ - valueFrom: $(inputs.seqFile.nameroot).tblout
    prefix: --tblout
 # TODO: Roll back if needed
 # - valueFrom: $(runtime.cores)
@@ -66,11 +66,11 @@ outputs:
   perTargetSummary:
     type: File
     outputBinding:
-      glob: $(inputs.seqfile.nameroot).tblout
+      glob: $(inputs.seqFile.nameroot).tblout
   programOutput:
     type: File
     outputBinding:
-      glob: $(inputs.seqfile.nameroot).out
+      glob: $(inputs.seqFile.nameroot).out
 
 $namespaces:
  s: http://schema.org/
