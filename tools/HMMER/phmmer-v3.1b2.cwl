@@ -39,13 +39,16 @@ inputs:
     inputBinding:
       position: 2
 
-  outputFile:
-    label: "Output file"
-    type: File
-    doc: |
-          Direct output to file <f>, not stdout
-    inputBinding:
-      prefix: -o
+
+# TODO: Roll back if worked out to avoid existence check
+#  outputFile:
+#    label: "Output file"
+#    type: File
+#    doc: |
+#          Direct output to file <f>, not stdout
+#    inputBinding:
+#      prefix: -o
+#      valueFrom: $(inputs.outputFile.path) + $(inputs.outputFile.basename)
 
   bitscoreThreshold:
     type: int?
@@ -58,7 +61,7 @@ baseCommand: [ phmmer ]
 arguments:
  - valueFrom: $(inputs.seqFile.nameroot).tblout
    prefix: --tblout
- - valueFrom: $(inputs.outputFile.path) + $(inputs.outputFile.basename)
+ - valueFrom: $(inputs.seqFile.nameroot).out
    prefix: -o
 # TODO: Roll back if needed
 # - valueFrom: $(runtime.cores)
@@ -72,7 +75,7 @@ outputs:
   programOutput:
     type: File
     outputBinding:
-      glob: $(inputs.outputFile)
+      glob: $(inputs.seqFile.nameroot).out
 
 $namespaces:
  s: http://schema.org/
