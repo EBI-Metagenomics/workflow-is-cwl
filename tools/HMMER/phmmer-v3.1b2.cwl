@@ -41,7 +41,7 @@ inputs:
 
   outputFile:
     label: "Output file"
-    type: File?
+    type: File
     doc: |
           Direct output to file <f>, not stdout
     inputBinding:
@@ -58,6 +58,8 @@ baseCommand: [ phmmer ]
 arguments:
  - valueFrom: $(inputs.seqFile.nameroot).tblout
    prefix: --tblout
+ - valueFrom: $(inputs.outputFile.path) + $(inputs.outputFile.basename)
+   prefix: -o
 # TODO: Roll back if needed
 # - valueFrom: $(runtime.cores)
 #   prefix: --cpu
@@ -70,7 +72,7 @@ outputs:
   programOutput:
     type: File
     outputBinding:
-      glob: $(inputs.seqFile.nameroot).out
+      glob: $(inputs.outputFile)
 
 $namespaces:
  s: http://schema.org/
