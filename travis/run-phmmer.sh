@@ -6,6 +6,6 @@ export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
 cd tools/HMMER
-CMD="cwl-runner phmmer-v3.1b2.cwl --seqFile test-input/HBB_HUMAN --seqdb test-input/globins45.fa -o HBB_HUMAN.out"
+CMD="cwl-runner phmmer-v3.1b2.cwl --seqFile test-input/HBB_HUMAN --seqdb test-input/globins45.fa"
 echo $CMD
 $CMD
