@@ -26,9 +26,9 @@ doc: |
 requirements:
   InitialWorkDirRequirement:
     listing:
-      - entry: $(inputs.workingDir)
-        entryname: inp
-        writable: true
+      - $(inputs.transcriptsFile)
+      - entry: $(inputs.longOpenReadingFrames)
+        entryname: $(inputs.transcriptsFile.basename).transdecoder_dir
   ResourceRequirement:
     ramMin: 1024
     coresMin: 1
@@ -43,7 +43,7 @@ requirements:
 #        version: [ "5.0.0", "5.0.1", "5.0.2" ]
 
 inputs:
-  workingDir: Directory
+  longOpenReadingFrames: Directory
   transcriptsFile:
     label: "transcripts.fasta"
     type: File
