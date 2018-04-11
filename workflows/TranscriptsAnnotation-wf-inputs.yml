@@ -3,3 +3,6 @@ transcriptsFile:
   path: ../tools/TransDecoder/test-input/test_transcripts.fasta
 singleBestOnly: true
 applications: [ Pfam ]
+replace:
+  find: '*'
+  replace: X

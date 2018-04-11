@@ -7,6 +7,7 @@ requirements:
  - class: SchemaDefRequirement
    types:
     - $import: ../tools/InterProScan/InterProScan-apps.yaml
+    - $import: ../tools/esl-reformat-replace.yaml
 
 inputs:
   transcriptsFile:
@@ -15,6 +16,7 @@ inputs:
 #    format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
   applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
+  replace: ../tools/esl-reformat-replace.yaml#replace?
 
 outputs:
   peptide_sequences:
@@ -50,7 +52,7 @@ steps:
     run: ../tools/esl-reformat.cwl
     in:
       sequences: identify_coding_regions/peptide_sequences
-      replace: { default: { find: '*', replace: X } }
+      replace: replace
     out: [ reformatted_sequences ]
 
   functional_analysis:
