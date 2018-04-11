@@ -17,16 +17,16 @@ inputs:
 outputs:
   peptide_sequences:
     type: File
-    outputSource: predicts_coding_regions/peptide_sequences
+    outputSource: predict_coding_regions/peptide_sequences
   coding_regions:
     type: File
-    outputSource: predicts_coding_regions/coding_regions
+    outputSource: predict_coding_regions/coding_regions
   gff3_output:
     type: File
-    outputSource: predicts_coding_regions/gff3_output
+    outputSource: predict_coding_regions/gff3_output
   bed_output:
     type: File
-    outputSource: predicts_coding_regions/bed_output
+    outputSource: predict_coding_regions/bed_output
 
 steps:
   extract_long_orfs:
