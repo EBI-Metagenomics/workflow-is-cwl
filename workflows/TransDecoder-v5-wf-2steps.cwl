@@ -45,6 +45,7 @@ steps:
     run: ../tools/TransDecoder/TransDecoder.Predict-v5.cwl
     in:
       transcriptsFile: transcriptsFile
+      longOpenReadingFrames: TransDecoderLongOrfs/workingDir
       singleBestOnly: singleBestOnly
     out: [ peptide_sequences, coding_regions, gff3_output, bed_output ]
 
