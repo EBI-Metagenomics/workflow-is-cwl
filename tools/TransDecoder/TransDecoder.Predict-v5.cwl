@@ -29,6 +29,7 @@ requirements:
       - $(inputs.transcriptsFile)
       - entry: $(inputs.longOpenReadingFrames)
         entryname: $(inputs.transcriptsFile.basename).transdecoder_dir
+        writable: true
   ResourceRequirement:
     ramMin: 1024
     coresMin: 1
