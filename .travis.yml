@@ -16,7 +16,8 @@ matrix:
     - language: perl
       perl: 5.24
       install:
-            - curl -L https://cpanmin.us | sudo perl - --sudo App::cpanminus
+#            - curl -L https://cpanmin.us | sudo perl - --sudo App::cpanminus
+            - apt-get install libdb6.0-dev libdb6.0
             - cpanm DB_File
             - travis/install-transdecoder.sh
       script:
