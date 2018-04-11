@@ -29,6 +29,12 @@ outputs:
   bed_output:
     type: File
     outputSource: identify_coding_regions/bed_output
+  reformatted_sequences:
+    type: File
+    outputSource: remove_asterisks_and_reformat/reformatted_sequences
+  i5Annotations:
+    type: File
+    outputSource: functional_analysis/i5Annotations
 
 steps:
   identify_coding_regions:
@@ -39,13 +45,21 @@ steps:
       singleBestOnly: singleBestOnly
     out: [ peptide_sequences, coding_regions, gff3_output, bed_output ]
 
+  remove_asterisks_and_reformat:
+    label: Removes asterisks characters from given peptide sequences
+    run: ../tools/esl-reformat.cwl
+    in:
+      sequences: identify_coding_regions/peptide_sequences
+      replace: { default: { find: '*', replace: X } }
+    out: [ reformatted_sequences ]
+
   functional_analysis:
     doc: |
         Matches are generated against predicted CDS, using a sub set of databases
         (Pfam, TIGRFAM, PRINTS, PROSITE patterns, Gene3d) from InterPro.
     run: ../tools/InterProScan/InterProScan-v5.cwl
     in:
-      proteinFile: identify_coding_regions/peptide_sequences
+      proteinFile: remove_asterisks_and_reformat/reformatted_sequences
       applications: applications
     out: [ i5Annotations ]
 
@@ -57,4 +71,4 @@ $schemas:
  - https://schema.org/docs/schema_org_rdfa.html
 
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:copyrightHolder: "EMBL - European Bioinformatics Institute"
+s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
