@@ -3,7 +3,6 @@ class: Workflow
 label: TransDecoder 2 step workflow, running TransDecoder.LongOrfs (step 1) followed by TransDecoder.Predict (step2)
 
 requirements:
-# - class: SubworkflowFeatureRequirement
  - class: SchemaDefRequirement
    types:
     - $import: ../tools/TransDecoder/TransDecoder-v5-genetic_codes.yaml
@@ -18,31 +17,31 @@ inputs:
 outputs:
   peptide_sequences:
     type: File
-    outputSource: TransDecoderPredict/peptide_sequences
+    outputSource: predicts_coding_regions/peptide_sequences
   coding_regions:
     type: File
-    outputSource: TransDecoderPredict/coding_regions
+    outputSource: predicts_coding_regions/coding_regions
   gff3_output:
     type: File
-    outputSource: TransDecoderPredict/gff3_output
+    outputSource: predicts_coding_regions/gff3_output
   bed_output:
     type: File
-    outputSource: TransDecoderPredict/bed_output
+    outputSource: predicts_coding_regions/bed_output
 
 steps:
-  TransDecoderLongOrfs:
+  extract_long_orfs:
     label: Extracts the long open reading frames
     run: ../tools/TransDecoder/TransDecoder.LongOrfs-v5.cwl
     in:
       transcriptsFile: transcriptsFile
     out: [ workingDir ]
 
-  TransDecoderPredict:
+  predicts_coding_regions:
     label: Predicts the likely coding regions
     run: ../tools/TransDecoder/TransDecoder.Predict-v5.cwl
     in:
       transcriptsFile: transcriptsFile
-      longOpenReadingFrames: TransDecoderLongOrfs/workingDir
+      longOpenReadingFrames: extract_long_orfs/workingDir
       singleBestOnly: singleBestOnly
     out: [ peptide_sequences, coding_regions, gff3_output, bed_output ]
 
