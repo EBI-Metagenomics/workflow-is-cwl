@@ -38,9 +38,6 @@ steps:
     out: [ workingDir ]
 
   TransDecoderPredict:
-#    requirements:
-#      - class: InitialWorkDirRequirement
-#        listing: TransDecoderLongOrfs.workingDir
     label: Predicts the likely coding regions
     run: ../tools/TransDecoder/TransDecoder.Predict-v5.cwl
     in:
