@@ -2,7 +2,7 @@ transcriptsFile:
   class: File
   path: ../tools/TransDecoder/test-input/test_transcripts.fasta
 singleBestOnly: true
-applications: [ Pfam ]
+applications: [ Pfam, TIGRFAM, PRINTS, ProSitePatterns, Gene3D ]
 replace:
   find: '*'
   replace: X
