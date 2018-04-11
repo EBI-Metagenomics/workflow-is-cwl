@@ -59,7 +59,7 @@ outputs:
     type: File
     format: iana:text/tab-separated-values
     outputBinding:
-      glob: $(inputs.proteinFile.nameroot).i5_annotations
+      glob: $(inputs.proteinFile.basename).i5_annotations
 
 $namespaces:
  iana: https://www.iana.org/assignments/media-types/
