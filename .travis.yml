@@ -19,11 +19,21 @@ matrix:
         - sudo apt-get -qq update
         - sudo apt-get install libdb6.0-dev libdb6.0
       install:
-#            - curl -L https://cpanmin.us | sudo perl - --sudo App::cpanminus
             - cpanm DB_File
             - travis/install-transdecoder.sh
       script:
         - bash travis/run-transdecoder.predict.sh
+
+    - language: perl
+      perl: 5.24
+      before_install:
+        - sudo apt-get -qq update
+        - sudo apt-get install libdb6.0-dev libdb6.0
+      install:
+        - cpanm DB_File
+        - travis/install-transdecoder.sh
+      script:
+        - bash travis/run-transdecoder.sub-workflow.sh
 
     - language: cpp
       compiler: clang
