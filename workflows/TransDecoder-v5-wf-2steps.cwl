@@ -36,7 +36,7 @@ steps:
       transcriptsFile: transcriptsFile
     out: [ workingDir ]
 
-  predicts_coding_regions:
+  predict_coding_regions:
     label: Predicts the likely coding regions
     run: ../tools/TransDecoder/TransDecoder.Predict-v5.cwl
     in:
