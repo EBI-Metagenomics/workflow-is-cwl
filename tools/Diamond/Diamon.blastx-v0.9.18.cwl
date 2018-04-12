@@ -98,6 +98,12 @@ inputs:
           cores on the machine.
     inputBinding:
       prefix: --threads
+  blockSize:
+    label: "sequence block size in billions of letters (default=2.0)"
+    type: float?
+    inputBinding:
+      prefix: --block-size
+
 
 baseCommand: [diamond, blastx]
 

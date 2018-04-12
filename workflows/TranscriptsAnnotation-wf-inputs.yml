@@ -11,3 +11,4 @@ phmmerSeqdb:
 diamondSeqdb:
   class: File
   path: ../tools/Diamond/test-input/uniref90_subset.dmnd
+blockSize: 1.0

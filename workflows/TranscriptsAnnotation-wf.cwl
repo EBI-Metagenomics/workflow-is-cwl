@@ -21,6 +21,7 @@ inputs:
 #    format: edam:format_1929  # FASTA
   diamondSeqdb:
     type: File
+  blockSize: float?
 
 outputs:
   peptide_sequences:
@@ -89,6 +90,7 @@ steps:
     in:
       queryInputFile: transcriptsFile
       databaseFile: diamondSeqdb
+      blockSize: blockSize
     out: [ matches ]
 
 $namespaces:
