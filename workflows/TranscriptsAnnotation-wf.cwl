@@ -76,10 +76,10 @@ steps:
   calculate_phmmer_matches:
     label: Calculates phmmer matches
     run: ../tools/HMMER/phmmer-v3.1b2.cwl
-      in:
-        seqFile: identify_coding_regions/peptide_sequences
-        seqdb: sequenceDatabase
-      out: [ perTargetSummary, programOutput ]
+    in:
+      seqFile: identify_coding_regions/peptide_sequences
+      seqdb: sequenceDatabase
+    out: [ perTargetSummary, programOutput ]
 
 $namespaces:
  edam: http://edamontology.org/
