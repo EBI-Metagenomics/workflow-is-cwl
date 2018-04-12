@@ -6,3 +6,6 @@ applications: [ Pfam, TIGRFAM, PRINTS, ProSitePatterns, Gene3D ]
 replace:
   find: '*'
   replace: X
+sequenceDatabase:
+  class: File
+  path: ../tools/HMMER/test-input/globins45.fa

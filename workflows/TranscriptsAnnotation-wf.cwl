@@ -17,6 +17,10 @@ inputs:
   singleBestOnly: boolean?
   applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
   replace: ../tools/esl-reformat-replace.yaml#replace?
+  sequenceDatabase:
+    type: File
+#   TODO: Resolve: Missing required 'format' for File at runtime
+#    format: edam:format_1929  # FASTA
 
 outputs:
   peptide_sequences:
@@ -37,6 +41,9 @@ outputs:
   i5Annotations:
     type: File
     outputSource: functional_analysis/i5Annotations
+  perTargetSummary:
+    type: File
+    outputSource: calculate_phmmer_matches/perTargetSummary
 
 steps:
   identify_coding_regions:
@@ -52,6 +59,7 @@ steps:
     run: ../tools/esl-reformat.cwl
     in:
       sequences: identify_coding_regions/peptide_sequences
+#      TODO: Check with Michael how to resolve Type property error "['null', 'replace']" not a valid Avro schema
       replace: replace
     out: [ reformatted_sequences ]
 
@@ -64,6 +72,14 @@ steps:
       proteinFile: remove_asterisks_and_reformat/reformatted_sequences
       applications: applications
     out: [ i5Annotations ]
+
+  calculate_phmmer_matches:
+    label: Calculates phmmer matches
+    run: ../tools/HMMER/phmmer-v3.1b2.cwl
+      in:
+        seqFile: identify_coding_regions/peptide_sequences
+        seqdb: sequenceDatabase
+      out: [ perTargetSummary, programOutput ]
 
 $namespaces:
  edam: http://edamontology.org/
