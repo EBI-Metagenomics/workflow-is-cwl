@@ -6,7 +6,6 @@ requirements:
  - class: SubworkflowFeatureRequirement
  - class: SchemaDefRequirement
    types:
-    - $import: ../tools/InterProScan/InterProScan-apps.yaml
     - $import: ../tools/esl-reformat-replace.yaml
 
 inputs:
@@ -15,7 +14,6 @@ inputs:
 #   TODO: Resolve: Missing required 'format' for File at runtime
 #    format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
-  applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
   replace: ../tools/esl-reformat-replace.yaml#replace?
   sequenceDatabase:
     type: File
@@ -70,7 +68,6 @@ steps:
     run: ../tools/InterProScan/InterProScan-v5.cwl
     in:
       proteinFile: remove_asterisks_and_reformat/reformatted_sequences
-      applications: applications
     out: [ i5Annotations ]
 
   calculate_phmmer_matches:
