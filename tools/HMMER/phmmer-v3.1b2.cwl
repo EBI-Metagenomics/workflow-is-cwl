@@ -59,9 +59,9 @@ inputs:
 baseCommand: [ phmmer ]
 
 arguments:
- - valueFrom: $(inputs.seqFile.nameroot).tblout
+ - valueFrom: $(inputs.seqFile.basename).tblout
    prefix: --tblout
- - valueFrom: $(inputs.seqFile.nameroot).out
+ - valueFrom: $(inputs.seqFile.basename).out
    prefix: -o
 # TODO: Roll back if needed
 # - valueFrom: $(runtime.cores)
