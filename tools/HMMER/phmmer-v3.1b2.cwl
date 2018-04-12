@@ -71,11 +71,11 @@ outputs:
   perTargetSummary:
     type: File
     outputBinding:
-      glob: $(inputs.seqFile.nameroot).tblout
+      glob: $(inputs.seqFile.basename).tblout
   programOutput:
     type: File
     outputBinding:
-      glob: $(inputs.seqFile.nameroot).out
+      glob: $(inputs.seqFile.basename).out
 
 $namespaces:
  s: http://schema.org/
