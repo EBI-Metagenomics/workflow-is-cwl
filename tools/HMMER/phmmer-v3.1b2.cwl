@@ -59,23 +59,23 @@ inputs:
 baseCommand: [ phmmer ]
 
 arguments:
- - valueFrom: $(inputs.seqFile.basename).tblout
+ - valueFrom: $(inputs.seqFile.basename).phmmer_matches.tblout
    prefix: --tblout
- - valueFrom: $(inputs.seqFile.basename).out
+ - valueFrom: $(inputs.seqFile.basename).phmmer_matches.out
    prefix: -o
 # TODO: Roll back if needed
 # - valueFrom: $(runtime.cores)
 #   prefix: --cpu
 
 outputs:
-  perTargetSummary:
+  matches:
     type: File
     outputBinding:
-      glob: $(inputs.seqFile.basename).tblout
+      glob: $(inputs.seqFile.basename).phmmer_matches.tblout
   programOutput:
     type: File
     outputBinding:
-      glob: $(inputs.seqFile.basename).out
+      glob: $(inputs.seqFile.basename).phmmer_matches.out
 
 $namespaces:
  s: http://schema.org/
