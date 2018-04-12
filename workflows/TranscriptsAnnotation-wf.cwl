@@ -15,10 +15,12 @@ inputs:
 #    format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
   replace: ../tools/esl-reformat-replace.yaml#replace?
-  sequenceDatabase:
+  phmmerSeqdb:
     type: File
 #   TODO: Resolve: Missing required 'format' for File at runtime
 #    format: edam:format_1929  # FASTA
+  diamondSeqdb:
+    type: File
 
 outputs:
   peptide_sequences:
@@ -39,9 +41,12 @@ outputs:
   i5Annotations:
     type: File
     outputSource: functional_analysis/i5Annotations
-  perTargetSummary:
+  phmmer_matches:
     type: File
-    outputSource: calculate_phmmer_matches/perTargetSummary
+    outputSource: calculate_phmmer_matches/matches
+  diamond_matches:
+    type: File
+    outputSource: calculate_diamond_matches/matches
 
 steps:
   identify_coding_regions:
@@ -75,8 +80,16 @@ steps:
     run: ../tools/HMMER/phmmer-v3.1b2.cwl
     in:
       seqFile: identify_coding_regions/peptide_sequences
-      seqdb: sequenceDatabase
-    out: [ perTargetSummary, programOutput ]
+      seqdb: phmmerSeqdb
+    out: [ matches, programOutput ]
+
+  calculate_diamond_matches:
+    label: Calculates Diamond matches
+    run: ../tools/Diamond/Diamon.blastx-v0.9.18.cwl
+    in:
+      queryInputFile: transcriptsFile
+      databaseFile: diamondSeqdb
+    out: [ matches ]
 
 $namespaces:
  edam: http://edamontology.org/

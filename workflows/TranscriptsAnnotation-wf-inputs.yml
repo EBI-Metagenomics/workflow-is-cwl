@@ -5,6 +5,9 @@ singleBestOnly: true
 replace:
   find: '*'
   replace: X
-sequenceDatabase:
+phmmerSeqdb:
   class: File
   path: ../tools/HMMER/test-input/globins45.fa
+diamondSeqdb:
+  class: File
+  path: ../tools/Diamond/test-input/uniref90_subset.dmnd
