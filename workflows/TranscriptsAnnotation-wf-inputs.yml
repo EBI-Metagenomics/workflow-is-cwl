@@ -2,10 +2,30 @@ transcriptsFile:
   class: File
   path: ../tools/TransDecoder/test-input/test_transcripts.fasta
 singleBestOnly: true
-applications: [ Pfam, TIGRFAM, PRINTS, ProSitePatterns, Gene3D ]
 replace:
   find: '*'
   replace: X
 sequenceDatabase:
   class: File
   path: ../tools/HMMER/test-input/globins45.fa
+applications:
+# Had to take out Gene3D because of the bug
+ - Pfam
+ - TIGRFAM
+ - PRINTS
+ - ProSitePatterns
+ - SFLD
+ - SUPERFAMILY
+ - Hamap
+ - Coils
+ - ProSiteProfiles
+ - SMART
+ - CDD
+ - PIRSF
+ - ProDom
+ - MobiDBLite
+ - SignalP_GRAM_POSITIVE
+ - SignalP_GRAM_NEGATIVE
+ - SignalP_EUK
+ - Phobius
+ - TMHMM

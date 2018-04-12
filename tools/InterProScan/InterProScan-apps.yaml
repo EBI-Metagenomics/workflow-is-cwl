@@ -16,3 +16,8 @@ symbols:
  - Pfam
  - ProDom
  - MobiDBLite
+ - SignalP_GRAM_POSITIVE
+ - SignalP_GRAM_NEGATIVE
+ - SignalP_EUK
+ - Phobius
+ - TMHMM
