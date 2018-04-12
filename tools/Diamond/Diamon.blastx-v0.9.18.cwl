@@ -102,14 +102,15 @@ inputs:
 baseCommand: [diamond, blastx]
 
 arguments:
- - valueFrom: $(runtime.outdir)
+ - valueFrom: $(inputs.queryInputFile.basename).diamond_matches
    prefix: --out
 
 outputs:
-  diamondDatabaseFile:
+  matches:
     type: File
     format: edam:format_2333  # Binary format
-    outputBinding: { glob: "$(inputs.outputDBFile.nameroot)*" }
+    outputBinding:
+          glob: $(inputs.queryInputFile.basename).diamond_matches
 
 $namespaces:
  s: http://schema.org/
