@@ -63,9 +63,8 @@ arguments:
    prefix: --tblout
  - valueFrom: $(inputs.seqFile.basename).phmmer_matches.out
    prefix: -o
-# TODO: Roll back if needed
-# - valueFrom: $(runtime.cores)
-#   prefix: --cpu
+ - valueFrom: $(runtime.cores)
+   prefix: --cpu
 
 outputs:
   matches:
