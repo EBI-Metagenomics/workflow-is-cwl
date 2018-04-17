@@ -43,12 +43,14 @@ matrix:
 
     - language: c
       compiler: clang
+      env: TOOL=phmmer
       install: travis/install-phmmer.sh
       script:
         - bash travis/run-phmmer.sh
 
     - language: c
       compiler: clang
+      env: TOOL=cmsearch
       install: travis/install-cmsearch.sh
       script:
         - bash travis/run-cmsearch.sh
