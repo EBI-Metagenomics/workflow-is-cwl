@@ -6,6 +6,6 @@ export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
 cd tools/Infernal/cmsearch
-CMD="cwl-runner infernal-cmsearch.cwl --covariance_model_database test-input/tRNA5.c.cm --query_sequences test-input/mrum-genome.fa"
+CMD="cwl-runner infernal-cmsearch.cwl test-inputs.yml"
 echo $CMD
 $CMD
