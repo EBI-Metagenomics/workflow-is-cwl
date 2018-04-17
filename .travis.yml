@@ -46,3 +46,9 @@ matrix:
       install: travis/install-phmmer.sh
       script:
         - bash travis/run-phmmer.sh
+
+    - language: c
+      compiler: clang
+      install: travis/install-cmsearch.sh
+      script:
+        - bash travis/run-cmsearch.sh
