@@ -1,6 +1,6 @@
 cmsearch_matches:
   class: File
-  path: 1.cmsearch.tblout
+  path: test-input/1.cmsearch.tblout
 clan_information:
   class: File
-  path: ribo.claninfo
+  path: test-input/ribo.claninfo
