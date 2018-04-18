@@ -60,7 +60,7 @@ steps:
 
   remove_asterisks_and_reformat:
     label: Removes asterisks characters from given peptide sequences
-    run: ../tools/esl-reformat.cwl
+    run: ../tools/utils/esl-reformat.cwl
     in:
       sequences: identify_coding_regions/peptide_sequences
 #      TODO: Check with Michael how to resolve Type property error "['null', 'replace']" not a valid Avro schema
