@@ -1,6 +1,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
-label: search sequence(s) against a covariance model database
+label: Search sequence(s) against a covariance model database
 doc: |
       Infernal ("INFERence of RNA ALignment") is for searching DNA sequence databases for RNA structure and sequence
       similarities. It is an implementation of a special case of profile stochastic context-free grammars called
