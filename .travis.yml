@@ -59,3 +59,10 @@ matrix:
       install: travis/install-cmsearch.sh
       script:
         - bash travis/run-cmsearch.sh
+
+    - language: perl
+      perl: 5.24
+      env: TOOL=cmsearch-deoverlap
+      install: travis/install-cmsearch-deoverlap.sh
+      script:
+        - bash travis/run-cmsearch-deoverlap.sh
