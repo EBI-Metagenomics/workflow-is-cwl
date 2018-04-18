@@ -29,7 +29,7 @@ inputs:
     type: File
     streamable: true
     inputBinding:
-      position: 1
+      position: 2
 #    TODO: Resolve: Missing required 'format' for File at runtime
 #    format:
 #      - edam:format_1929  # FASTA
