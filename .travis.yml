@@ -3,18 +3,21 @@ matrix:
   include:
     - language: java
       jdk: openjdk8
+      env: TOOL=InterProScan
       install: travis/install-interproscan5.sh
       script:
         - bash travis/run-interproscan5.sh
 
     - language: perl
       perl: 5.24
+      env: TOOL=TransDecoder.Longorfs
       install: travis/install-transdecoder.sh
       script:
         - bash travis/run-transdecoder.longorfs.sh
 
     - language: perl
       perl: 5.24
+      env: TOOL=TransDecoder.Predict
       before_install:
         - sudo apt-get -qq update
         - sudo apt-get install libdb6.0-dev libdb6.0
@@ -26,6 +29,7 @@ matrix:
 
     - language: perl
       perl: 5.24
+      env: TOOL=TransDecoder-Workflow
       before_install:
         - sudo apt-get -qq update
         - sudo apt-get install libdb6.0-dev libdb6.0
@@ -37,6 +41,7 @@ matrix:
 
     - language: cpp
       compiler: clang
+      env: TOOL=Diamond
       install: travis/install-diamond.sh
       script:
         - bash travis/run-diamond.sh
