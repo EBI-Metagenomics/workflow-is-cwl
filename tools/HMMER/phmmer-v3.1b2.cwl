@@ -56,6 +56,13 @@ inputs:
     inputBinding:
       prefix: -T
 
+  cpu:
+    label: Number of parallel CPU workers to use for multithreads
+    type: int?
+#    default: $(runtime.cores)
+    inputBinding:
+      prefix: --cpu
+
 baseCommand: [ phmmer ]
 
 arguments:
@@ -63,8 +70,6 @@ arguments:
    prefix: --tblout
  - valueFrom: $(inputs.seqFile.basename).phmmer_matches.out
    prefix: -o
- - valueFrom: $(runtime.cores)
-   prefix: --cpu
 
 outputs:
   matches:
