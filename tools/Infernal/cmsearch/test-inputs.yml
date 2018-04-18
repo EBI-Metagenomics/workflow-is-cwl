@@ -7,3 +7,4 @@ query_sequences:
 search_space_size: 1000
 only_hmm: true
 omit_alignment_section: true
+cpu: 8

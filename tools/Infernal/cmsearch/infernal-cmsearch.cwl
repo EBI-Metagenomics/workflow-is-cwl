@@ -30,14 +30,15 @@ inputs:
     streamable: true
     inputBinding:
       position: 1
-    format:
-      - edam:format_1929  # FASTA
-      - edam:format_1927  # EMBL
-      - edam:format_1936  # Genbank entry format
-      - edam:format_1961  # Stockholm
-      - edam:format_3281  # A2M
-      - edam:format_1982  # Clustal
-      - edam:format_1997  # PHYLIP
+#    TODO: Resolve: Missing required 'format' for File at runtime
+#    format:
+#      - edam:format_1929  # FASTA
+#      - edam:format_1927  # EMBL
+#      - edam:format_1936  # Genbank entry format
+#      - edam:format_1961  # Stockholm
+#      - edam:format_3281  # A2M
+#      - edam:format_1982  # Clustal
+#      - edam:format_1997  # PHYLIP
       # ddbj ?
       # pfam ?
       # afa ?
@@ -75,13 +76,18 @@ inputs:
     inputBinding:
       prefix: --cut_ga
 
+  cpu:
+    label: Number of parallel CPU workers to use for multithreads
+    type: int?
+#    default: $(runtime.cores)
+    inputBinding:
+      prefix: --cpu
+
 baseCommand: cmsearch
 
 arguments:
   - valueFrom: $(inputs.query_sequences.basename).cmsearch_matches.tbl
     prefix: --tblout
-  - valueFrom: $(runtime.cores)
-    prefix: --cpu
   - valueFrom: $(inputs.query_sequences.basename).cmsearch.out
     prefix: -o
 
