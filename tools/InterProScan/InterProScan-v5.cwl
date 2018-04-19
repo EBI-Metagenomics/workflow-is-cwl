@@ -43,7 +43,7 @@ inputs:
 baseCommand: interproscan.sh
 
 arguments:
- - valueFrom: $(inputs.proteinFile.nameroot).i5_annotations
+ - valueFrom: $(inputs.proteinFile.basename).i5_annotations
    prefix: --outfile
  - valueFrom: TSV
    prefix: --formats
