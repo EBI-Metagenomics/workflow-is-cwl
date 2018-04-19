@@ -45,7 +45,7 @@ arguments:
   - valueFrom: fasta
     position: 2
 
-stdout: reformatted_sequences  # helps with cwltool's --cache
+stdout: $(inputs.sequences.basename).reformatted_seqs  # helps with cwltool's --cache
 
 outputs:
   reformatted_sequences:
