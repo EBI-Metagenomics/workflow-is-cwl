@@ -19,9 +19,11 @@ inputs:
     type: File
 #   TODO: Resolve: Missing required 'format' for File at runtime
 #    format: edam:format_1929  # FASTA
-  diamondSeqdb:
-    type: File
+  diamondSeqdb: File
   blockSize: float?
+  covariance_models: File[]
+  clanInfoFile: File
+  cmsearchCores: int
 
 outputs:
   peptide_sequences:
@@ -91,6 +93,16 @@ steps:
       queryInputFile: transcriptsFile
       databaseFile: diamondSeqdb
       blockSize: blockSize
+    out: [ matches ]
+
+  identify_nc_rna:
+    label: Identifies non-coding RNAs using Rfams covariance models
+    run: cmsearch-multimodel-wf.cwl
+    in:
+      query_sequences: transcriptsFile
+      covariance_models: covariance_models
+      clan_info: clanInfoFile
+      cores: cmsearchCores
     out: [ matches ]
 
 $namespaces:

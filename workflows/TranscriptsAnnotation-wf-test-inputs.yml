@@ -12,3 +12,10 @@ diamondSeqdb:
   class: File
   path: ../tools/Diamond/test-input/uniref90_subset.dmnd
 blockSize: 1.0
+covariance_models:
+  - class: File
+    path: ../tools/Infernal/cmsearch/test-input/tRNA5.c.cm
+clanInfoFile:
+  class: File
+  path: ../tools/cmsearch-deoverlap/test-input/ribo.claninfo
+cmsearchCores: 2
