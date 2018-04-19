@@ -50,6 +50,12 @@ outputs:
   diamond_matches:
     type: File
     outputSource: calculate_diamond_matches/matches
+  cmsearch_matches:
+    type: File
+    outputSource: identify_nc_rna/cmsearch_matches
+  deoverlapped_matches:
+    type: File
+    outputSource: identify_nc_rna/deoverlapped_matches
 
 steps:
   identify_coding_regions:
@@ -103,7 +109,7 @@ steps:
       covariance_models: covariance_models
       clan_info: clanInfoFile
       cores: cmsearchCores
-    out: [ matches ]
+    out: [ cmsearch_matches, deoverlapped_matches ]
 
 $namespaces:
  edam: http://edamontology.org/
