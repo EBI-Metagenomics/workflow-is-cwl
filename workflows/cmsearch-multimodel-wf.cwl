@@ -12,9 +12,6 @@ inputs:
   cores: int
 
 outputs:
-  cmsearch_matches:
-    type: File
-    outputSource: cmsearch/matches
   deoverlapped_matches:
     type: File
     outputSource: remove_overlaps/deoverlapped_matches
