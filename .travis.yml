@@ -66,3 +66,12 @@ matrix:
       install: travis/install-cmsearch-deoverlap.sh
       script:
         - bash travis/run-cmsearch-deoverlap.sh
+
+    - language: c
+      compiler: clang
+      env: TOOL=cmsearch-multimodel-Workflow
+      install:
+        - travis/install-cmsearch.sh
+        - travis/install-cmsearch-deoverlap.sh
+      script:
+        - bash travis/run-cmsearch.sub-workflow.sh
