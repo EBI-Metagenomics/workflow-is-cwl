@@ -6,7 +6,7 @@ requirements:
  - class: SubworkflowFeatureRequirement
  - class: SchemaDefRequirement
    types:
-    - $import: ../tools/esl-reformat-replace.yaml
+    - $import: ../tools/utils/esl-reformat-replace.yaml
 
 inputs:
   transcriptsFile:
@@ -14,7 +14,7 @@ inputs:
 #   TODO: Resolve: Missing required 'format' for File at runtime
 #    format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
-  replace: ../tools/esl-reformat-replace.yaml#replace?
+  replace: ../tools/utils/esl-reformat-replace.yaml#replace?
   phmmerSeqdb:
     type: File
 #   TODO: Resolve: Missing required 'format' for File at runtime
