@@ -74,7 +74,7 @@ inputs:
       prefix: --out
   lineage:
     label: "Location of the BUSCO lineage data to use (e.g. fungi_odb9)"
-    type: string
+    type: Directory
     doc: |
           Specify location of the BUSCO lineage data to be used.
           Visit http://busco.ezlab.org/ for available lineages.
