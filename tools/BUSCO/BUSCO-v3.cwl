@@ -188,7 +188,7 @@ outputs:
     format: iana:text/tab-separated-values
     outputBinding:
       glob: full_table_*.tsv
-  missingBUSCOs
+  missingBUSCOs:
     label: Contains a list of missing BUSCOs
     type: File
     format: iana:text/tab-separated-values
