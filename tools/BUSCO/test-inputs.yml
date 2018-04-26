@@ -5,4 +5,4 @@ lineage:
   class: Directory
   path: test-input/example
 outputName: TEST
-mode: genome
+mode: geno
