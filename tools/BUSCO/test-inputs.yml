@@ -1,0 +1,8 @@
+sequenceFile:
+  class: File
+  path: test-input/target.fa
+lineage:
+  class: Directory
+  path: test-input/example
+outputName: TEST
+mode: genome
