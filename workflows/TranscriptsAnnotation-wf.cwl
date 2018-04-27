@@ -7,6 +7,7 @@ requirements:
  - class: SchemaDefRequirement
    types:
     - $import: ../tools/utils/esl-reformat-replace.yaml
+    - $import: ../tools/BUSCO/BUSCO-assessment_modes.yaml
 
 inputs:
   transcriptsFile:
@@ -24,6 +25,9 @@ inputs:
   covariance_models: File[]
   clanInfoFile: File
   cmsearchCores: int
+  buscoMode: ../tools/BUSCO/BUSCO-assessment_modes.yaml#assessment_modes
+  buscoOutputName: string
+  buscoLineage: Directory
 
 outputs:
   peptide_sequences:
@@ -53,6 +57,24 @@ outputs:
   deoverlapped_matches:
     type: File
     outputSource: identify_nc_rna/deoverlapped_matches
+  busco_short_summary:
+    type: File
+    outputSource: run_transcriptome_assessment/shortSummary
+  busco_full_table:
+    type: File
+    outputSource: run_transcriptome_assessment/fullTable
+  busco_missing_buscos:
+    type: File
+    outputSource: run_transcriptome_assessment/missingBUSCOs
+  busco_hmmer_output:
+    type: Directory
+    outputSource: run_transcriptome_assessment/hmmerOutput
+  busco_translated_proteins:
+    type: Directory
+    outputSource: run_transcriptome_assessment/translatedProteins
+  busco_blast_output:
+    type: Directory
+    outputSource: run_transcriptome_assessment/blastOutput
 
 steps:
   identify_coding_regions:
@@ -107,6 +129,17 @@ steps:
       clan_info: clanInfoFile
       cores: cmsearchCores
     out: [ deoverlapped_matches ]
+
+  run_transcriptome_assessment:
+    label: Performs transcriptome assessment using BUSCO
+    run: ../tools/BUSCO/BUSCO-v3.cwl
+    in:
+      mode: buscoMode
+      sequenceFile: transcriptsFile
+      outputName: outputName
+      lineage: lineage
+    out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
+
 
 $namespaces:
  edam: http://edamontology.org/

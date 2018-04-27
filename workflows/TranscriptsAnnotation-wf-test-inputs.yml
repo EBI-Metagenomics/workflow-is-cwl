@@ -19,3 +19,8 @@ clanInfoFile:
   class: File
   path: ../tools/cmsearch-deoverlap/test-input/ribo.claninfo
 cmsearchCores: 2
+buscoLineage:
+  class: Directory
+  path: ../tools/BUSCO/test-input/example
+buscoOutputName: TEST
+buscoMode: tran
