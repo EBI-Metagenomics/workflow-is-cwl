@@ -178,7 +178,7 @@ outputs:
     type: File
 #    format: iana:text/tab-separated-values
     outputBinding:
-      glob: short_summary_*.txt
+      glob: run_$(inputs.outputName)/short_summary_*.txt
   fullTable:
     doc: |
           Contains the complete results in a tabular format with scores and lengths of
@@ -187,23 +187,23 @@ outputs:
     type: File
     format: iana:text/tab-separated-values
     outputBinding:
-      glob: full_table_*.tsv
+      glob: run_$(inputs.outputName)/full_table_*.tsv
   missingBUSCOs:
     label: Contains a list of missing BUSCOs
     type: File
     format: iana:text/tab-separated-values
     outputBinding:
-      glob: missing_buscos_list_*.tsv
+      glob: run_$(inputs.outputName)/missing_busco_list_*.tsv
   hmmerOutput:
     label: Tabular format HMMER output of searches with BUSCO HMMs
     type: Directory
     outputBinding:
-      glob: hmmer_output
+      glob: run_$(inputs.outputName)/hmmer_output
   translatedProteins:
     label: Transcript sequence translations, only created during transcriptome assessment
     type: Directory
     outputBinding:
-      glob: translated_proteins
+      glob: run_$(inputs.outputName)/translated_proteins
   blastOutput:
     doc: |
           tBLASTn results, not created for assessment of proteins.
@@ -211,7 +211,7 @@ outputs:
           File: coordinates_XXXX.txt = locations of BUSCO matches (genome mode)
     type: Directory
     outputBinding:
-      glob: blast_output
+      glob: run_$(inputs.outputName)/blast_output
 
 $namespaces:
  s: http://schema.org/
