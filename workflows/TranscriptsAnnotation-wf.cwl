@@ -136,8 +136,8 @@ steps:
     in:
       mode: buscoMode
       sequenceFile: transcriptsFile
-      outputName: outputName
-      lineage: lineage
+      outputName: buscoOutputName
+      lineage: buscoLineage
     out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
 
 
