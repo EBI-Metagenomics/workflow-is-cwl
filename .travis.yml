@@ -79,6 +79,7 @@ matrix:
     - language: python
       env: TOOL=Workflow validation tests
       install:
+        - travis/install-nodejs.sh
         - travis/install-cwl-runner.sh
       script:
         - bash travis/workflow-cwl-validation-tests.sh
