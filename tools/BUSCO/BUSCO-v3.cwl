@@ -58,7 +58,7 @@ inputs:
           transcriptome mode), or protein sequences from an annotated gene set
           (proteins mode).
           NB: select just one transcript/protein per gene for your input,
-          otherwise they will appear as ‘Duplicated’ matches.
+          otherwise they will appear as 'Duplicated' matches.
     type: File
 #    format: edam:format_1929  # FASTA
     inputBinding:
