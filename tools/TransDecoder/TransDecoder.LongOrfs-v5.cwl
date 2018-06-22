@@ -17,7 +17,7 @@ inputs:
       gene-to-transcript identifier mapping file (tab-delimited,
       gene_id<tab>trans_id<return>)
   - id: geneticCode
-    type: 'genetic_codes[]?'
+    type: TransDecoder-v5-genetic_codes.yaml#genetic_codes[]?
     inputBinding:
       position: 0
       prefix: '-G'
