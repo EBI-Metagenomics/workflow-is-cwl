@@ -83,3 +83,18 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/workflow-cwl-validation-tests.sh
+
+    - language: go
+      services:
+        - docker
+      env:
+        global:
+          - DOCKER_VERSION=1.10.1-0~trusty
+          - DOCKER_COMPOSE_VERSION=1.6.0
+      before_install:
+        # list docker-engine versions
+        - apt-cache madison docker-engine
+        # upgrade docker-engine to specific version
+        - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
+      script:
+        - docker version
