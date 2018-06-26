@@ -6,6 +6,6 @@ export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
 cd tools/TransDecoder
-CMD="cwl-runner TransDecoder.LongOrfs-v5.cwl TransDecoder-v5-genetic_codes.yaml test-inputs.yml"
+CMD="cwl-runner TransDecoder.LongOrfs-v5.cwl test-inputs.yml TransDecoder-v5-genetic_codes.yaml"
 echo $CMD
 $CMD
