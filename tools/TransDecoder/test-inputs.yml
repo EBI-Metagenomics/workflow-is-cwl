@@ -1,0 +1,4 @@
+transcriptsFile:
+  class: File
+  format: 'edam:format_1929'
+  path: test-input/test_transcripts.fasta

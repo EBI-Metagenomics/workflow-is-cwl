@@ -7,6 +7,7 @@ $namespaces:
 baseCommand:
   - TransDecoder.LongOrfs
 inputs:
+#  - format: 'edam:format_3475'
   - id: geneToTranscriptMap
     type: File?
     inputBinding:
@@ -39,7 +40,8 @@ inputs:
       prefix: '-S'
     label: strand-specific
     doc: strand-specific (only analyzes top strand)
-  - id: transcriptsFile
+  - format: 'edam:format_1929'
+    id: transcriptsFile
     type: File
     inputBinding:
       position: 0
@@ -84,8 +86,9 @@ requirements:
       - $import: TransDecoder-v5-genetic_codes.yaml
   - class: ResourceRequirement
     ramMin: 1024
-  - class: DockerRequirement
-    dockerPull: comics/transdecoder
+#  - class: DockerRequirement
+#    dockerPull: comics/transdecoder
+  - class: InlineJavascriptRequirement
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
