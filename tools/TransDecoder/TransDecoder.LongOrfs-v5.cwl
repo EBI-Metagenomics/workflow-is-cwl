@@ -18,7 +18,7 @@ inputs:
       gene-to-transcript identifier mapping file (tab-delimited,
       gene_id<tab>trans_id<return>)
   - id: geneticCode
-    type: TransDecoder-v5-genetic_codes.yaml#genetic_codes[]?
+    type: 'genetic_codes[]?'
     inputBinding:
       position: 0
       prefix: '-G'
@@ -83,16 +83,33 @@ label: >-
 requirements:
   - class: SchemaDefRequirement
     types:
-      - $import: TransDecoder-v5-genetic_codes.yaml
+      - name: genetic_codes
+        symbols:
+          - universal
+          - Euplotes
+          - Tetrahymena
+          - Candida
+          - Acetabularia
+          - Mitochondrial-Canonical
+          - Mitochondrial-Vertebrates
+          - Mitochondrial-Arthropods
+          - Mitochondrial-Echinoderms
+          - Mitochondrial-Molluscs
+          - Mitochondrial-Ascidians
+          - Mitochondrial-Nematodes
+          - Mitochondrial-Platyhelminths
+          - Mitochondrial-Yeasts
+          - Mitochondrial-Euascomycetes
+          - Mitochondrial-Protozoans
+        type: enum
   - class: ResourceRequirement
     ramMin: 1024
+  - class: InlineJavascriptRequirement
+hints:
   - class: DockerRequirement
     dockerPull: comics/transdecoder
-  - class: InlineJavascriptRequirement
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-# TODO: Add sevenbridges schema to support sgb fields
-#'sbg:wrapperAuthor': Maxim Scheremetjew
