@@ -1,0 +1,15 @@
+geneticCode: null
+longOpenReadingFrames:
+  class: Directory
+  path: test-input/test_transcripts.fasta.transdecoder_dir
+noRefineStarts: null
+retainBlastpHits: null
+retainLongOrfsLength: null
+retainLongOrfsMode: null
+retainPfamHits: null
+singleBestOnly: true
+train: null
+transcriptsFile:
+  class: File
+  format: 'edam:format_1929'
+  path: test-input/test_transcripts.fasta
