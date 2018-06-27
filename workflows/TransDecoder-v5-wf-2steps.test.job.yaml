@@ -2,4 +2,4 @@ singleBestOnly: true
 transcriptsFile:
   class: File
   format: 'edam:format_1929'
-  path: test-input/test_transcripts.fasta
+  path: ../tools/TransDecoder/test-input/test_transcripts.fasta
