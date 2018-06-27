@@ -1,0 +1,8 @@
+bitscoreThreshold: null
+cpu: null
+seqFile:
+  class: File
+  path: test-input/globins45.fa
+seqdb:
+  class: File
+  path: test-input/HBB_HUMAN
