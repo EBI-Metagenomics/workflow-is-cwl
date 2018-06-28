@@ -11,9 +11,9 @@ matrix:
     - language: perl
       perl: 5.24
       env: TOOL=TransDecoder.Longorfs
-      install: travis/install-transdecoder.sh
+      install: travis/install-transdecoder-v5.0.2.sh
       script:
-        - bash travis/run-transdecoder.longorfs.sh
+        - bash travis/run-transdecoder.longorfs-v5.0.2.sh
 
     - language: perl
       perl: 5.24
@@ -23,9 +23,9 @@ matrix:
         - sudo apt-get install libdb6.0-dev libdb6.0
       install:
             - cpanm DB_File
-            - travis/install-transdecoder.sh
+            - travis/install-transdecoder-v5.0.2.sh
       script:
-        - bash travis/run-transdecoder.predict.sh
+        - bash travis/run-transdecoder.predict-v5.0.2.sh
 
     - language: perl
       perl: 5.24
@@ -35,16 +35,16 @@ matrix:
         - sudo apt-get install libdb6.0-dev libdb6.0
       install:
         - cpanm DB_File
-        - travis/install-transdecoder.sh
+        - travis/install-transdecoder-v5.0.2.sh
       script:
-        - bash travis/run-transdecoder.sub-workflow.sh
+        - bash travis/run-transdecoder-v5.0.2.sub-workflow.sh
 
     - language: cpp
       compiler: clang
       env: TOOL=Diamond
-      install: travis/install-diamond.sh
+      install: travis/install-diamond-v0.9.21.sh
       script:
-        - bash travis/run-diamond.sh
+        - bash travis/run-diamond-v0.9.21.sh
 
     - language: c
       compiler: clang
