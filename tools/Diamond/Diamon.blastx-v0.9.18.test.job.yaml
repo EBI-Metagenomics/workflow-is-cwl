@@ -3,12 +3,12 @@ databaseFile:
   class: File
   path: >-
     test-input/uniref90_subset.dmnd
-outputFormat: null
+outputFormat: '5'
 queryGeneticCode: null
 queryInputFile:
   class: File
   path: >-
     test-input/test_transcripts.fasta
-strand: plus
+strand: both
 taxonList: null
 threads: null

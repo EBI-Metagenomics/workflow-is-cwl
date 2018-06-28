@@ -22,12 +22,28 @@ inputs:
     label: DIAMOND database input file
     doc: Path to the DIAMOND database file.
   - id: outputFormat
-    type: 'output_formats[]?'
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - '0'
+          - '5'
+          - '6'
+          - '100'
+          - '101'
+        name: outputFormat
     inputBinding:
       position: 0
       prefix: '--outfmt'
     label: Format of the output file
-    doc: The format of the output file.
+    doc: |-
+      0   = BLAST pairwise
+      5   = BLAST XML
+      6   = BLAST tabular
+      100 = DIAMOND alignment archive (DAA)
+      101 = SAM
+
+      Value 6 may be followed by a space-separated list of these keywords
   - id: queryGeneticCode
     type: int?
     inputBinding:
@@ -39,8 +55,8 @@ inputs:
       at least this length.
 
       By default this feature is disabled for sequences of length below 30, set
-      to 20 for sequences of length below 100, and set to 40 otherwise. Setting this option to 1
-      will disable this feature.
+      to 20 for sequences of length below 100, and set to 40 otherwise. Setting
+      this option to 1 will disable this feature.
   - id: queryInputFile
     type: File
     inputBinding:
@@ -49,11 +65,19 @@ inputs:
     label: Query input file in FASTA
     doc: >
       Path to the query input file in FASTA or FASTQ format (may be gzip
-      compressed). If this parameter is omitted, the input will be read from stdin
+      compressed). If this parameter is omitted, the input will be read from
+      stdin
   - id: strand
-    type: 'strand[]?'
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - both
+          - minus
+          - plus
+        name: strand
     inputBinding:
-      position: 0
+      position: -3
       prefix: '--strand'
     label: Set strand of query to align for translated searches
     doc: >-
@@ -67,9 +91,9 @@ inputs:
     label: Protein accession to taxon identifier NCBI mapping file
     doc: >
       Comma-separated list of NCBI taxonomic IDs to filter the database by. Any
-      taxonomic rank can be used, and only reference sequences matching one of the specified
-      taxon ids will be searched against. Using this option requires setting the --taxonmap and
-      --taxonnodes parameters for makedb.
+      taxonomic rank can be used, and only reference sequences matching one of
+      the specified taxon ids will be searched against. Using this option
+      requires setting the --taxonmap and --taxonnodes parameters for makedb.
   - id: threads
     type: int?
     inputBinding:
@@ -104,23 +128,6 @@ arguments:
     prefix: '--out'
     valueFrom: $(inputs.queryInputFile.basename).diamond_matches
 requirements:
-  - class: SchemaDefRequirement
-    types:
-      - name: strand
-        symbols:
-          - both
-          - plus
-          - minus
-        type: enum
-      - name: output_formats
-        symbols:
-          - 0
-          - 5
-          - 6
-          - 100
-          - 101
-          - 102
-        type: int
   - class: ResourceRequirement
     ramMin: 1024
   - class: InlineJavascriptRequirement
