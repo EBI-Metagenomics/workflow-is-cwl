@@ -1,0 +1,13 @@
+covariance_model_database:
+  class: File
+  path: >-
+    /home/maxim/software-projects/worflow-is-cwl/tools/Infernal/cmsearch/test-input/tRNA5.c.cm
+cpu: 8
+cut_ga: null
+omit_alignment_section: true
+only_hmm: true
+query_sequences:
+  class: File
+  path: >-
+    /home/maxim/software-projects/worflow-is-cwl/tools/Infernal/cmsearch/test-input/mrum-genome.fa
+search_space_size: 1000

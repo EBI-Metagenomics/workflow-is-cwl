@@ -56,9 +56,9 @@ matrix:
     - language: c
       compiler: clang
       env: TOOL=cmsearch
-      install: travis/install-cmsearch.sh
+      install: travis/install-cmsearch-v1.1.2.sh
       script:
-        - bash travis/run-cmsearch.sh
+        - bash travis/run-cmsearch-v1.1.2.sh
 
     - language: perl
       perl: 5.24

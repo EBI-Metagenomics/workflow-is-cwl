@@ -18,7 +18,7 @@ outputs:
 
 steps:
   cmsearch:
-    run: ../tools/Infernal/cmsearch/infernal-cmsearch.cwl
+    run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
     in:
       query_sequences: query_sequences
       covariance_model_database: covariance_models
