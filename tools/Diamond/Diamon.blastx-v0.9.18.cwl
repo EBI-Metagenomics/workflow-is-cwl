@@ -39,9 +39,7 @@ inputs:
       at least this length.
 
       By default this feature is disabled for sequences of length below 30, set
-      to 20 for sequences
-
-      of length below 100, and set to 40 otherwise. Setting this option to 1
+      to 20 for sequences of length below 100, and set to 40 otherwise. Setting this option to 1
       will disable this feature.
   - id: queryInputFile
     type: File
@@ -51,9 +49,7 @@ inputs:
     label: Query input file in FASTA
     doc: >
       Path to the query input file in FASTA or FASTQ format (may be gzip
-      compressed). If this
-
-      parameter is omitted, the input will be read from stdin
+      compressed). If this parameter is omitted, the input will be read from stdin
   - id: strand
     type: 'strand[]?'
     inputBinding:
@@ -71,15 +67,9 @@ inputs:
     label: Protein accession to taxon identifier NCBI mapping file
     doc: >
       Comma-separated list of NCBI taxonomic IDs to filter the database by. Any
-      taxonomic rank
-
-      can be used, and only reference sequences matching one of the specified
-      taxon ids will
-
-      be searched against. Using this option requires setting the --taxonmap and
-      --taxonnodes
-
-      parameters for makedb.
+      taxonomic rank can be used, and only reference sequences matching one of the specified
+      taxon ids will be searched against. Using this option requires setting the --taxonmap and
+      --taxonnodes parameters for makedb.
   - id: threads
     type: int?
     inputBinding:
@@ -88,9 +78,7 @@ inputs:
     label: Number of CPU threads
     doc: >
       Number of CPU threads. By default, the program will auto-detect and use
-      all available virtual
-
-      cores on the machine.
+      all available virtual cores on the machine.
 outputs:
   - id: matches
     type: File
@@ -135,7 +123,6 @@ requirements:
         type: int
   - class: ResourceRequirement
     ramMin: 1024
-    coresMin: 1
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
