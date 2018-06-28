@@ -1,0 +1,11 @@
+inputRefDBFile:
+  class: File
+  path: >-
+    test-input/uniref90_subset.fasta
+outputDBFile:
+  class: File
+  path: >-
+    test-input/uniref90_subset.dmnd
+taxonMapFile: null
+taxonNodesFiles: null
+threads: null

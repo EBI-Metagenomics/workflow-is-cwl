@@ -2,13 +2,13 @@ blockSize: null
 databaseFile:
   class: File
   path: >-
-    /home/maxim/IdeaProjects/workflow-is-cwl/tools/Diamond/test-input/uniref90_subset.dmnd
+    test-input/uniref90_subset.dmnd
 outputFormat: null
 queryGeneticCode: null
 queryInputFile:
   class: File
   path: >-
-    /home/maxim/IdeaProjects/workflow-is-cwl/tools/Diamond/test-input/test_transcripts.fasta
+    test-input/test_transcripts.fasta
 strand: null
 taxonList: null
 threads: null
