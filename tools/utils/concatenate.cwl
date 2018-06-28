@@ -1,37 +1,34 @@
-#!/usr/bin/env cwl-runner
-cwlVersion: v1.0
 class: CommandLineTool
-
-requirements:
-  InlineJavascriptRequirement: {}  # to propagate the file format
-  ResourceRequirement:
-    coresMax: 1
-    ramMin: 100  # just a default, could be lowered
-
+cwlVersion: v1.0
+$namespaces:
+  s: 'http://schema.org/'
+  sbg: 'https://www.sevenbridges.com'
+baseCommand:
+  - cat
 inputs:
-  files:
-    type: File[]
-    streamable: true
+  - id: files
+    type: 'File[]'
     inputBinding:
       position: 1
-
-baseCommand: cat
-
-stdout: result  # to aid cwltool's cache feature
-
+    streamable: true
 outputs:
-  result:
+  - id: result
     type: File
     outputBinding:
       glob: result
       outputEval: |
         ${ self[0].format = inputs.files[0].format;
            return self; }
-
-$namespaces:
- s: http://schema.org/
+requirements:
+  - class: ResourceRequirement
+    ramMin: 100
+    coresMax: 1
+  - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: 'alpine:3.7'
+stdout: result
 $schemas:
- - https://schema.org/docs/schema_org_rdfa.html
-
-s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:copyrightHolder: "EMBL - European Bioinformatics Institute"
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+'s:copyrightHolder': EMBL - European Bioinformatics Institute
+'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
