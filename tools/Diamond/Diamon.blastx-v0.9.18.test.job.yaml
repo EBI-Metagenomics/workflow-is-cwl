@@ -9,6 +9,6 @@ queryInputFile:
   class: File
   path: >-
     test-input/test_transcripts.fasta
-strand: null
+strand: plus
 taxonList: null
 threads: null
