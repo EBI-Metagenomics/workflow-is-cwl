@@ -6,6 +6,6 @@ export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
 cd tools/Diamond
-CMD="cwl-runner --no-container Diamon.blastx-v0.9.18.cwl Diamon.blastx-v0.9.18.test.job.yaml"
+CMD="cwl-runner --no-container Diamon.blastx-v0.9.21.cwl Diamon.blastx-v0.9.21.test.job.yaml"
 echo $CMD
 $CMD

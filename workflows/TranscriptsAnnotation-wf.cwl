@@ -113,7 +113,7 @@ steps:
 
   calculate_diamond_matches:
     label: Calculates Diamond matches
-    run: ../tools/Diamond/Diamon.blastx-v0.9.18.cwl
+    run: ../tools/Diamond/Diamon.blastx-v0.9.21.cwl
     in:
       queryInputFile: transcriptsFile
       databaseFile: diamondSeqdb
