@@ -1,0 +1,22 @@
+blastSingleCore: null
+cpu: null
+evalue: null
+force: null
+help: null
+lineage:
+  class: Directory
+  path: test-input/example
+long: null
+mode: tran
+outputName: TEST
+quiet: null
+regionLimit: null
+restart: null
+sequenceFile:
+  class: File
+  format: 'edam:format_1929'
+  path: test-input/target.fa
+species: null
+tarzip: null
+tempPath: null
+version: null
