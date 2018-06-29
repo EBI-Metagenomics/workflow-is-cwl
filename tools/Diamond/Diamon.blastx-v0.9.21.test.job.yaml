@@ -7,8 +7,8 @@ outputFormat: '5'
 queryGeneticCode: null
 queryInputFile:
   class: File
-  path: >-
-    test-input/test_transcripts.fasta
+  format: 'edam:format_1929'
+  path: test-input/test_transcripts.fasta
 strand: both
 taxonList: null
 threads: null
