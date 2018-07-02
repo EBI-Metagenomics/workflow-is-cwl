@@ -74,7 +74,7 @@ matrix:
         - travis/install-cmsearch-v1.1.2.sh
         - travis/install-cmsearch-deoverlap-v0.02.sh
       script:
-        - bash travis/run-cmsearch.sub-workflow.sh
+        - bash travis/run-cmsearch.multimodel-wf.sh
 
     - language: python
       env: TOOL=Workflow validation tests
