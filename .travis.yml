@@ -63,16 +63,16 @@ matrix:
     - language: perl
       perl: 5.24
       env: TOOL=cmsearch-deoverlap
-      install: travis/install-cmsearch-deoverlap.sh
+      install: travis/install-cmsearch-deoverlap-v0.02.sh
       script:
-        - bash travis/run-cmsearch-deoverlap.sh
+        - bash travis/run-cmsearch-deoverlap-v0.02.sh
 
     - language: c
       compiler: clang
       env: TOOL=cmsearch-multimodel-Workflow
       install:
-        - travis/install-cmsearch.sh
-        - travis/install-cmsearch-deoverlap.sh
+        - travis/install-cmsearch-v1.1.2.sh
+        - travis/install-cmsearch-deoverlap-v0.02.sh
       script:
         - bash travis/run-cmsearch.sub-workflow.sh
 
