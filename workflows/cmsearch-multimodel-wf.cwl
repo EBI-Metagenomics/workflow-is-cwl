@@ -1,45 +1,62 @@
-#!/usr/bin/env cwl-runner
-cwlVersion: v1.0
 class: Workflow
-
-requirements:
-  ScatterFeatureRequirement: {}
-
+cwlVersion: v1.0
+$namespaces:
+  sbg: 'https://www.sevenbridges.com'
 inputs:
-  query_sequences: File
-  covariance_models: File[]
-  clan_info: File
-  cores: int
-
-outputs:
-  deoverlapped_matches:
+  - id: clan_info
     type: File
-    outputSource: remove_overlaps/deoverlapped_matches
-
+  - id: cores
+    type: int
+  - id: covariance_models
+    type: 'File[]'
+  - id: query_sequences
+    type: File
+outputs:
+  - id: deoverlapped_matches
+    outputSource:
+      - remove_overlaps/deoverlapped_matches
+    type: File
 steps:
-  cmsearch:
+  - id: cmsearch
+    in:
+      - id: covariance_model_database
+        source: covariance_models
+      - id: cpu
+        source: cores
+      - id: omit_alignment_section
+        default: true
+      - id: only_hmm
+        default: true
+      - format: 'edam:format_1929'
+        id: query_sequences
+        source: query_sequences
+      - id: search_space_size
+        default: 1000
+    out:
+      - id: matches
+      - id: programOutput
     run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
+    label: Search sequence(s) against a covariance model database
+    scatter:
+      - covariance_model_database
+  - id: concatenate_matches
     in:
-      query_sequences: query_sequences
-      covariance_model_database: covariance_models
-      only_hmm: { default: true }
-      omit_alignment_section: { default: true }
-      search_space_size: { default: 1000 }
-#      TODO: For some model files, e.g. tRNA5, the GA bit threshold is unavailable
-#      cut_ga: { default: true }
-      cpu: cores
-    out: [ matches, programOutput ]
-    scatter: covariance_model_database
-
-  concatenate_matches:
+      - id: files
+        source:
+          - cmsearch/matches
+    out:
+      - id: result
     run: ../tools/utils/concatenate.cwl
+  - id: remove_overlaps
     in:
-      files: cmsearch/matches
-    out: [ result ]
-
-  remove_overlaps:
+      - id: clan_information
+        source: clan_info
+      - id: cmsearch_matches
+        source: concatenate_matches/result
+    out:
+      - id: deoverlapped_matches
     run: ../tools/cmsearch-deoverlap/cmsearch-deoverlap-v0.02.cwl
-    in:
-      cmsearch_matches: concatenate_matches/result
-      clan_information: clan_info
-    out: [ deoverlapped_matches ]
+    label: Remove lower scoring overlaps from cmsearch --tblout files.
+requirements:
+  - class: ScatterFeatureRequirement
+'sbg:wrapperAuthor': Maxim Scheremetjew
