@@ -8,7 +8,7 @@ inputs:
   - id: cores
     type: int
   - id: covariance_models
-    type: 'File[]'
+    type: File[]
   - id: query_sequences
     type: File
 outputs:
@@ -27,8 +27,7 @@ steps:
         default: true
       - id: only_hmm
         default: true
-      - format: 'edam:format_1929'
-        id: query_sequences
+      - id: query_sequences
         source: query_sequences
       - id: search_space_size
         default: 1000
