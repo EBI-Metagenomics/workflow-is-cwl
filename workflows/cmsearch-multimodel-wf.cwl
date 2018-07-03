@@ -1,6 +1,8 @@
 class: Workflow
 cwlVersion: v1.0
 $namespaces:
+  edam: 'http://edamontology.org/'
+  s: 'http://schema.org/'
   sbg: 'https://www.sevenbridges.com'
 inputs:
   - id: clan_info
@@ -27,7 +29,8 @@ steps:
         default: true
       - id: only_hmm
         default: true
-      - id: query_sequences
+      - format: 'edam:format_1929'
+        id: query_sequences
         source: query_sequences
       - id: search_space_size
         default: 1000
@@ -58,4 +61,9 @@ steps:
     label: Remove lower scoring overlaps from cmsearch --tblout files.
 requirements:
   - class: ScatterFeatureRequirement
+$schemas:
+  - 'http://edamontology.org/EDAM_1.16.owl'
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+'s:copyrightHolder': EMBL - European Bioinformatics Institute
+'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
 'sbg:wrapperAuthor': Maxim Scheremetjew
