@@ -53,7 +53,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: biocontainers/hmmer:v3.1b2dfsg-5-deb_cv1
+    dockerPull: myhmmer:latest
 stdout: $(inputs.sequences.basename).reformatted_seqs
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
