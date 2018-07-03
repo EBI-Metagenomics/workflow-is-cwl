@@ -84,16 +84,9 @@ matrix:
       script:
         - bash travis/workflow-cwl-validation-tests.sh
 
-    - language: go
+    - language: c
+      compiler: clang
       services:
         - docker
-      env:
-        global:
-          - DOCKER_VERSION=1.10.1-0~trusty
       before_install:
-        # list docker-engine versions
-        - apt-cache madison docker-engine
-        # upgrade docker-engine to specific version
-        - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=1.10.1-0~trusty
-      script:
-        - docker version
+        - docker build -t myhmmer containers/hmmer/easel
