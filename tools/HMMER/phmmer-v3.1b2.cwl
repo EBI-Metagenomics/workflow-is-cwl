@@ -66,7 +66,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: biocontainers/hmmer:v3.1b2dfsg-5-deb_cv1
+    dockerPull: quay.io/biocontainers/hmmer:3.1b2--3
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
