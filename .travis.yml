@@ -49,9 +49,9 @@ matrix:
     - language: c
       compiler: clang
       env: TOOL=phmmer
-      install: travis/install-phmmer.sh
+      install: travis/install-phmmer-v3.2.1.sh
       script:
-        - bash travis/run-phmmer.sh
+        - bash travis/run-phmmer-v3.2.1.sh
 
     - language: c
       compiler: clang
