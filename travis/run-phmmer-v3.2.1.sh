@@ -3,6 +3,7 @@
 export PATH="$HOME/hmmer-3.2.1:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
 echo $PATH
+ls -l $HOME/travis/hmmer-3.2.1
 source activate cwl-environment
 
 cd tools/HMMER
