@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-export PATH="$HOME/hmmer-3.2.1/binaries:$PATH"
+export PATH="$HOME/hmmer-3.2.1:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
-#echo $PATH
+echo $PATH
 source activate cwl-environment
 
 cd tools/HMMER
