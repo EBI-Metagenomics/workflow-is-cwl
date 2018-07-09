@@ -147,7 +147,7 @@ inputs:
       prefix: '--tarzip'
     label: Results folders with many files will be tarzipped
   - id: tempPath
-    type: File?
+    type: Directory?
     inputBinding:
       position: 0
       prefix: '--tmp'
