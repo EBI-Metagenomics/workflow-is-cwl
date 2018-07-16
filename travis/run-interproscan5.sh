@@ -6,4 +6,6 @@ source activate cwl-environment
 
 cd tools/InterProScan
 touch test_single_protein.fasta.i5_annotations
-cwl-runner InterProScan-v5.cwl InterProScan-apps.yaml --proteinFile test_single_protein.fasta
+CMD="cwl-runner --no-container InterProScan-v5.cwl InterProScan-v5.test.job.yaml"
+echo $CMD
+$CMD
