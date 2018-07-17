@@ -1,0 +1,76 @@
+# TBLASTN 2.4.0+
+# Query: BUSCO_3_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 2 hits found
+BUSCO_3_1	sample	59.322	59	21	1	16	74	67338	67505	6.72e-14	67.8
+BUSCO_3_1	sample	80.556	36	7	0	95	130	68136	68243	1.16e-12	63.9
+# TBLASTN 2.4.0+
+# Query: BUSCO_4_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+BUSCO_4_1	sample	73.077	182	49	0	1	182	69425	69970	1.48e-64	219
+# TBLASTN 2.4.0+
+# Query: BUSCO_6_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 11 hits found
+BUSCO_6_1	sample	66.409	259	85	2	286	543	85106	84333	0.0	321
+BUSCO_6_1	sample	80.142	141	28	0	544	684	84267	83845	0.0	248
+BUSCO_6_1	sample	76.991	113	26	0	680	792	83803	83465	0.0	192
+BUSCO_6_1	sample	72.414	29	8	0	262	290	85254	85168	0.0	44.3
+BUSCO_6_1	sample	75.410	61	15	0	789	849	83058	82876	6.53e-18	83.6
+BUSCO_6_1	sample	50.000	62	23	2	836	897	82697	82536	5.23e-12	63.9
+BUSCO_6_1	sample	69.048	42	13	0	172	213	86380	86255	2.97e-11	61.6
+BUSCO_6_1	sample	70.370	54	16	0	211	264	85767	85606	3.13e-11	61.6
+BUSCO_6_1	sample	74.286	35	9	0	882	916	82461	82357	7.01e-09	53.9
+BUSCO_6_1	sample	79.167	24	5	0	54	77	86985	86914	4.77e-06	44.7
+BUSCO_6_1	sample	71.111	45	12	1	88	131	86706	86572	4.78e-04	37.7
+# TBLASTN 2.4.0+
+# Query: BUSCO_2_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 7 hits found
+BUSCO_2_1	sample	85.000	80	12	0	365	444	46186	46425	5.32e-39	145
+BUSCO_2_1	sample	81.081	74	14	0	298	371	45523	45744	2.40e-32	125
+BUSCO_2_1	sample	93.750	48	3	0	262	309	45267	45410	4.11e-23	97.1
+BUSCO_2_1	sample	90.000	50	5	0	186	235	42013	42162	5.02e-23	97.1
+BUSCO_2_1	sample	89.130	46	5	0	140	185	41480	41617	5.23e-21	90.5
+BUSCO_2_1	sample	90.625	32	3	0	232	263	42697	42792	1.22e-11	61.2
+BUSCO_2_1	sample	56.098	82	28	1	1	82	32021	32242	1.84e-11	60.5
+# TBLASTN 2.4.0+
+# Query: BUSCO_5_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+BUSCO_5_1	sample	61.053	190	55	1	23	193	71647	71078	3.11e-58	196
+# TBLASTN 2.4.0+
+# Query: BUSCO_1_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 2 hits found
+BUSCO_1_1	sample	70.330	91	27	0	104	194	30499	30227	2.67e-54	123
+BUSCO_1_1	sample	78.947	57	12	0	53	109	30708	30538	2.67e-54	100
+# TBLASTN 2.4.0+
+# Query: BUSCO_7_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+BUSCO_7_1	sample	62.083	240	87	2	212	448	168394	169110	2.94e-95	310
+# TBLASTN 2.4.0+
+# Query: BUSCO_8_1
+# Database: ./tmp/TEST_609554419
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 2 hits found
+BUSCO_8_1	sample	58.654	104	43	0	80	183	233604	233915	2.50e-28	105
+BUSCO_8_1	sample	61.111	36	10	1	1	32	233045	233152	3.31e-06	41.2
+# TBLASTN 2.4.0+
+# Query: BUSCO_9_1
+# Database: ./tmp/TEST_609554419
+# 0 hits found
+# TBLASTN 2.4.0+
+# Query: BUSCO_10_1
+# Database: ./tmp/TEST_609554419
+# 0 hits found
+# BLAST processed 10 queries
