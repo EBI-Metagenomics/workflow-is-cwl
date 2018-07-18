@@ -2,6 +2,7 @@ inputRefDBFile:
   class: File
   path: >-
     test-input/uniref90_subset.fasta
+  edam_format: http://edamontology.org/format_1929
 outputDBFile:
   class: File
   path: >-
