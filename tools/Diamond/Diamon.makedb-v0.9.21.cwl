@@ -81,8 +81,6 @@ arguments:
   - position: 0
     prefix: '--db'
     valueFrom: $(inputs.inputRefDBFile.nameroot).dmnd
-    label: Output DIAMOND database file
-    doc: Path to the output DIAMOND database file.
 requirements:
   - class: ResourceRequirement
     ramMin: 1024
