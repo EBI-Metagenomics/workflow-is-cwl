@@ -3,11 +3,6 @@ inputRefDBFile:
   format: 'edam:format_1929'
   path: >-
     test-input/uniref90_subset.fasta
-outputDBFile:
-  class: File
-  format: 'edam:format_2333'
-  path: >-
-    test-input/uniref90_subset.dmnd
 taxonMapFile: null
 taxonNodesFiles: null
 threads: null

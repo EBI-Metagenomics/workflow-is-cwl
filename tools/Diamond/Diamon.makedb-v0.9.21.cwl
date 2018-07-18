@@ -19,14 +19,6 @@ inputs:
       Path to the input protein reference database file in FASTA format (may be
       gzip compressed).
       If this parameter is omitted, the input will be read from stdin.
-  - format: 'edam:format_2333'
-    id: outputDBFile
-    type: File
-    inputBinding:
-      position: 0
-      prefix: '--db'
-    label: Output DIAMOND database file
-    doc: Path to the output DIAMOND database file.
   - id: taxonMapFile
     type: File?
     inputBinding:
@@ -67,7 +59,7 @@ outputs:
   - id: diamondDatabaseFile
     type: File
     outputBinding:
-      glob: $(inputs.outputDBFile.nameroot)*
+      glob: $(inputs.inputRefDBFile.nameroot).dmnd
     format: 'edam:format_2333'
 doc: |
   DIAMOND is a sequence aligner for protein and translated DNA searches,
@@ -85,6 +77,12 @@ doc: |
 label: >-
   diamond makedb: Sets up a reference protein database (in binary file format)
   for DIAMOND
+arguments:
+  - position: 0
+    prefix: '--db'
+    valueFrom: $(inputs.inputRefDBFile.nameroot).dmnd
+    label: Output DIAMOND database file
+    doc: Path to the output DIAMOND database file.
 requirements:
   - class: ResourceRequirement
     ramMin: 1024
