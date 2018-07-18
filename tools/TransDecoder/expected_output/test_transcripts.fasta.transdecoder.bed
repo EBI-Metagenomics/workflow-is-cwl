@@ -1,0 +1,2 @@
+track name='test_transcripts.fasta.transdecoder.gff3'
+transcript_01	0	15185	ID=transcript_01.p2;GENE.transcript_01~~transcript_01.p2;ORF_type:complete_len:1559_(-),score=1354.66	0	-	2335	7012	0	1	15185	0

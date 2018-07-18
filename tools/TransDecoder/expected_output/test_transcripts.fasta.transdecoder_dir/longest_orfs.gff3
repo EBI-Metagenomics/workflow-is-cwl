@@ -1,0 +1,84 @@
+transcript_01	transdecoder	gene	1	15185	.	-	.	ID=GENE.transcript_01~~transcript_01.p1;Name=ORF%20type%3Acomplete%20len%3A2177%20%28-%29
+transcript_01	transdecoder	mRNA	1	15185	.	-	.	ID=transcript_01.p1;Parent=GENE.transcript_01~~transcript_01.p1;Name=ORF%20type%3Acomplete%20len%3A2177%20%28-%29
+transcript_01	transdecoder	five_prime_UTR	15028	15185	.	-	.	ID=transcript_01.p1.utr5p1;Parent=transcript_01.p1
+transcript_01	transdecoder	exon	1	15185	.	-	.	ID=transcript_01.p1.exon1;Parent=transcript_01.p1
+transcript_01	transdecoder	CDS	8497	15027	.	-	0	ID=cds.transcript_01.p1;Parent=transcript_01.p1
+transcript_01	transdecoder	three_prime_UTR	1	8496	.	-	.	ID=transcript_01.p1.utr3p1;Parent=transcript_01.p1
+
+transcript_01	transdecoder	gene	1	15185	.	-	.	ID=GENE.transcript_01~~transcript_01.p2;Name=ORF%20type%3Acomplete%20len%3A1559%20%28-%29
+transcript_01	transdecoder	mRNA	1	15185	.	-	.	ID=transcript_01.p2;Parent=GENE.transcript_01~~transcript_01.p2;Name=ORF%20type%3Acomplete%20len%3A1559%20%28-%29
+transcript_01	transdecoder	five_prime_UTR	7013	15185	.	-	.	ID=transcript_01.p2.utr5p1;Parent=transcript_01.p2
+transcript_01	transdecoder	exon	1	15185	.	-	.	ID=transcript_01.p2.exon1;Parent=transcript_01.p2
+transcript_01	transdecoder	CDS	2336	7012	.	-	0	ID=cds.transcript_01.p2;Parent=transcript_01.p2
+transcript_01	transdecoder	three_prime_UTR	1	2335	.	-	.	ID=transcript_01.p2.utr3p1;Parent=transcript_01.p2
+
+transcript_01	transdecoder	gene	1	15185	.	-	.	ID=GENE.transcript_01~~transcript_01.p3;Name=ORF%20type%3Acomplete%20len%3A424%20%28-%29
+transcript_01	transdecoder	mRNA	1	15185	.	-	.	ID=transcript_01.p3;Parent=GENE.transcript_01~~transcript_01.p3;Name=ORF%20type%3Acomplete%20len%3A424%20%28-%29
+transcript_01	transdecoder	five_prime_UTR	8271	15185	.	-	.	ID=transcript_01.p3.utr5p1;Parent=transcript_01.p3
+transcript_01	transdecoder	exon	1	15185	.	-	.	ID=transcript_01.p3.exon1;Parent=transcript_01.p3
+transcript_01	transdecoder	CDS	6999	8270	.	-	0	ID=cds.transcript_01.p3;Parent=transcript_01.p3
+transcript_01	transdecoder	three_prime_UTR	1	6998	.	-	.	ID=transcript_01.p3.utr3p1;Parent=transcript_01.p3
+
+transcript_01	transdecoder	gene	1	15185	.	+	.	ID=GENE.transcript_01~~transcript_01.p4;Name=ORF%20type%3Acomplete%20len%3A190%20%28%2B%29
+transcript_01	transdecoder	mRNA	1	15185	.	+	.	ID=transcript_01.p4;Parent=GENE.transcript_01~~transcript_01.p4;Name=ORF%20type%3Acomplete%20len%3A190%20%28%2B%29
+transcript_01	transdecoder	five_prime_UTR	1	277	.	+	.	ID=transcript_01.p4.utr5p1;Parent=transcript_01.p4
+transcript_01	transdecoder	exon	1	15185	.	+	.	ID=transcript_01.p4.exon1;Parent=transcript_01.p4
+transcript_01	transdecoder	CDS	278	847	.	+	0	ID=cds.transcript_01.p4;Parent=transcript_01.p4
+transcript_01	transdecoder	three_prime_UTR	848	15185	.	+	.	ID=transcript_01.p4.utr3p1;Parent=transcript_01.p4
+
+transcript_01	transdecoder	gene	1	15185	.	-	.	ID=GENE.transcript_01~~transcript_01.p5;Name=ORF%20type%3Acomplete%20len%3A166%20%28-%29
+transcript_01	transdecoder	mRNA	1	15185	.	-	.	ID=transcript_01.p5;Parent=GENE.transcript_01~~transcript_01.p5;Name=ORF%20type%3Acomplete%20len%3A166%20%28-%29
+transcript_01	transdecoder	five_prime_UTR	1284	15185	.	-	.	ID=transcript_01.p5.utr5p1;Parent=transcript_01.p5
+transcript_01	transdecoder	exon	1	15185	.	-	.	ID=transcript_01.p5.exon1;Parent=transcript_01.p5
+transcript_01	transdecoder	CDS	786	1283	.	-	0	ID=cds.transcript_01.p5;Parent=transcript_01.p5
+transcript_01	transdecoder	three_prime_UTR	1	785	.	-	.	ID=transcript_01.p5.utr3p1;Parent=transcript_01.p5
+
+transcript_01	transdecoder	gene	1	15185	.	+	.	ID=GENE.transcript_01~~transcript_01.p6;Name=ORF%20type%3Acomplete%20len%3A151%20%28%2B%29
+transcript_01	transdecoder	mRNA	1	15185	.	+	.	ID=transcript_01.p6;Parent=GENE.transcript_01~~transcript_01.p6;Name=ORF%20type%3Acomplete%20len%3A151%20%28%2B%29
+transcript_01	transdecoder	five_prime_UTR	1	12910	.	+	.	ID=transcript_01.p6.utr5p1;Parent=transcript_01.p6
+transcript_01	transdecoder	exon	1	15185	.	+	.	ID=transcript_01.p6.exon1;Parent=transcript_01.p6
+transcript_01	transdecoder	CDS	12911	13363	.	+	0	ID=cds.transcript_01.p6;Parent=transcript_01.p6
+transcript_01	transdecoder	three_prime_UTR	13364	15185	.	+	.	ID=transcript_01.p6.utr3p1;Parent=transcript_01.p6
+
+transcript_01	transdecoder	gene	1	15185	.	-	.	ID=GENE.transcript_01~~transcript_01.p7;Name=ORF%20type%3Acomplete%20len%3A125%20%28-%29
+transcript_01	transdecoder	mRNA	1	15185	.	-	.	ID=transcript_01.p7;Parent=GENE.transcript_01~~transcript_01.p7;Name=ORF%20type%3Acomplete%20len%3A125%20%28-%29
+transcript_01	transdecoder	five_prime_UTR	797	15185	.	-	.	ID=transcript_01.p7.utr5p1;Parent=transcript_01.p7
+transcript_01	transdecoder	exon	1	15185	.	-	.	ID=transcript_01.p7.exon1;Parent=transcript_01.p7
+transcript_01	transdecoder	CDS	422	796	.	-	0	ID=cds.transcript_01.p7;Parent=transcript_01.p7
+transcript_01	transdecoder	three_prime_UTR	1	421	.	-	.	ID=transcript_01.p7.utr3p1;Parent=transcript_01.p7
+
+transcript_01	transdecoder	gene	1	15185	.	+	.	ID=GENE.transcript_01~~transcript_01.p8;Name=ORF%20type%3Acomplete%20len%3A114%20%28%2B%29
+transcript_01	transdecoder	mRNA	1	15185	.	+	.	ID=transcript_01.p8;Parent=GENE.transcript_01~~transcript_01.p8;Name=ORF%20type%3Acomplete%20len%3A114%20%28%2B%29
+transcript_01	transdecoder	five_prime_UTR	1	6438	.	+	.	ID=transcript_01.p8.utr5p1;Parent=transcript_01.p8
+transcript_01	transdecoder	exon	1	15185	.	+	.	ID=transcript_01.p8.exon1;Parent=transcript_01.p8
+transcript_01	transdecoder	CDS	6439	6780	.	+	0	ID=cds.transcript_01.p8;Parent=transcript_01.p8
+transcript_01	transdecoder	three_prime_UTR	6781	15185	.	+	.	ID=transcript_01.p8.utr3p1;Parent=transcript_01.p8
+
+transcript_01	transdecoder	gene	1	15185	.	+	.	ID=GENE.transcript_01~~transcript_01.p9;Name=ORF%20type%3Acomplete%20len%3A112%20%28%2B%29
+transcript_01	transdecoder	mRNA	1	15185	.	+	.	ID=transcript_01.p9;Parent=GENE.transcript_01~~transcript_01.p9;Name=ORF%20type%3Acomplete%20len%3A112%20%28%2B%29
+transcript_01	transdecoder	five_prime_UTR	1	12145	.	+	.	ID=transcript_01.p9.utr5p1;Parent=transcript_01.p9
+transcript_01	transdecoder	exon	1	15185	.	+	.	ID=transcript_01.p9.exon1;Parent=transcript_01.p9
+transcript_01	transdecoder	CDS	12146	12481	.	+	0	ID=cds.transcript_01.p9;Parent=transcript_01.p9
+transcript_01	transdecoder	three_prime_UTR	12482	15185	.	+	.	ID=transcript_01.p9.utr3p1;Parent=transcript_01.p9
+
+transcript_01	transdecoder	gene	1	15185	.	+	.	ID=GENE.transcript_01~~transcript_01.p10;Name=ORF%20type%3Acomplete%20len%3A109%20%28%2B%29
+transcript_01	transdecoder	mRNA	1	15185	.	+	.	ID=transcript_01.p10;Parent=GENE.transcript_01~~transcript_01.p10;Name=ORF%20type%3Acomplete%20len%3A109%20%28%2B%29
+transcript_01	transdecoder	five_prime_UTR	1	270	.	+	.	ID=transcript_01.p10.utr5p1;Parent=transcript_01.p10
+transcript_01	transdecoder	exon	1	15185	.	+	.	ID=transcript_01.p10.exon1;Parent=transcript_01.p10
+transcript_01	transdecoder	CDS	271	597	.	+	0	ID=cds.transcript_01.p10;Parent=transcript_01.p10
+transcript_01	transdecoder	three_prime_UTR	598	15185	.	+	.	ID=transcript_01.p10.utr3p1;Parent=transcript_01.p10
+
+transcript_01	transdecoder	gene	1	15185	.	-	.	ID=GENE.transcript_01~~transcript_01.p11;Name=ORF%20type%3Acomplete%20len%3A109%20%28-%29
+transcript_01	transdecoder	mRNA	1	15185	.	-	.	ID=transcript_01.p11;Parent=GENE.transcript_01~~transcript_01.p11;Name=ORF%20type%3Acomplete%20len%3A109%20%28-%29
+transcript_01	transdecoder	five_prime_UTR	2235	15185	.	-	.	ID=transcript_01.p11.utr5p1;Parent=transcript_01.p11
+transcript_01	transdecoder	exon	1	15185	.	-	.	ID=transcript_01.p11.exon1;Parent=transcript_01.p11
+transcript_01	transdecoder	CDS	1908	2234	.	-	0	ID=cds.transcript_01.p11;Parent=transcript_01.p11
+transcript_01	transdecoder	three_prime_UTR	1	1907	.	-	.	ID=transcript_01.p11.utr3p1;Parent=transcript_01.p11
+
+transcript_01	transdecoder	gene	1	15185	.	+	.	ID=GENE.transcript_01~~transcript_01.p12;Name=ORF%20type%3Acomplete%20len%3A107%20%28%2B%29
+transcript_01	transdecoder	mRNA	1	15185	.	+	.	ID=transcript_01.p12;Parent=GENE.transcript_01~~transcript_01.p12;Name=ORF%20type%3Acomplete%20len%3A107%20%28%2B%29
+transcript_01	transdecoder	five_prime_UTR	1	9433	.	+	.	ID=transcript_01.p12.utr5p1;Parent=transcript_01.p12
+transcript_01	transdecoder	exon	1	15185	.	+	.	ID=transcript_01.p12.exon1;Parent=transcript_01.p12
+transcript_01	transdecoder	CDS	9434	9754	.	+	0	ID=cds.transcript_01.p12;Parent=transcript_01.p12
+transcript_01	transdecoder	three_prime_UTR	9755	15185	.	+	.	ID=transcript_01.p12.utr3p1;Parent=transcript_01.p12
+
