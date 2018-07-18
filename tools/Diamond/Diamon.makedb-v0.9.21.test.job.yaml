@@ -2,11 +2,12 @@ inputRefDBFile:
   class: File
   path: >-
     test-input/uniref90_subset.fasta
-  edam_format: http://edamontology.org/format_1929
+  format: http://edamontology.org/format_1929
 outputDBFile:
   class: File
   path: >-
     test-input/uniref90_subset.dmnd
+  format: http://edamontology.org/format_2333
 taxonMapFile: null
 taxonNodesFiles: null
 threads: null
