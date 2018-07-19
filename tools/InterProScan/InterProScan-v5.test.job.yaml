@@ -1,0 +1,6 @@
+applications:
+  - PfamA
+  - TIGRFAM
+proteinFile:
+  class: File
+  path: test-input/test_single_protein.fasta

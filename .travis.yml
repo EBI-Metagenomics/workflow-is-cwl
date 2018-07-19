@@ -41,10 +41,17 @@ matrix:
 
     - language: cpp
       compiler: clang
-      env: TOOL=Diamond-v0.9.21
+      env: TOOL=Diamond.blastx-v0.9.21
       install: travis/install-diamond-v0.9.21.sh
       script:
-        - bash travis/run-diamond-v0.9.21.sh
+        - bash travis/run-diamond.blastx-v0.9.21.sh
+
+    - language: cpp
+      compiler: clang
+      env: TOOL=Diamond.makedb-v0.9.21
+      install: travis/install-diamond-v0.9.21.sh
+      script:
+        - bash travis/run-diamond.makedb-v0.9.21.sh
 
     - language: c
       compiler: clang

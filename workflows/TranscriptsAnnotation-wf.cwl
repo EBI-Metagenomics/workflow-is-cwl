@@ -6,7 +6,7 @@ requirements:
  - class: SubworkflowFeatureRequirement
  - class: SchemaDefRequirement
    types:
-    - $import: ../tools/utils/esl-reformat-replace.yaml
+    - $import: ../utils/esl-reformat-replace.yaml
     - $import: ../tools/BUSCO/BUSCO-assessment_modes.yaml
 
 inputs:
@@ -15,7 +15,7 @@ inputs:
 #   TODO: Resolve: Missing required 'format' for File at runtime
 #    format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
-  replace: ../tools/utils/esl-reformat-replace.yaml#replace?
+  replace: ../utils/esl-reformat-replace.yaml#replace?
   phmmerSeqdb:
     type: File
 #   TODO: Resolve: Missing required 'format' for File at runtime
@@ -87,7 +87,7 @@ steps:
 
   remove_asterisks_and_reformat:
     label: Removes asterisks characters from given peptide sequences
-    run: ../tools/utils/esl-reformat.cwl
+    run: ../utils/esl-reformat.cwl
     in:
       sequences: identify_coding_regions/peptide_sequences
 #      TODO: Check with Michael how to resolve Type property error "['null', 'replace']" not a valid Avro schema

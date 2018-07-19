@@ -47,7 +47,7 @@ steps:
           - cmsearch/matches
     out:
       - id: result
-    run: ../tools/utils/concatenate.cwl
+    run: ../utils/concatenate.cwl
   - id: remove_overlaps
     in:
       - id: clan_information

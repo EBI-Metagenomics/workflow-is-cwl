@@ -1,13 +1,9 @@
 inputRefDBFile:
   class: File
+  format: 'edam:format_1929'
   path: >-
     test-input/uniref90_subset.fasta
   format: http://edamontology.org/format_1929
-outputDBFile:
-  class: File
-  path: >-
-    test-input/uniref90_subset.dmnd
-  format: http://edamontology.org/format_2333
 taxonMapFile: null
 taxonNodesFiles: null
 threads: null
