@@ -33,17 +33,15 @@ requirements:
   - class: SchemaDefRequirement
     types:
       - fields:
-          - doc: >
+          - name: find
+            type: string
+            doc: >
               Must be equal length with replace. Each character from the input
               file will be replaced by its counterpart (at the same position) from
               replace
-            label: null
-            name: find
+          - name: replace
             type: string
-          - doc: must be equal length with find
-            label: null
-            name: replace
-            type: string
+            doc: must be equal length with find
         label: sequence token replacement
         name: replace
         type: record
