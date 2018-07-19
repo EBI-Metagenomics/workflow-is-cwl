@@ -5,7 +5,7 @@ $namespaces:
   s: 'http://schema.org/'
   sbg: 'https://www.sevenbridges.com'
 baseCommand:
-  - python
+  - python3
 inputs:
   - id: chunk_size
     type: int
