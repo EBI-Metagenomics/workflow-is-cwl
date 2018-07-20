@@ -8,7 +8,7 @@ baseCommand:
   - esl-reformat
 inputs:
   - id: replace
-    type: replace?
+    type: esl-reformat-replace.yaml#replace?
     inputBinding:
       position: 1
       prefix: '--replace'
@@ -32,21 +32,7 @@ arguments:
 requirements:
   - class: SchemaDefRequirement
     types:
-      - fields:
-          - doc: >
-              Must be equal length with replace. Each character from the input
-              file will be replaced by its counterpart (at the same position) from
-              replace
-            label: null
-            name: find
-            type: string
-          - doc: must be equal length with find
-            label: null
-            name: replace
-            type: string
-        label: sequence token replacement
-        name: replace
-        type: record
+      - $import: esl-reformat-replace.yaml
   - class: ResourceRequirement
     ramMin: 100
     coresMax: 1
