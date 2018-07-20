@@ -25,7 +25,13 @@ inputs:
   covariance_models: File[]
   clanInfoFile: File
   cmsearchCores: int
-  buscoMode: ../tools/BUSCO/BUSCO-v3.cwl#mode
+  buscoMode:
+    type:
+      type: enum
+      symbols:
+        - geno
+        - prot
+        - tran
   buscoOutputName: string
   buscoLineage: Directory
 
