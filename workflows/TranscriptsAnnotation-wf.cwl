@@ -25,7 +25,7 @@ inputs:
   covariance_models: File[]
   clanInfoFile: File
   cmsearchCores: int
-  buscoMode: ../tools/BUSCO/BUSCO-assessment_modes.yaml#assessment_modes
+  buscoMode: ../tools/BUSCO/BUSCO-v3.cwl#mode
   buscoOutputName: string
   buscoLineage: Directory
 
