@@ -91,9 +91,19 @@ matrix:
       script:
         - bash travis/workflow-cwl-validation-tests.sh
 
-    - language: c
-      compiler: clang
-      services:
-        - docker
-      before_install:
-        - docker build -t myhmmer containers/hmmer/easel
+    - language: python
+      env: TOOL=Tool validation tests
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
+      script:
+        - bash travis/tools-validation-tests.sh
+
+    - language: python
+      env: TOOL=Utils validation tests
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
+      script:
+        - bash travis/utils-validation-tests.sh
+

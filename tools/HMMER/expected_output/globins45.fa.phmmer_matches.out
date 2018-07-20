@@ -1,0 +1,1857 @@
+# phmmer :: search a protein sequence against a protein database
+# HMMER 3.2 (June 2018); http://hmmer.org/
+# Copyright (C) 2018 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query sequence file:             /var/lib/cwl/stgc72dd3bc-8891-4b83-83e7-215178692be8/globins45.fa
+# target sequence database:        /var/lib/cwl/stgf46f4fb0-f7ec-4fbf-b608-74ca6d8a20a0/HBB_HUMAN
+# output directed to file:         globins45.fa.phmmer_matches.out
+# per-seq hits tabular output:     globins45.fa.phmmer_matches.tblout
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       MYG_ESCGI  [L=153]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.3e-11   30.3   0.1    2.5e-11   30.2   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   30.2   0.1   2.5e-11   2.5e-11       6     146 ..       7     145 ..       2     146 .] 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 30.2 bits;  conditional E-value: 2.5e-11
+  MYG_ESCGI   6 ewqlvlniwakveadvaghgqdilirlfkghpetlekfdkfkhlkteaemkasedlkkhgntvltalggilkkkghheaelkplaqshatkhkipikyle 105
+                e   v  +w kv  d  g   + l rl+  +p t   f+ f  l t   +  +  +k hg  vl a++  l    + +  +  l++ h  k  +  + + 
+  HBB_HUMAN   7 EKSAVTALWGKVNVDEVG--GEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFR 104
+                6677889******99876..57899**********************9999*****************9999999****************999999999 PP
+
+  MYG_ESCGI 106 fisdaiihvlhsrhpgdfgadaqaamnkalelfrkdiaaky 146
+                ++ + ++ vl  +   +f    qaa  k +      +a ky
+  HBB_HUMAN 105 LLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                **********8888889**********99887777777776 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (153 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.03u 0.00s 00:00:00.03 Elapsed: 00:00:00.02
+# Mc/sec: 1.08
+//
+Query:       MYG_HORSE  [L=153]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    5.1e-12   32.3   0.1    6.1e-12   32.1   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   32.1   0.1   6.1e-12   6.1e-12       7     146 ..       8     145 ..       3     146 .] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 32.1 bits;  conditional E-value: 6.1e-12
+  MYG_HORSE   7 wqqvlnvwgkveadiaghgqevlirlftghpetlekfdkfkhlkteaemkasedlkkhgtvvltalggilkkkghheaelkplaqshatkhkipikylef 106
+                   v  +wgkv  d  g   e l rl+  +p t   f+ f  l t   +  +  +k hg  vl a++  l    + +  +  l++ h  k  +  + + +
+  HBB_HUMAN   8 KSAVTALWGKVNVDEVG--GEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRL 105
+                5668889*****99875..699************************9999*****************9999999****************999999999* PP
+
+  MYG_HORSE 107 isdaiihvlhskhpgnfgadaqgamtkalelfrndiaaky 146
+                + + ++ vl       f    q+a  k +    n +a ky
+  HBB_HUMAN 106 LGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ********9877777899**********999999999998 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (153 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       MYG_PROGU  [L=153]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    9.3e-13   34.6   0.0    1.1e-12   34.4   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   34.4   0.0   1.1e-12   1.1e-12       7     146 ..       8     145 ..       3     146 .] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 34.4 bits;  conditional E-value: 1.1e-12
+  MYG_PROGU   7 wqlvlnvwgkvegdlsghgqevlirlfkghpetlekfdkfkhlkaedemraseelkkhgttvltalggilkkkgqhaaelaplaqshatkhkipvkylef 106
+                   v  +wgkv  d    g e l rl+  +p t   f+ f  l   d +  + ++k hg  vl a++  l         +a l++ h  k  +  + + +
+  HBB_HUMAN   8 KSAVTALWGKVNVDEV--GGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRL 105
+                5678889****98865..6799********************************************999999999999************999999999* PP
+
+  MYG_PROGU 107 iseaiiqvlqskhpgdfgadaqgamskalelfrndiaaky 146
+                +   ++ vl      +f    q+a  k +    n +a ky
+  HBB_HUMAN 106 LGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                *********9888889*************99999999998 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (153 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.42
+//
+Query:       MYG_SAISC  [L=153]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    7.4e-13   35.1   0.0      8e-13   35.0   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   35.0   0.0     8e-13     8e-13       6     146 ..       7     145 ..       2     146 .] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 35.0 bits;  conditional E-value: 8e-13
+  MYG_SAISC   6 ewqlvlniwgkveadipshgqevlislfkghpetlekfdkfkhlksedemkaseelkkhgttvltalggilkkkgqheaelkplaqshatkhkipvkyle 105
+                e   v  +wgkv  d    g e l  l+  +p t   f+ f  l + d +  + ++k hg  vl a++  l      +  +  l++ h  k  +  + + 
+  HBB_HUMAN   7 EKSAVTALWGKVNVD--EVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFR 104
+                5667889*****877..6799**********************************************9999999999**************99999999* PP
+
+  MYG_SAISC 106 lisdaivhvlqkkhpgdfgadaqgamkkalelfrndmaaky 146
+                l+ + +v vl      +f    q+a +k +    n +a ky
+  HBB_HUMAN 105 LLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                **********998899**************99999999998 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (153 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.42
+//
+Query:       MYG_LYCPI  [L=153]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    3.8e-15   42.4   0.0    4.1e-15   42.3   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   42.3   0.0   4.1e-15   4.1e-15       6     146 ..       7     145 ..       2     146 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 42.3 bits;  conditional E-value: 4.1e-15
+  MYG_LYCPI   6 ewqivlniwgkvetdlaghgqevlirlfknhpetldkfdkfkhlktedemkgsedlkkhgntvltalggilkkkghheaelkplaqshatkhkipvkyle 105
+                e   v  +wgkv  d  g   e l rl+  +p t   f+ f  l t d + g+  +k hg  vl a++  l    + +  +  l++ h  k  +  + + 
+  HBB_HUMAN   7 EKSAVTALWGKVNVDEVG--GEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFR 104
+                5667889*******9875..699*********************************************9999999****************99999999* PP
+
+  MYG_LYCPI 106 fisdaiiqvlqnkhsgdfhadteaamkkalelfrndiaaky 146
+                ++ + ++ vl +    +f    +aa +k +    n +a ky
+  HBB_HUMAN 105 LLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ***********99999***************9999999998 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (153 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.42
+//
+Query:       MYG_MOUSE  [L=153]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.1e-12   33.7   0.0    2.5e-12   33.4   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   33.4   0.0   2.5e-12   2.5e-12       7     146 ..       8     145 ..       3     146 .] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 33.4 bits;  conditional E-value: 2.5e-12
+  MYG_MOUSE   7 wqlvlnvwgkveadlaghgqevliglfkthpetldkfdkfknlkseedmkgsedlkkhgctvltalgtilkkkgqhaaeiqplaqshatkhkipvkylef 106
+                   v  +wgkv  d  g   e l  l+  +p t   f+ f +l + + + g+  +k hg  vl a++  l         +  l++ h  k  +  + + +
+  HBB_HUMAN   8 KSAVTALWGKVNVDEVG--GEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRL 105
+                5678889******9876..589999*********************************************999999999***********99999999** PP
+
+  MYG_MOUSE 107 iseiiievlkkrhsgdfgadaqgamskalelfrndiaaky 146
+                +  +++ vl  +   +f    q+a  k +    n +a ky
+  HBB_HUMAN 106 LGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                *********999999**************99999999998 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (153 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.41
+//
+Query:       MYG_MUSAN  [L=148]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    4.4e-09   22.9   0.0    4.8e-09   22.8   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   22.8   0.0   4.8e-09   4.8e-09       6     131 ..      11     135 ..       6     146 .] 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 22.8 bits;  conditional E-value: 4.8e-09
+  MYG_MUSAN   6 vnsvwsavesdltaigqnillrlfeqypesqnhfpkfknkslge.lkdtadikaqadtvlsalgnivkkkgshsqpvkalaathitthkipphyftkitt 104
+                v ++w  v  d   +g   l rl+  yp +q  f  f + s  + +     +ka    vl a+++ +    +       l+  h     + p+ f  +  
+  HBB_HUMAN  11 VTALWGKVNVD--EVGGEALGRLLVVYPWTQRFFESFGDLSTPDaVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGN 108
+                77899988766..78999*********************998762678999***********999998888888888999999**9999*********** PP
+
+  MYG_MUSAN 105 iavdvlsemypsemnaqvqaafsgafk 131
+                + v vl+  +  e+   vqaa+     
+  HBB_HUMAN 109 VLVCVLAHHFGKEFTPPVQAAYQKVVA 135
+                *********************986655 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (148 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.37
+//
+Query:       HBA_AILME  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.4e-34  104.8   0.2    2.8e-34  104.6   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  104.6   0.2   2.8e-34   2.8e-34       2     140 ..       3     145 ..       2     146 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 104.6 bits;  conditional E-value: 2.8e-34
+  HBA_AILME   2 lspadktnvkatwdkigghageyggealertfasfpttktyfphf.dlsp.....gsaqvkahgkkvadalttavghlddlpgalsalsdlhahklrvdp 95 
+                l+p +k+ v a w k++    e ggeal r +  +p t+ +f  f dls      g+ +vkahgkkv  a++  ++hld+l g ++ ls+lh  kl+vdp
+  HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLSTpdavmGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                789************95..78*********************99977774244448889***************************************** PP
+
+  HBA_AILME  96 vnfkllshcllvtlashhpaeftpavhasldkffsavstvltsky 140
+                 nf+ll + l+  la h   eftp v+a+  k  + v+  l  ky
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ******************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.34
+//
+Query:       HBA_PROLO  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.9e-33  101.2   0.2    3.4e-33  101.0   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  101.0   0.2   3.4e-33   3.4e-33       2     140 ..       3     145 ..       2     146 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 101.0 bits;  conditional E-value: 3.4e-33
+  HBA_PROLO   2 lspadkanikatwdkigghageyggealertfasfpttktyfphf.dlsp.....gsaqvkahgkkvadaltlavghlddlpgalsalsdlhayklrvdp 95 
+                l+p +k+ + a w k++    e ggeal r +  +p t+ +f  f dls      g+ +vkahgkkv  a++  ++hld+l g ++ ls+lh  kl+vdp
+  HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLSTpdavmGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                789************95..78*********************99977774244448889***************************************** PP
+
+  HBA_PROLO  96 vnfkllshcllvtlachhpaeftpavhasldkfftsvstvltsky 140
+                 nf+ll + l+  la h   eftp v+a+  k    v+  l  ky
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ******************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.01s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.34
+//
+Query:       HBA_PAGLA  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.6e-30   92.2   0.1    1.9e-30   92.0   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   92.0   0.1   1.9e-30   1.9e-30       4     140 ..       5     145 ..       2     146 .] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 92.0 bits;  conditional E-value: 1.9e-30
+  HBA_PAGLA   4 sadknnikatwdkigshageygaealertfisfpttktyfphf.dls.....hgsaqvkahgkkvadaltlavghledlpnalsalsdlhayklrvdpvn 97 
+                  +k+ + a w k++    e g eal r ++ +p t+ +f  f dls      g+ +vkahgkkv  a++  ++hl++l   ++ ls+lh  kl+vdp n
+  HBB_HUMAN   5 PEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPEN 102
+                5689999******95..78*********************99977773333358899******************************************* PP
+
+  HBA_PAGLA  98 fkllshcllvtlachhpaeftpavhsaldkffsavstvltsky 140
+                f+ll + l+  la h   eftp v++a  k  + v+  l  ky
+  HBB_HUMAN 103 FRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ****************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.30
+//
+Query:       HBA_MACFA  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    6.3e-33  100.1   0.2    7.4e-33   99.9   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   99.9   0.2   7.4e-33   7.4e-33       2     140 ..       3     145 ..       2     146 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 99.9 bits;  conditional E-value: 7.4e-33
+  HBA_MACFA   2 lspadktnvkaawgkvgghageygaealermflsfpttktyfphf.dls.....hgsaqvkghgkkvadaltlavghvddmpqalsalsdlhahklrvdp 95 
+                l+p +k+ v a wgkv+    e g eal r+++ +p t+ +f  f dls      g+ +vk+hgkkv  a++  ++h+d++   ++ ls+lh  kl+vdp
+  HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                789************95..78*********************99977773333358899***************************************** PP
+
+  HBA_MACFA  96 vnfkllshcllvtlaahlpaeftpavhasldkflasvstvltsky 140
+                 nf+ll + l+  la h+  eftp v+a+  k +a v+  l  ky
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ******************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.33
+//
+Query:       HBA_MACSI  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    4.4e-32   97.3   0.2    5.2e-32   97.1   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   97.1   0.2   5.2e-32   5.2e-32       2     140 ..       3     145 ..       2     146 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 97.1 bits;  conditional E-value: 5.2e-32
+  HBA_MACSI   2 lspadktnvkdawgkvgghageygaealermflsfpttktyfphf.dls.....hgsaqvkghgkkvadaltlavghvddmpqalsalsdlhahklrvdp 95 
+                l+p +k+ v   wgkv+    e g eal r+++ +p t+ +f  f dls      g+ +vk+hgkkv  a++  ++h+d++   ++ ls+lh  kl+vdp
+  HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                789************95..78*********************99977773333358899***************************************** PP
+
+  HBA_MACSI  96 vnfkllshcllvtlaahlpaeftpavhasldkflasvstvltsky 140
+                 nf+ll + l+  la h+  eftp v+a+  k +a v+  l  ky
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ******************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBA_PONPY  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.1e-33  101.7   0.2    2.4e-33  101.5   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  101.5   0.2   2.4e-33   2.4e-33       2     140 ..       3     145 ..       2     146 .] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 101.5 bits;  conditional E-value: 2.4e-33
+  HBA_PONPY   2 lspadktnvktawgkvgahagdygaealermflsfpttktyfphf.dls.....hgsaqvkdhgkkvadaltnavahvddmpnalsalsdlhahklrvdp 95 
+                l+p +k+ v   wgkv+    + g eal r+++ +p t+ +f  f dls      g+ +vk hgkkv  a+++ +ah+d++   ++ ls+lh  kl+vdp
+  HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                789************97..5799*******************99977773333358899***************************************** PP
+
+  HBA_PONPY  96 vnfkllshcllvtlaahlpaeftpavhasldkflasvstvltsky 140
+                 nf+ll + l+  la h+  eftp v+a+  k +a v+  l  ky
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ******************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.37
+//
+Query:       HBA2_GALCR  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+      2e-32   98.3   0.1    2.4e-32   98.1   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   98.1   0.1   2.4e-32   2.4e-32       2     140 ..       3     145 ..       2     146 .] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 98.1 bits;  conditional E-value: 2.4e-32
+  HBA2_GALCR   2 lsptdksnvkaawekvgahagdygaealermflsfpttktyfphf.dls.....hgstqvkghgkkvadaltnavlhvddmpsalsalsdlhahklrvd 94 
+                 l+p +ks v a w kv+    + g eal r+++ +p t+ +f  f dls      g+ +vk+hgkkv  a+++ + h+d++   ++ ls+lh  kl+vd
+   HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 789************97..5799*******************9997676333336999***************************************** PP
+
+  HBA2_GALCR  95 pvnfkllrhcllvtlachhpaeftpavhasldkfmasvstvltsky 140
+                 p nf+ll + l+  la h   eftp v+a+  k +a v+  l  ky
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 *******************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBA_MESAU  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.4e-34  105.7   0.3    1.6e-34  105.5   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  105.5   0.3   1.6e-34   1.6e-34       3     140 ..       4     145 ..       2     146 .] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 105.5 bits;  conditional E-value: 1.6e-34
+  HBA_MESAU   3 sakdktniseawgkigghageygaealermffvypttktyfphf......dvshgsaqvkghgkkvadaltnavghlddlpgalsalsdlhahklrvdpv 96 
+                + ++k+ ++  wgk++    e g eal r++ vyp t+ +f  f      d   g+ +vk+hgkkv  a+++ ++hld+l g ++ ls+lh  kl+vdp 
+  HBB_HUMAN   4 TPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgdlstpDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPE 101
+                6789999*******95..78*********************9997444444557999******************************************* PP
+
+  HBA_MESAU  97 nfkllshcllvtlanhhpadftpavhasldkffasvstvltsky 140
+                nf+ll + l+  la+h   +ftp v+a+  k  a v+  l  ky
+  HBB_HUMAN 102 NFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                *****************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBA2_BOSMU  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    9.9e-33   99.5   0.3    1.1e-32   99.3   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   99.3   0.3   1.1e-32   1.1e-32       4     140 ..       5     145 ..       2     146 .] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 99.3 bits;  conditional E-value: 1.1e-32
+  HBA2_BOSMU   4 aadkgnvkaawgkvgghaaeygaealermflsfpttktyfphf.dls.....hgsaqvkghgakvaaaltkavghlddlpgalselsdlhahklrvdpv 96 
+                   +k+ v a wgkv+    e g eal r+++ +p t+ +f  f dls      g+ +vk+hg kv  a++  ++hld+l g ++ ls+lh  kl+vdp 
+   HBB_HUMAN   5 PEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPE 101
+                 678999********6..789********************99977773333358899****************************************** PP
+
+  HBA2_BOSMU  97 nfkllshsllvtlashlpsdftpavhasldkflanvstvltsky 140
+                 nf+ll + l+  la h+  +ftp v+a+  k +a v+  l  ky
+   HBB_HUMAN 102 NFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 *****************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBA_ERIEU  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.7e-31   95.7   0.3    1.9e-31   95.5   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   95.5   0.3   1.9e-31   1.9e-31       4     140 ..       5     145 ..       2     146 .] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 95.5 bits;  conditional E-value: 1.9e-31
+  HBA_ERIEU   4 atdkanvktfwgklgghggeyggealdrmfqahpttktyfphf.dln.p....gsaqvkghgkkvadalttavnnlddvpgalsalsdlhahklrvdpvn 97 
+                  +k+ v  +wgk++    e ggeal r++  +p t+ +f  f dl+ p    g+ +vk+hgkkv  a++  + +ld++ g ++ ls+lh  kl+vdp n
+  HBB_HUMAN   5 PEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStPdavmGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPEN 102
+                56899999*****96..57*********************99976653233448899******************************************* PP
+
+  HBA_ERIEU  98 fkllshcllvtlalhhpadftpavhasldkflatvatvltsky 140
+                f+ll + l+  la h   +ftp v+a+  k +a va  l  ky
+  HBB_HUMAN 103 FRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ****************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.39
+//
+Query:       HBA_FRAPO  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    3.8e-32   97.5   0.2    4.4e-32   97.3   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   97.3   0.2   4.4e-32   4.4e-32       4     140 ..       5     145 ..       2     146 .] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 97.3 bits;  conditional E-value: 4.4e-32
+  HBA_FRAPO   4 aadknnvkgifgkisshaedygaealermfitypstktyfphf.dls.....hgsaqvkghgkkvvaalieaanhiddiagtlsklsdlhahklrvdpvn 97 
+                  +k+ v +++gk++   ++ g eal r+++ yp t+ +f  f dls      g+ +vk+hgkkv+ a+ +   h+d++ gt++ ls+lh  kl+vdp n
+  HBB_HUMAN   5 PEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPEN 102
+                66899999*****96..789********************99977773333358899******************************************* PP
+
+  HBA_FRAPO  98 fkllgqcflvvvaihhpsaltpevhasldkflcavgnvltaky 140
+                f+llg  ++ v+a h    +tp v+a+  k ++ v+n l  ky
+  HBB_HUMAN 103 FRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                *******9999999999***********************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.27
+//
+Query:       HBA_PHACO  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.2e-30   92.7   0.1    1.3e-30   92.5   0.1    1.1  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   92.5   0.1   1.3e-30   1.3e-30       6     140 ..       7     145 ..       2     146 .] 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 92.5 bits;  conditional E-value: 1.3e-30
+  HBA_PHACO   6 dknnvkgiftkiaghaeeygaealermfitypstktyfphf.dls.....hgsaqikghgkkvvaalieavnhidditgtlsklsdlhahklrvdpvnfk 99 
+                +k+ v +++ k+  + +e g eal r+++ yp t+ +f  f dls      g+ ++k+hgkkv+ a+ + + h+d++ gt++ ls+lh  kl+vdp nf+
+  HBB_HUMAN   7 EKSAVTALWGKV--NVDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFR 104
+                666677777776..689*********************99977773333358899********************************************* PP
+
+  HBA_PHACO 100 llgqcflvvvaihhpsaltpevhasldkflcavgtvltaky 140
+                llg  ++ v+a h    +tp v+a+  k ++ v+  l  ky
+  HBB_HUMAN 105 LLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                *****9999999999**********************9999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.41
+//
+Query:       HBA_TRIOC  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    5.9e-31   93.6   0.1    6.8e-31   93.4   0.1    1.1  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   93.4   0.1   6.8e-31   6.8e-31       6     140 ..       7     145 ..       2     146 .] 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 93.4 bits;  conditional E-value: 6.8e-31
+  HBA_TRIOC   6 dktnvktvftkitghaedygaetlermfitypptktyfphf......dlhhgsaqikahgkkvvgalieavnhiddiagalsklsdlhaqklrvdpvnfk 99 
+                +k+ v  ++ k+  + ++ g e l r+++ yp t+ +f  f      d   g+ ++kahgkkv+ga+ + + h+d++ g ++ ls+lh  kl+vdp nf+
+  HBB_HUMAN   7 EKSAVTALWGKV--NVDEVGGEALGRLLVVYPWTQRFFESFgdlstpDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFR 104
+                566666666666..5789********************9997333334457999********************************************** PP
+
+  HBA_TRIOC 100 llgqcflvvvaihhpsvltpevhasldkflcavgnvlsaky 140
+                llg  ++ v+a h    +tp v+a+  k ++ v+n l+ ky
+  HBB_HUMAN 105 LLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                *****9999999999***********************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBA_ANSSE  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+      2e-29   88.7   0.1    2.3e-29   88.5   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   88.5   0.1   2.3e-29   2.3e-29       4     140 ..       5     145 ..       2     146 .] 0.91
+
+  Alignments for each domain:
+  == domain 1  score: 88.5 bits;  conditional E-value: 2.3e-29
+  HBA_ANSSE   4 aadkgnvktvfgkigghaeeygaetlqrmfqtfpqtktyfphf.dlq.p....gsaqikahgkkvaaalveaanhiddiagalsklsdlhaqklrvdpvn 97 
+                  +k+ v  ++gk+  + +e g e l r++  +p t+ +f  f dl  p    g+ ++kahgkkv  a+ +   h+d++ g ++ ls+lh  kl+vdp n
+  HBB_HUMAN   5 PEEKSAVTALWGKV--NVDEVGGEALGRLLVVYPWTQRFFESFgDLStPdavmGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPEN 102
+                56788899999**9..589*********************99975542233338999******************************************* PP
+
+  HBA_ANSSE  98 fkflghcflvvlaihhpslltpevhasmdkflcavatvltaky 140
+                f++lg+ ++ vla h    +tp v+a+  k ++ va  l  ky
+  HBB_HUMAN 103 FRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ***************************************9999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBA_COLLI  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    3.8e-32   97.6   0.2    4.4e-32   97.4   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   97.4   0.2   4.4e-32   4.4e-32       3     140 ..       4     145 ..       2     146 .] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 97.4 bits;  conditional E-value: 4.4e-32
+  HBA_COLLI   3 sandksnvkavfakiggqagdlggealerlfitypqtktyfphf.dls.....hgsaqikghgkkvaealveaanhiddiagalsklsdlhaqklrvdpv 96 
+                +  +ks v a++ k++    ++ggeal rl++ yp t+ +f  f dls      g+ ++k+hgkkv  a+ +   h+d++ g ++ ls+lh  kl+vdp 
+  HBB_HUMAN   4 TPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPE 101
+                56799999*****996..679********************99977773333358899****************************************** PP
+
+  HBA_COLLI  97 nfkllghcflvvvavhfpslltpevhasldkfvlavgtvltaky 140
+                nf+llg+ ++ v+a hf   +tp v+a+  k v  v+  l  ky
+  HBB_HUMAN 102 NFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                ****************************************9999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBAD_CHLME  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    7.6e-33   99.7   0.0    8.8e-33   99.5   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   99.5   0.0   8.8e-33   8.8e-33       2     140 ..       3     145 ..       2     146 .] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 99.5 bits;  conditional E-value: 8.8e-33
+  HBAD_CHLME   2 ltaddkklltqlwekvaghqeefgsealqrmfltypqtktyfphf......dlhpgseqvrghgkkvaaalgnavksldnlsqalselsnlhaynlrvd 94 
+                 lt ++k  +t lw kv  + +e g eal r+++ yp t+ +f  f      d   g+ +v++hgkkv  a+++ +  ldnl   ++ ls lh   l+vd
+   HBB_HUMAN   3 LTPEEKSAVTALWGKV--NVDEVGGEALGRLLVVYPWTQRFFESFgdlstpDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 7999***********9..5799********************9997333333346999***************************************** PP
+
+  HBAD_CHLME  95 panfkllaqcfqvvlathlgkdyspemhaafdkflsavaavlaeky 140
+                 p nf+ll   +  vla h+gk+++p ++aa+ k ++ va  la ky
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.38
+//
+Query:       HBAD_PASMO  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    5.1e-32   97.1   0.0    5.9e-32   96.9   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   96.9   0.0   5.9e-32   5.9e-32       2     140 ..       3     145 ..       2     146 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 96.9 bits;  conditional E-value: 5.9e-32
+  HBAD_PASMO   2 ltaedkkliqqiwgklggaeeeigadalwrmfhsypstktyfphf.dls.....qgsdqirghgkkvvaalsnaiknldnlsqalselsnlhaynlrvd 94 
+                 lt e+k  +  +wgk++   +e+g +al r++  yp t+ +f  f dls      g+ ++++hgkkv+ a+s+ + +ldnl   ++ ls lh   l+vd
+   HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgDLStpdavMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 899************97..579********************9997666333336999***************************************** PP
+
+  HBAD_PASMO  95 pvnfkflsqclqvslatrlgkeyspevhsavdkfmsavasvlaeky 140
+                 p nf++l   l   la ++gke++p v++a  k ++ va+ la ky
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.39
+//
+Query:       HBAZ_HORSE  [L=141]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+      5e-31   94.1   0.0    5.8e-31   93.9   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   93.9   0.0   5.8e-31   5.8e-31       2     140 ..       3     145 ..       2     146 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 93.9 bits;  conditional E-value: 5.8e-31
+  HBAZ_HORSE   2 ltkaertmvvsiwgkismqadavgtealqrlfssypqtktyfphf......dlhegspqlrahgskvaaavgdavksidnvagalaklselhayilrvd 94 
+                 lt  e++ v ++wgk++   d vg eal rl+  yp t+ +f  f      d   g+p+++ahg kv  a +d +  +dn+ g +a lselh   l+vd
+   HBB_HUMAN   3 LTPEEKSAVTALWGKVN--VDEVGGEALGRLLVVYPWTQRFFESFgdlstpDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 7899***********97..599********************99973333344579******************************************* PP
+
+  HBAZ_HORSE  95 pvnfkflshcllvtlasrlpadftadahaawdkflsivssvlteky 140
+                 p nf++l + l+  la ++  +ft   +aa+ k ++ v++ l  ky
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 *******************************************999 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (141 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.39
+//
+Query:       HBA4_SALIR  [L=142]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    4.7e-34  104.0   0.0    5.3e-34  103.8   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  103.8   0.0   5.3e-34   5.3e-34       2     141 ..       3     145 ..       2     146 .] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 103.8 bits;  conditional E-value: 5.3e-34
+  HBA4_SALIR   2 lsakdkanvkaiwgkilpksdeigeqalsrmlvvypqtkayfshwasva.p....gsapvkkhgitimnqiddcvghmddlfgfltklselhatklrvd 95 
+                 l+ ++k+ v a+wgk+    de+g +al r+lvvyp t+ +f  +  ++ p    g+  vk hg  ++  + d ++h+d+l g +  lselh  kl+vd
+   HBB_HUMAN   3 LTPEEKSAVTALWGKV--NVDEVGGEALGRLLVVYPWTQRFFESFGDLStPdavmGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 567899*********9..57**********************99987642233337889**************************************** PP
+
+  HBA4_SALIR  96 ptnfkilahnlivviaayfpaeftpeihlsvdkflqqlalalaeky 141
+                 p nf++l + l+ v+a +f  eftp ++ +  k +  +a ala ky
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (142 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.21
+//
+Query:       HBB_ORNAN  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    9.1e-79  249.0   0.3      1e-78  248.8   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  248.8   0.3     1e-78     1e-78       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 248.8 bits;  conditional E-value: 1e-78
+  HBB_ORNAN   1 vhlsggeksavtnlwgkvninelggealgrllvvypwtqrffeafgdlssagavmgnpkvkahgakvltsfgdalknlddlkgtfaklselhcdklhvdp 100
+                vhl+  eksavt lwgkvn++e+ggealgrllvvypwtqrffe+fgdls+  avmgnpkvkahg kvl +f+d l +ld+lkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                79************************************************************************************************** PP
+
+  HBB_ORNAN 101 enfnrlgnvlivvlarhfskdfspevqaawqklvsgvahalghkyh 146
+                enf  lgnvl+ vla+hf k+f+p vqaa+qk+v+gva+al+hkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.13
+//
+Query:       HBB_TACAC  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.5e-79  251.5   0.2    1.7e-79  251.4   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  251.4   0.2   1.7e-79   1.7e-79       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 251.4 bits;  conditional E-value: 1.7e-79
+  HBB_TACAC   1 vhlsgsektavtnlwghvnvnelggealgrllvvypwtqrffesfgdlssadavmgnakvkahgakvltsfgdalknldnlkgtfaklselhcdklhvdp 100
+                vhl+  ek+avt lwg vnv+e+ggealgrllvvypwtqrffesfgdls+ davmgn kvkahg kvl +f+d l +ldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                7*************************************************************************************************** PP
+
+  HBB_TACAC 101 enfnrlgnvlvvvlarhfskeftpeaqaawqklvsgvshalahkyh 146
+                enf  lgnvlv vla+hf keftp  qaa+qk+v+gv++alahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.24
+//
+Query:       HBE_PONPY  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.9e-80  253.5   0.1    3.2e-80  253.3   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  253.3   0.1   3.2e-80   3.2e-80       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 253.3 bits;  conditional E-value: 3.2e-80
+  HBE_PONPY   1 vhftaeekaavtslwskmnveeaggealgrllvvypwtqrffdsfgnlsspsailgnpkvkahgkkvltsfgdaiknmdnlkttfaklselhcdklhvdp 100
+                vh+t eek+avt+lw k+nv+e ggealgrllvvypwtqrff+sfg+ls+p a++gnpkvkahgkkvl +f+d + ++dnlk tfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                7*************************************************************************************************** PP
+
+  HBE_PONPY 101 enfkllgnvmviilathfgkeftpevqaawqklvsavaialahkyh 146
+                enf+llgnv+v +la hfgkeftp vqaa+qk+v+ va alahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.31
+//
+Query:       HBB_SPECI  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.1e-81  257.4   0.3    2.4e-81  257.3   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  257.3   0.3   2.4e-81   2.4e-81       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 257.3 bits;  conditional E-value: 2.4e-81
+  HBB_SPECI   1 vhlsdgeknaistawgkvhaaevgaealgrllvvypwtqrffdsfgdlssasavmgnakvkahgkkvidsfsnglkhldnlkgtfaslselhcdklhvdp 100
+                vhl+  ek+a++  wgkv+  evg ealgrllvvypwtqrff+sfgdls+  avmgn kvkahgkkv+ +fs+gl hldnlkgtfa+lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                7*************************************************************************************************** PP
+
+  HBB_SPECI 101 enfkllgnmivivmahhlgkdftpeaqaafqkvvagvanalahkyh 146
+                enf+llgn++v v+ahh+gk+ftp  qaa+qkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.22
+//
+Query:       HBB_SPETO  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    3.9e-82  259.7   0.2    4.4e-82  259.6   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  259.6   0.2   4.4e-82   4.4e-82       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 259.6 bits;  conditional E-value: 4.4e-82
+  HBB_SPETO   1 vhltdgeknaistawgkvnaaeigaealgrllvvypwtqrffdsfgdlssasavmgnakvkahgkkvidsfsnglkhldnlkgtfaslselhcdklhvdp 100
+                vhlt  ek+a++  wgkvn  e+g ealgrllvvypwtqrff+sfgdls+  avmgn kvkahgkkv+ +fs+gl hldnlkgtfa+lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                8*************************************************************************************************** PP
+
+  HBB_SPETO 101 enfkllgnmivivmahhlgkdftpeaqaafqkvvagvanalshkyh 146
+                enf+llgn++v v+ahh+gk+ftp  qaa+qkvvagvanal+hkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.24
+//
+Query:       HBB_EQUHE  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.1e-85  270.3   0.4    2.4e-85  270.1   0.4    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  270.1   0.4   2.4e-85   2.4e-85       1     146 []       1     146 []       1     146 [] 0.99
+
+  Alignments for each domain:
+  == domain 1  score: 270.1 bits;  conditional E-value: 2.4e-85
+  HBB_EQUHE   1 vqlsgeekaavlalwdkvneeevggealgrllvvypwtqrffdsfgdlsnpaavmgnpkvkahgkkvlhsfgegvhhldnlkgtfaqlselhcdklhvdp 100
+                v l+ eek+av alw kvn +evggealgrllvvypwtqrff+sfgdls p avmgnpkvkahgkkvl +f++g+ hldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                57899*********************************************************************************************** PP
+
+  HBB_EQUHE 101 enfrllgnvlvvvlarhfgkdftpelqasyqkvvagvanalahkyh 146
+                enfrllgnvlv vla+hfgk+ftp +qa+yqkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.31
+//
+Query:       HBB_SUNMU  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.8e-85  270.7   0.3    1.9e-85  270.5   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  270.5   0.3   1.9e-85   1.9e-85       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 270.5 bits;  conditional E-value: 1.9e-85
+  HBB_SUNMU   1 vhlsgeekacvtglwgkvnedevgaealgrllvvypwtqrffdsfgdlssasavmgnpkvkahgkkvlhslgegvanldnlkgtfaklselhcdklhvdp 100
+                vhl+ eek++vt+lwgkvn devg ealgrllvvypwtqrff+sfgdls+  avmgnpkvkahgkkvl ++++g+a+ldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                7*************************************************************************************************** PP
+
+  HBB_SUNMU 101 enfrllgnvlvvvlaskfgkeftppvqaafqkvvagvanalahkyh 146
+                enfrllgnvlv vla  fgkeftppvqaa+qkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.23
+//
+Query:       HBB_CALAR  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    5.9e-99  314.4   0.7    6.6e-99  314.3   0.7    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  314.3   0.7   6.6e-99   6.6e-99       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 314.3 bits;  conditional E-value: 6.6e-99
+  HBB_CALAR   1 vhltgeeksavtalwgkvnvdevggealgrllvvypwtqrffesfgdlstpdavmnnpkvkahgkkvlgafsdglthldnlkgtfahlselhcdklhvdp 100
+                vhlt eeksavtalwgkvnvdevggealgrllvvypwtqrffesfgdlstpdavm npkvkahgkkvlgafsdgl hldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                8*************************************************************************************************** PP
+
+  HBB_CALAR 101 enfrllgnvlvcvlahhfgkeftpvvqaayqkvvagvanalahkyh 146
+                enfrllgnvlvcvlahhfgkeftp vqaayqkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.22
+//
+Query:       HBB_MANSP  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.2e-98  313.6   0.5    1.3e-98  313.4   0.5    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  313.4   0.5   1.3e-98   1.3e-98       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 313.4 bits;  conditional E-value: 1.3e-98
+  HBB_MANSP   1 vhltpeektavttlwgkvnvdevggealgrllvvypwtqrffdsfgdlsspdavmgnpkvkahgkkvlgafsdglnhldnlkgtfaqlselhcdklhvdp 100
+                vhltpeek+avt lwgkvnvdevggealgrllvvypwtqrff+sfgdls+pdavmgnpkvkahgkkvlgafsdgl hldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                8*************************************************************************************************** PP
+
+  HBB_MANSP 101 enfkllgnvlvcvlahhfgkeftpqvqaayqkvvagvanalahkyh 146
+                enf+llgnvlvcvlahhfgkeftp vqaayqkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.36
+//
+Query:       HBB_URSMA  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    7.6e-93  294.7   0.3    8.5e-93  294.5   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  294.5   0.3   8.5e-93   8.5e-93       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 294.5 bits;  conditional E-value: 8.5e-93
+  HBB_URSMA   1 vhltgeekslvtglwgkvnvdevggealgrllvvypwtqrffdsfgdlssadaimnnpkvkahgkkvlnsfsdglknldnlkgtfaklselhcdklhvdp 100
+                vhlt eeks vt+lwgkvnvdevggealgrllvvypwtqrff+sfgdls+ da+m npkvkahgkkvl +fsdgl +ldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                8*************************************************************************************************** PP
+
+  HBB_URSMA 101 enfkllgnvlvcvlahhfgkeftpqvqaayqkvvagvanalahkyh 146
+                enf+llgnvlvcvlahhfgkeftp vqaayqkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.41
+//
+Query:       HBB_RABIT  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.1e-92  293.8   0.3    1.2e-92  293.7   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  293.7   0.3   1.2e-92   1.2e-92       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 293.7 bits;  conditional E-value: 1.2e-92
+  HBB_RABIT   1 vhlsseeksavtalwgkvnveevggealgrllvvypwtqrffesfgdlssanavmnnpkvkahgkkvlaafseglshldnlkgtfaklselhcdklhvdp 100
+                vhl+ eeksavtalwgkvnv+evggealgrllvvypwtqrffesfgdls+ +avm npkvkahgkkvl afs+gl+hldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                8*************************************************************************************************** PP
+
+  HBB_RABIT 101 enfrllgnvlvivlshhfgkeftpqvqaayqkvvagvanalahkyh 146
+                enfrllgnvlv vl+hhfgkeftp vqaayqkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.41
+//
+Query:       HBB_TUPGL  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    2.8e-84  267.0   0.2    3.1e-84  266.9   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  266.9   0.2   3.1e-84   3.1e-84       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 266.9 bits;  conditional E-value: 3.1e-84
+  HBB_TUPGL   1 vhlsgeekaavtglwgkvdlekvggqslgsllivypwtqrffdsfgdlsspsavmsnpkvkahgkkvltsfsdglnhldnlkgtfaklselhcdklhvdp 100
+                vhl+ eek+avt+lwgkv++++vgg++lg ll+vypwtqrff+sfgdls+p avm npkvkahgkkvl +fsdgl hldnlkgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                7*************************************************************************************************** PP
+
+  HBB_TUPGL 101 enfrllgnvlvrvlacnfgpeftpqvqaafqkvvagvanalahkyh 146
+                enfrllgnvlv vla +fg eftp vqaa+qkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.37
+//
+Query:       HBB_TRIIN  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.6e-84  267.4   0.3    1.7e-84  267.2   0.3    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  267.2   0.3   1.7e-84   1.7e-84       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 267.2 bits;  conditional E-value: 1.7e-84
+  HBB_TRIIN   1 vhltpeekalviglwakvnvkeyggealgrllvvypwtqrffehfgdlssasaimnnpkvkahgekvftsfgdglkhledlkgafaelselhcdklhvdp 100
+                vhltpeek+ v +lw kvnv e ggealgrllvvypwtqrffe fgdls+  a+m npkvkahg+kv+ +f+dgl hl++lkg fa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                8*************************************************************************************************** PP
+
+  HBB_TRIIN 101 enfrllgnvlvcvlarhfgkefspeaqaayqkvvagvanalahkyh 146
+                enfrllgnvlvcvla+hfgkef+p  qaayqkvvagvanalahkyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.40
+//
+Query:       HBB_COLLI  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.7e-72  228.6   0.1    1.9e-72  228.5   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  228.5   0.1   1.9e-72   1.9e-72       1     146 []       1     146 []       1     146 [] 0.99
+
+  Alignments for each domain:
+  == domain 1  score: 228.5 bits;  conditional E-value: 1.9e-72
+  HBB_COLLI   1 vhwsaeekqlitsiwgkvnvadcgaealarllivypwtqrffssfgnlssataisgnpnvkahgkkvltsfgdavknldnikgtfaqlselhcdklhvdp 100
+                vh + eek  +t++wgkvnv + g eal rll+vypwtqrff sfg+ls+  a+ gnp vkahgkkvl +f+d + +ldn+kgtfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                7999************************************************************************************************ PP
+
+  HBB_COLLI 101 enfrllgdilviilaahfgkdftpecqaawqklvrvvahalarkyh 146
+                enfrllg++lv +la hfgk+ftp  qaa+qk+v  va+ala+kyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.35
+//
+Query:       HBB_LARRI  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.5e-70  222.2   0.1    1.6e-70  222.0   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  222.0   0.1   1.6e-70   1.6e-70       1     146 []       1     146 []       1     146 [] 0.99
+
+  Alignments for each domain:
+  == domain 1  score: 222.0 bits;  conditional E-value: 1.6e-70
+  HBB_LARRI   1 vhwsaeekqlitglwgkvnvadcgaealarllivypwtqrffasfgnlssptaingnpmvrahgkkvltsfgeavknldnikntfaqlselhcdklhvdp 100
+                vh + eek  +t+lwgkvnv + g eal rll+vypwtqrff sfg+ls+p a+ gnp v+ahgkkvl +f++ + +ldn+k tfa lselhcdklhvdp
+  HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDP 100
+                7999************************************************************************************************ PP
+
+  HBB_LARRI 101 enfrllgdiliivlaahfakdftpdsqaawqklvrvvahalarkyh 146
+                enfrllg++l+ vla hf k+ftp  qaa+qk+v  va+ala+kyh
+  HBB_HUMAN 101 ENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                *********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.40
+//
+Query:       HBB1_VAREX  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+      7e-67  210.6   0.2    7.7e-67  210.5   0.2    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  210.5   0.2   7.7e-67   7.7e-67       1     146 []       1     146 []       1     146 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 210.5 bits;  conditional E-value: 7.7e-67
+  HBB1_VAREX   1 vhwtaeekqlicslwgkidvgliggetlagllviypwtqrqfshfgnlssptaiagnprvkahgkkvltsfgdaiknldnikdtfaklselhcdklhvd 99 
+                 vh t eek  + +lwgk++v  +gge l  llv+ypwtqr f  fg+ls+p a+ gnp+vkahgkkvl +f+d + +ldn+k tfa lselhcdklhvd
+   HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 79************************************************************************************************* PP
+
+  HBB1_VAREX 100 ptnfkllgnvlvivladhhgkeftpahhaayqklvnvvshslarryh 146
+                 p nf+llgnvlv vla h gkeftp  +aayqk+v  v+++la++yh
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                 **********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.42
+//
+Query:       HBB2_XENTR  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.2e-52  163.9   0.1    1.4e-52  163.7   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  163.7   0.1   1.4e-52   1.4e-52       1     145 [.       1     145 [.       1     146 [] 0.99
+
+  Alignments for each domain:
+  == domain 1  score: 163.7 bits;  conditional E-value: 1.4e-52
+  HBB2_XENTR   1 vhwtaeekatiasvwgkvdieqdghdalsrllvvypwtqryfssfgnlsnvsavsgnvkvkahgnkvlsavgsaiqhlddvkshlkglskshaedlhvd 99 
+                 vh t eek+ + ++wgkv++++ g +al rllvvypwtqr+f sfg+ls   av gn kvkahg kvl a +  + hld++k  +  ls+ h + lhvd
+   HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 79************************************************************************************************* PP
+
+  HBB2_XENTR 100 penfkrladvlvivlaaklgsaftpqvqavweklnatlvaalshgy 145
+                 penf+ l +vlv vla  +g  ftp vqa ++k+ a +  al+h y
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 ********************************************98 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.41
+//
+Query:       HBBL_RANCA  [L=146]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    1.5e-57  180.0   0.1    1.7e-57  179.9   0.1    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  179.9   0.1   1.7e-57   1.7e-57       1     146 []       1     146 []       1     146 [] 0.99
+
+  Alignments for each domain:
+  == domain 1  score: 179.9 bits;  conditional E-value: 1.7e-57
+  HBBL_RANCA   1 vhwtaeekavinsvwqkvdveqdghealtrlfivypwtqryfstfgdlsspaaiagnpkvhahgkkilgaidnaihnlddvkgtlhdlseehanelhvd 99 
+                 vh t eek+ + ++w kv+v++ g eal rl++vypwtqr+f +fgdls+p a+ gnpkv ahgkk+lga+ + + +ld++kgt+  lse h ++lhvd
+   HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 79************************************************************************************************* PP
+
+  HBBL_RANCA 100 penfrrlgevlivvlgaklgkafspqvqhvwekfiavlvdalshsyh 146
+                 penfr lg vl+ vl+  +gk f+p vq  ++k +a + +al+h yh
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH 146
+                 **********************************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (146 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 1.39
+//
+Query:       HBB2_TRICR  [L=145]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------  -----------
+    3.4e-46  143.0   0.0    3.7e-46  142.8   0.0    1.0  1  HBB_HUMAN  Human beta hemoglobin.
+
+
+Domain annotation for each sequence (and alignments):
+>> HBB_HUMAN  Human beta hemoglobin.
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  142.8   0.0   3.7e-46   3.7e-46       1     145 []       1     145 [.       1     145 [. 0.98
+
+  Alignments for each domain:
+  == domain 1  score: 142.8 bits;  conditional E-value: 3.7e-46
+  HBB2_TRICR   1 vhltaedrkeiaailgkvnvdslggqclarlivvnpwsrryfhdfgdlsscdaicrnpkvlahgakvmrsiveatkhldnlreyyadlsvthslkfyvd 99 
+                 vhlt e++  + a+ gkvnvd +gg++l rl+vv pw++r+f+ fgdls+ da+  npkv ahg kv+ ++ +   hldnl+  +a ls  h  k++vd
+   HBB_HUMAN   1 VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVD 99 
+                 8************************************************************************************************** PP
+
+  HBB2_TRICR 100 penfklfsgivivclaltlqtdfschkqlafeklmkgvshalghgy 145
+                 penf+l+ ++++  la  +  +f+   q a++k++ gv++al+h y
+   HBB_HUMAN 100 PENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKY 145
+                 *******9998888999***************************87 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (145 nodes)
+Target sequences:                          1  (146 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 1.39
+//
+[ok]

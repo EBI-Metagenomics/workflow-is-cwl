@@ -1,0 +1,7 @@
+transcript_01	transdecoder	gene	1	15185	.	-	.	ID=GENE.transcript_01~~transcript_01.p2;Name=ORF%20type%3Acomplete%20len%3A1559%20%28-%29%2Cscore%3D1354.66
+transcript_01	transdecoder	mRNA	1	15185	.	-	.	ID=transcript_01.p2;Parent=GENE.transcript_01~~transcript_01.p2;Name=ORF%20type%3Acomplete%20len%3A1559%20%28-%29%2Cscore%3D1354.66
+transcript_01	transdecoder	five_prime_UTR	7013	15185	.	-	.	ID=transcript_01.p2.utr5p1;Parent=transcript_01.p2
+transcript_01	transdecoder	exon	1	15185	.	-	.	ID=transcript_01.p2.exon1;Parent=transcript_01.p2
+transcript_01	transdecoder	CDS	2336	7012	.	-	0	ID=cds.transcript_01.p2;Parent=transcript_01.p2
+transcript_01	transdecoder	three_prime_UTR	1	2335	.	-	.	ID=transcript_01.p2.utr3p1;Parent=transcript_01.p2
+

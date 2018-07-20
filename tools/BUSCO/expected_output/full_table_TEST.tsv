@@ -1,0 +1,15 @@
+# BUSCO version is: 3.0.2 
+# The lineage dataset is: sample dataset BUSCO 2.0 (Creation date: 07.10.2016, number of species: 23, number of BUSCOs: 10)
+# To reproduce this run: python /software/applications/busco/3.0.2/scripts/run_BUSCO.py -i /var/lib/cwl/stg0686624e-f80a-44e4-ac16-077f2cf461a7/target.fa -o TEST -l /var/lib/cwl/stgd8db2461-8d7f-48ad-92da-a38c7f6d82fa/example/ -m transcriptome -c 1
+#
+# Busco id	Status	Sequence	Score	Length
+BUSCO_1	Fragmented	sample	141.9	88
+BUSCO_10	Missing
+BUSCO_2	Complete	sample	442.1	394
+BUSCO_3	Missing
+BUSCO_4	Complete	sample	407.3	522
+BUSCO_5	Complete	sample	441.0	464
+BUSCO_6	Fragmented	sample	572.7	519
+BUSCO_7	Complete	sample	419.5	872
+BUSCO_8	Missing
+BUSCO_9	Missing
