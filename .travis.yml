@@ -84,6 +84,16 @@ matrix:
         - bash travis/run-cmsearch.multimodel-wf.sh
 
     - language: python
+      env: TOOL=Utils - FASTA chunker
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
+      script:
+        - bash travis/run-utils-fasta_chunker.sh
+
+    - language: python
       env: TOOL=Workflow validation tests
       install:
         - travis/install-nodejs.sh

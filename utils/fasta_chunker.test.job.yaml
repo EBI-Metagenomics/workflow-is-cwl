@@ -1,0 +1,6 @@
+chunk_size: 1
+seqs:
+  class: File
+  metadata: {}
+  path: test-input/test_seq.fasta
+  secondaryFiles: []
