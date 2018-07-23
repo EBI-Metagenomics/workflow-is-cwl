@@ -92,6 +92,8 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/run-utils-fasta_chunker.sh
+        - if ! diff -q test_01_test_01.fasta expected_output/fasta_chunker/test_01_test_01.fasta &>/dev/null; then exit 1; fi
+        - if ! diff -q test_02_test_02.fasta expected_output/fasta_chunker/test_02_test_02.fasta &>/dev/null; then exit 1; fi
 
     - language: python
       env: TOOL=Workflow validation tests
