@@ -9,9 +9,9 @@ baseCommand:
 inputs:
   - id: chunk_size
     type: int
-  - format: 'edam:format_1929'
-    id: seqs
+  - id: seqs
     type: File
+    format: 'edam:format_1929'
 outputs:
   - id: chunks
     type: 'File[]'

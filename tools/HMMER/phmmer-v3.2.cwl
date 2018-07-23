@@ -21,6 +21,7 @@ inputs:
     label: Number of parallel CPU workers to use for multithreads
   - id: seqFile
     type: File
+    format: 'edam:format_1929'
     inputBinding:
       position: 1
     label: Query sequence(s) file

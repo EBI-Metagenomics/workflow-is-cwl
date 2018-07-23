@@ -15,6 +15,7 @@ inputs:
       itemSeparator: ','
   - id: proteinFile
     type: File
+    format: 'edam:format_1929'
     inputBinding:
       position: 0
       prefix: '--input'

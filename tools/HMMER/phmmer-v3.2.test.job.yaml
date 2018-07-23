@@ -2,6 +2,7 @@ bitscoreThreshold: null
 cpu: null
 seqFile:
   class: File
+  format: 'edam:format_1929'
   path: test-input/globins45.fa
 seqdb:
   class: File

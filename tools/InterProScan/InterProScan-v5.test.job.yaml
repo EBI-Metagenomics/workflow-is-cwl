@@ -3,4 +3,5 @@ applications:
   - TIGRFAM
 proteinFile:
   class: File
+  format: 'edam:format_1929'
   path: test-input/test_single_protein.fasta
