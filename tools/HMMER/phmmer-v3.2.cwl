@@ -30,6 +30,7 @@ inputs:
       database.
   - id: seqdb
     type: File
+    format: 'edam:format_1929'
     inputBinding:
       position: 2
     label: Target database of sequences
