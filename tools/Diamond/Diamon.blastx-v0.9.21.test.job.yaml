@@ -3,7 +3,7 @@ databaseFile:
   class: File
   path: >-
     test-input/uniref90_subset.dmnd
-outputFormat: '5'
+outputFormat: '6'
 queryGeneticCode: null
 queryInputFile:
   class: File
