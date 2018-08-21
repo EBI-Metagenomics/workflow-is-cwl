@@ -1,0 +1,5 @@
+end_mode: SE
+read_files:
+  - class: File
+    format: 'edam:format_1930'
+    path: se-reads.fastq.gz

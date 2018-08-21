@@ -1,0 +1,17 @@
+end_mode: PE
+read_files:
+  - class: File
+    format: 'edam:format_1930'
+    path: forward-reads.fastq.gz
+  - class: File
+    format: 'edam:format_1930'
+    path: reverse-reads.fastq.gz
+forward_reads:
+  class: File
+  format: 'edam:format_1930'
+  path: forward-reads.fastq.gz
+reverse_reads:
+  class: File
+  format: 'edam:format_1930'
+  path: reverse-reads.fastq.gz
+
