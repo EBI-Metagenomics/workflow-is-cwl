@@ -1,0 +1,6 @@
+in_fastq:
+  - class: File
+    path: /Users/arnaud-meng/Desktop/EBI_assembly_pipeline/test_data/A1_left.fq
+  - class: File
+    path: /Users/arnaud-meng/Desktop/EBI_assembly_pipeline/test_data/A1_right.fq
+n_threads: 5
