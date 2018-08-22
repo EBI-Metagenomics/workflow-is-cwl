@@ -8,6 +8,13 @@ matrix:
       script:
         - bash travis/run-interproscan5.sh
 
+    - language: java
+      jdk: openjdk8
+      env: TOOL=FastQC-v0.11.7
+      install: travis/install-fastqc-v0.11.7.sh
+      script:
+        - bash travis/run-fastqc-v0.11.7.sh
+
     - language: perl
       perl: 5.24
       env: TOOL=TransDecoder.Longorfs-v5.0.2
