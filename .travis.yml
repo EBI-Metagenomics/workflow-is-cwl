@@ -14,7 +14,7 @@ matrix:
       install: travis/install-fastqc-v0.11.7.sh
       script:
         - bash travis/run-fastqc-v0.11.7.sh
-        - if ! [ -f A1_left_fastqc.html ] ; then exit 1; fi
+        - if [ -f A1_left_fastqc.html ] ; then exit 0; fi
 
     - language: perl
       perl: 5.24
