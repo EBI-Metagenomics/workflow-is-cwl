@@ -1,6 +1,0 @@
-in_fastq:
-  - class: File
-    path: test-input/A1_left.fq.gz
-  - class: File
-    path: test-input/A1_right.fq.gz
-n_threads: 5

@@ -23,7 +23,6 @@ inputs:
     type: File[]
     inputBinding:
       position: 3
-      # itemSeparator: ' '
     label: Input FASTQ file(s). If multiple files are provided then use space separated
 
 outputs:
@@ -31,13 +30,11 @@ outputs:
     label: 'Zipped output report'
     type: File[]
     outputBinding:
-      #glob: $(inputs.in_fastq.nameroot)_fastqc.zip
       glob: '*_fastqc.zip'
   - id: html_report
     label: 'HTML output report'
     type: File[]
     outputBinding:
-      #glob: $(inputs.in_fastq.nameroot)_fastqc.html
       glob: '*_fastqc.html'
 
 doc: >
@@ -56,10 +53,11 @@ doc: >
     
 label: FastQC - A high throughtput sequence analyses QC.
 
-requirements:
-  - class: InlineJavascriptRequirement
-
 hints:
+  - class: DockerRequirement
+# TODOs: From looking into the result files
+# received from the container tag as latest (22/08/2018) we deal with version 0.11.5 here
+    dockerPull: 'biocontainers/fastqc:latest'
   - class: SoftwareRequirement
     packages:
       FastQC:
