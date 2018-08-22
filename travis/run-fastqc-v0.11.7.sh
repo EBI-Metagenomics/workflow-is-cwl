@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 APP_VERSION=0.11.7
-export PATH="$HOME/diamond-v$APP_VERSION:$PATH"
+export PATH="$HOME/FastQC-v$APP_VERSION/FastQC:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
 echo $PATH
 source activate cwl-environment
