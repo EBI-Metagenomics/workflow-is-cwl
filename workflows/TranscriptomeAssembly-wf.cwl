@@ -75,9 +75,9 @@ steps:
     doc: |
        Provide reverse and forward read files for paired-end (PE)
        or a single read file for single-end (SE).
-    run: ../tools/FASTQC-multi-read-files.cwl
+    run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
-      read_files: read_files
+      in_fastq: read_files
     out: [ raw_qc_report, raw_html_report ]
 
   filter_reads:
