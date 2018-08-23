@@ -8,7 +8,12 @@ baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
 
 inputs:
   - id: seq_type
-    type: string
+    type:
+      type: enum
+      symbols:
+        - fa
+        - fq
+      name: seq_type
     inputBinding:
       position: 1
       prefix: '--seqType'
@@ -18,7 +23,9 @@ inputs:
     inputBinding:
       position: 2
       prefix: '--max_memory'
-    label: 'suggested max memory to use by Trinity where limiting can be enabled. (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G'
+    label: >-
+      Suggested max memory to use by Trinity where limiting can be enabled.
+      (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
   - id: left_fastq
     type: File
     inputBinding:
@@ -37,44 +44,44 @@ inputs:
       symbols:
         - FR
         - RF
+        - F
+        - R
+      name: ss_lib_type
     inputBinding:
       position: 5
       prefix: '--SS_lib_type'
-    label: 'Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single: F or R. (dUTP method = RF). See web documentation'
+    label: >-
+      Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
+      F or R. (dUTP method = RF). See web documentation
   - id: cpu
     type: int?
     inputBinding:
       position: 6
       prefix: '--CPU'
     label: 'number of CPUs to use, default: 2'
-
 outputs:
-  assembly_dir:
+  - id: assembly_dir
+    label: Assembly directory containing assembly results
     type: Directory
     outputBinding:
       glob: .
-    label: 'Assembly directory containing assembly results'
-
 doc: >
-  Trinity, developed at the Broad Institute and the Hebrew University of Jerusalem, 
-  represents a novel method for the efficient and robust de novo reconstruction 
-  of transcriptomes from RNA-seq data. 
-  Trinity combines three independent software modules: Inchworm, Chrysalis, and 
-  Butterfly, applied sequentially to process large volumes of RNA-seq reads.
+  Trinity, developed at the Broad Institute and the Hebrew University of
+  Jerusalem,  represents a novel method for the efficient and robust de novo
+  reconstruction  of transcriptomes from RNA-seq data.  Trinity combines three
+  independent software modules: Inchworm, Chrysalis, and  Butterfly, applied
+  sequentially to process large volumes of RNA-seq reads.
 
   Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki
-
 label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
-
 hints:
   - class: SoftwareRequirement
     packages:
       Trinity:
-       version:
+        version:
           - 2.6.5
   - class: DockerRequirement
     dockerPull: 'trinityrnaseq/trinityrnaseq:2.6.5'
-
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
