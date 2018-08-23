@@ -7,6 +7,6 @@ echo $PATH
 source activate cwl-environment
 
 cd tools/FastQC
-CMD="cwl-runner --no-container FastQC-v0.11.7.cwl FastQC-V0.11.7.test.job.yaml"
+CMD="cwl-runner --no-container FastQC-v$APP_VERSION.cwl FastQC-v$APP_VERSION.test.job.yaml"
 echo $CMD
 $CMD

@@ -23,7 +23,6 @@ inputs:
     type: File[]
     inputBinding:
       position: 3
-      # itemSeparator: ' '
     label: Input FASTQ file(s). If multiple files are provided then use space separated
 
 outputs:
@@ -31,13 +30,11 @@ outputs:
     label: 'Zipped output report'
     type: File[]
     outputBinding:
-      #glob: $(inputs.in_fastq.nameroot)_fastqc.zip
       glob: '*_fastqc.zip'
   - id: html_report
     label: 'HTML output report'
     type: File[]
     outputBinding:
-      #glob: $(inputs.in_fastq.nameroot)_fastqc.html
       glob: '*_fastqc.html'
 
 doc: >
@@ -56,17 +53,14 @@ doc: >
     
 label: FastQC - A high throughtput sequence analyses QC.
 
-requirements:
-  - class: InlineJavascriptRequirement
-
-#hints:
-#  - class: SoftwareRequirement
-#    packages:
-#      FastQC:
-#       version:
-#          - 0.11.5
-#  - class: DockerRequirement
-#    dockerPull: 'biocontainers/fastqc:0.11.5'
+hints:
+  - class: DockerRequirement
+    dockerPull: 'biocontainers/fastqc:0.11.5'
+  - class: SoftwareRequirement
+    packages:
+      FastQC:
+        version:
+        - 0.11.5
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
