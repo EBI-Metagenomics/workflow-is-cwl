@@ -1,0 +1,10 @@
+seq_type: fq
+max_mem: 10G
+left_fastq:
+  class: File
+  path: /Users/arnaud-meng/Desktop/EBI_assembly_pipeline/test_data/A1_left_sub.fq
+right_fastq:
+  class: File
+  path: /Users/arnaud-meng/Desktop/EBI_assembly_pipeline/test_data/A1_right_sub.fq
+ss_lib_type: FR
+cpu: 4
