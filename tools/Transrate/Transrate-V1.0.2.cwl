@@ -32,6 +32,18 @@ inputs:
       prefix: '--threads='
       separate: false
     label: 'Number of threads to use (default: 8)'
+  - id: log_level
+    type: string?
+    inputBinding:
+      prefix: '--loglevel='
+      separate: false
+    label: 'Log level. One of [error, info, warn, debug] (default: info)'
+  - id: output
+    type: string?
+    inputBinding:
+      prefix: '--output='
+      separate: false
+    label: 'Directory where results are output (will be created) (default: transrate_results)'
 
 outputs:
   evaluation_dir:
