@@ -4,8 +4,8 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
   
-baseCommand: transrate-1.0.3-linux-x86_64/transrate
-  
+baseCommand: transrate
+
 inputs:
   - id: in_fasta
     type: File
@@ -57,10 +57,10 @@ hints:
        version:
           - 1.0.3
   - class: DockerRequirement
-    dockerPull: 'ycogne/transrate:1.0.3'
+    dockerPull: 'arnaudmeng/transrate:1.0.3'
 
-#$schemas:
-#  - 'http://edamontology.org/EDAM_1.16.owl'
-#  - 'https://schema.org/docs/schema_org_rdfa.html'
-#'s:copyrightHolder': EMBL - European Bioinformatics Institute
-#'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
+$schemas:
+  - 'http://edamontology.org/EDAM_1.16.owl'
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+'s:copyrightHolder': EMBL - European Bioinformatics Institute
+'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
