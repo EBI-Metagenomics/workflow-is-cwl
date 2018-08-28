@@ -4,8 +4,13 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
   
+<<<<<<< HEAD
 baseCommand: transrate
 
+=======
+baseCommand: /usr/bin/transrate-1.0.3-linux-x86_64/transrate
+  
+>>>>>>> 0098ed6eabacf655cf3e068497c153bee2e818d6
 inputs:
   - id: in_fasta
     type: File
@@ -32,6 +37,18 @@ inputs:
       prefix: '--threads='
       separate: false
     label: 'Number of threads to use (default: 8)'
+  - id: log_level
+    type: string?
+    inputBinding:
+      prefix: '--loglevel='
+      separate: false
+    label: 'Log level. One of [error, info, warn, debug] (default: info)'
+  - id: output
+    type: string?
+    inputBinding:
+      prefix: '--output='
+      separate: false
+    label: 'Directory where results are output (will be created) (default: transrate_results)'
 
 outputs:
   evaluation_dir:
