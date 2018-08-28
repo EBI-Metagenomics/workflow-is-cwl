@@ -4,13 +4,8 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
   
-<<<<<<< HEAD
 baseCommand: transrate
-
-=======
-baseCommand: /usr/bin/transrate-1.0.3-linux-x86_64/transrate
   
->>>>>>> 0098ed6eabacf655cf3e068497c153bee2e818d6
 inputs:
   - id: in_fasta
     type: File
