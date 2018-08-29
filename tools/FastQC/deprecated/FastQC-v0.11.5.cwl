@@ -55,17 +55,15 @@ label: FastQC - A high throughtput sequence analyses QC.
 
 hints:
   - class: DockerRequirement
-# TODOs: From looking into the result files
-# received from the container tag as latest (22/08/2018) we deal with version 0.11.5 here
-    dockerPull: 'quay.io/biocontainers/fastqc:0.11.7--4'
+    dockerPull: 'biocontainers/fastqc:0.11.5'
   - class: SoftwareRequirement
     packages:
       FastQC:
         version:
-        - 0.11.7
+        - 0.11.5
 
-#$schemas:
-#  - 'http://edamontology.org/EDAM_1.16.owl'
-#  - 'https://schema.org/docs/schema_org_rdfa.html'
-#'s:copyrightHolder': EMBL - European Bioinformatics Institute
-#'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
+$schemas:
+  - 'http://edamontology.org/EDAM_1.16.owl'
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+'s:copyrightHolder': EMBL - European Bioinformatics Institute
+'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
