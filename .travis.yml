@@ -96,6 +96,16 @@ matrix:
         - if ! diff -q test_02_test_02.fasta expected_output/fasta_chunker/test_02_test_02.fasta &>/dev/null; then exit 1; fi
 
     - language: python
+      env: TOOL=BUSCO v3
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
+       script:
+        - bash travis/run-BUSCO-v3.0.2.sh
+
+    - language: python
       env: TOOL=Workflow validation tests
       install:
         - travis/install-nodejs.sh
