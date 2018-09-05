@@ -102,7 +102,7 @@ matrix:
       install:
         - travis/install-nodejs.sh
         - travis/install-cwl-runner.sh
-       script:
+      script:
         - bash travis/run-BUSCO-v3.0.2.sh
 
     - language: python
