@@ -103,7 +103,7 @@ matrix:
       install:
         - travis/install-nodejs.sh
         - travis/install-cwl-runner.sh
-       script:
+      script:
         - bash travis/run-BUSCO-v3.0.2.sh
         - if ! [ -e missing_busco_list_TEST.tsv ]; then exit 1; fi
         - if ! [ -e short_summary_TEST.txt ]; then exit 1; fi
