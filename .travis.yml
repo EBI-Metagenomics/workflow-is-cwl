@@ -92,6 +92,7 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/run-utils-fasta_chunker.sh
+        - if ! [ -e test_01_test_01.fasta ]; then exit 1; fi
         - if ! diff -q test_01_test_01.fasta expected_output/fasta_chunker/test_01_test_01.fasta &>/dev/null; then exit 1; fi
         - if ! diff -q test_02_test_02.fasta expected_output/fasta_chunker/test_02_test_02.fasta &>/dev/null; then exit 1; fi
 
@@ -102,8 +103,11 @@ matrix:
       install:
         - travis/install-nodejs.sh
         - travis/install-cwl-runner.sh
-      script:
+       script:
         - bash travis/run-BUSCO-v3.0.2.sh
+        - if ! [ -e missing_busco_list_TEST.tsv ]; then exit 1; fi
+        - if ! [ -e short_summary_TEST.txt ]; then exit 1; fi
+        - if ! [ -e translated_proteins/sample.faa ]; then exit 1; fi
 
     - language: python
       env: TOOL=Workflow validation tests
@@ -128,4 +132,3 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/utils-validation-tests.sh
-
