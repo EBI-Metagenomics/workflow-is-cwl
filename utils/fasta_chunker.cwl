@@ -3,7 +3,6 @@ cwlVersion: v1.0
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 baseCommand:
   - python3
 inputs:
@@ -48,7 +47,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: biopython/biopython
+    dockerPull: biopython/biopython:latest
   - class: SoftwareRequirement
     packages:
       biopython:
@@ -64,4 +63,4 @@ $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': EMBL - European Bioinformatics Institute
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'sbg:wrapperAuthor': Michael Crusoe, Maxim Scheremetjew
+'s:author': Michael Crusoe, Maxim Scheremetjew
