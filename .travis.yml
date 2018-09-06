@@ -105,9 +105,9 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/run-BUSCO-v3.0.2.sh
-        - if ! [ -e missing_busco_list_TEST.tsv ]; then exit 1; fi
-        - if ! [ -e short_summary_TEST.txt ]; then exit 1; fi
-        - if ! [ -e translated_proteins/sample.faa ]; then exit 1; fi
+        - if ! [ -e tools/BUSCO/missing_busco_list_TEST.tsv ]; then exit 1; fi
+        - if ! [ -e tools/BUSCO/short_summary_TEST.txt ]; then exit 1; fi
+        - if ! [ -e tools/BUSCO/translated_proteins/sample.faa ]; then exit 1; fi
 
     - language: python
       env: TOOL=Workflow validation tests
