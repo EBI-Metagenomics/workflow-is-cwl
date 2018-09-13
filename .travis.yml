@@ -42,9 +42,15 @@ matrix:
     - language: cpp
       compiler: clang
       env: TOOL=Diamond.blastx-v0.9.21
-      install: travis/install-diamond-v0.9.21.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-diamond.blastx-v0.9.21.sh
+        - if ! [ -e tools/Diamond/test_transcripts.fasta.diamond_matches ]; then exit 1; fi
+        - if ! diff -q tools/Diamond/test_transcripts.fasta.diamond_matches tools/Diamond/expected_output/test_transcripts.fasta.diamond_matches &>/dev/null; then exit 1; fi
 
     - language: cpp
       compiler: clang
