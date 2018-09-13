@@ -1,105 +1,96 @@
-class: CommandLineTool
+#!/usr/bin/env cwl-runner
 cwlVersion: v1.0
-$namespaces:
-  iana: 'https://www.iana.org/assignments/media-types/'
-  s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
-baseCommand:
-  - interproscan.sh
-inputs:
-  - id: applications
-    type: 'string[]?'
-    inputBinding:
-      position: 0
-      prefix: '--applications'
-      itemSeparator: ','
-  - id: proteinFile
-    type: File
-    format: 'edam:format_1929'
-    inputBinding:
-      position: 0
-      prefix: '--input'
-outputs:
-  - id: i5Annotations
-    type: File
-    outputBinding:
-      glob: $(inputs.proteinFile.basename).i5_annotations
-    format: 'iana:text/tab-separated-values'
-doc: |
-  Releases can be downloaded from:
-  ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/
+class: CommandLineTool
 
-  Documentation on how to run InterProScan 5 can be found here:
-  https://github.com/ebi-pf-team/interproscan/wiki/HowToRun
-label: 'InterProScan: protein sequence classifier'
-arguments:
-  - position: 0
-    prefix: '--outfile'
-    valueFrom: $(inputs.proteinFile.basename).i5_annotations
-  - position: 0
-    prefix: '--formats'
-    valueFrom: TSV
-  - '--disable-precalc'
-  - '--goterms'
-  - '--pathways'
-  - position: 0
-    prefix: '--tempdir'
-    valueFrom: $(runtime.tmpdir)
+label: "InterProScan: protein sequence classifier"
+
+doc: |
+      Version 5.21-60 can be downloaded here:
+      https://github.com/ebi-pf-team/interproscan/wiki/HowToDownload
+
+      Documentation on how to run InterProScan 5 can be found here:
+      https://github.com/ebi-pf-team/interproscan/wiki/HowToRun
+
 requirements:
-  - class: SchemaDefRequirement
+  SchemaDefRequirement:
     types:
-      - name: apps
-        symbols:
-          - TIGRFAM
-          - SFLD
-          - SUPERFAMILY
-          - Gene3D
-          - Hamap
-          - Coils
-          - ProSiteProfiles
-          - SMART
-          - CDD
-          - PRINTS
-          - PIRSF
-          - ProSitePatterns
-          - Pfam
-          - ProDom
-          - MobiDBLite
-          - SignalP_GRAM_POSITIVE
-          - SignalP_GRAM_NEGATIVE
-          - SignalP_EUK
-          - Phobius
-          - TMHMM
-        type: enum
-      - name: protein_formats
-        symbols:
-          - TSV
-          - XML
-          - GFF3
-        type: enum
-  - class: ResourceRequirement
-    ramMin: 8192
-    coresMin: 3
-  - class: InlineJavascriptRequirement
+      - $import: InterProScan-apps.yaml
+      - $import: InterProScan-protein_formats.yaml
+  DockerRequirement:
+    dockerPull: 'biocontainers/interproscan:v5.30-69.0_cv1'
+  ShellCommandRequirement: {}
 hints:
-  - class: SoftwareRequirement
+  SoftwareRequirement:
     packages:
       interproscan:
-        specs:
-          - 'https://identifiers.org/rrid/RRID:SCR_005829'
-        version:
-          - 5.21-60
-          - 5.22-61.0
-          - 5.23-62.0
-          - 5.24-63.0
-          - 5.25-64.0
-          - 5.26-65.0
-          - 5.27-66.0
-          - 5.28-67.0
-  - class: DockerRequirement
-    dockerPull: 'olat/interproscan:latest'
+        specs: [ "https://identifiers.org/rrid/RRID:SCR_005829" ]
+        version: [ "5.30-69" ]
+  ResourceRequirement:
+    ramMin: 8192
+    coresMin: 3
+inputs:
+  proteinFile:
+    type: File
+    inputBinding:
+      prefix: --input
+  # outputFileType:
+  #   type: InterProScan-protein_formats.yaml#protein_formats
+  #   inputBinding:
+  #     prefix: --formats
+  applications:
+    type: InterProScan-apps.yaml#apps[]?
+    inputBinding:
+      itemSeparator: ','
+      prefix: --applications
+  databases: Directory
+
+baseCommand: []  # interproscan.sh
+
+arguments:
+ - cp
+ - -r
+ - /opt/interproscan
+ - $(runtime.outdir)/interproscan
+ - ;
+
+ - rm
+ - -rf
+ - $(runtime.outdir)/interproscan/data
+ - ;
+
+ - cp
+ - -rs
+ - $(inputs.databases.path)/data
+ - $(runtime.outdir)/interproscan/
+ - ;
+
+ - bash
+ - $(runtime.outdir)/interproscan/interproscan.sh
+
+ - prefix: --outfile
+   valueFrom: $(runtime.outdir)/$(inputs.proteinFile.nameroot).i5_annotations
+ - prefix: --formats
+   valueFrom: TSV
+ - --disable-precalc
+ - --goterms
+ - --pathways
+ - prefix: --tempdir
+   valueFrom: $(runtime.tmpdir)
+
+
+outputs:
+  i5Annotations:
+    type: File
+    format: iana:text/tab-separated-values
+    outputBinding:
+      glob: $(inputs.proteinFile.nameroot).i5_annotations
+
+$namespaces:
+ iana: https://www.iana.org/assignments/media-types/
+ s: http://schema.org/
 $schemas:
-  - 'https://schema.org/docs/schema_org_rdfa.html'
-'s:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
-'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'sbg:wrapperAuthor': Maxim Scheremetjew
+ - https://schema.org/docs/schema_org_rdfa.html
+
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:copyrightHolder: "EMBL - European Bioinformatics Institute"
+'s:author': Michael Crusoe, Aleksandra Ola Tarkowska
