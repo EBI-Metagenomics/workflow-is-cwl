@@ -11,19 +11,22 @@ matrix:
     - language: perl
       perl: 5.24
       env: TOOL=TransDecoder.Longorfs-v5.0.2
-      install: travis/install-transdecoder-v5.0.2.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-transdecoder.longorfs-v5.0.2.sh
 
     - language: perl
       perl: 5.24
       env: TOOL=TransDecoder.Predict-v5.0.2
-      before_install:
-        - sudo apt-get -qq update
-        - sudo apt-get install libdb6.0-dev libdb6.0
+      services:
+        - docker
       install:
-            - cpanm DB_File
-            - travis/install-transdecoder-v5.0.2.sh
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-transdecoder.predict-v5.0.2.sh
 
