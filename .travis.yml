@@ -61,8 +61,12 @@ matrix:
 
     - language: c
       compiler: clang
-      env: TOOL=phmmer
-      install: travis/install-phmmer-v3.2.1.sh
+      env: TOOL=phmmer-v3.2.1
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-phmmer-v3.2.1.sh
 
