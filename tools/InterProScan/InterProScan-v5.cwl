@@ -122,7 +122,7 @@ arguments:
     prefix: '--tempdir'
     valueFrom: $(runtime.tmpdir)
 requirements:
-  - class: ShellCommandRequirement {}
+  - class: ShellCommandRequirement
   - class: ResourceRequirement
     ramMin: 8192
     coresMin: 3
