@@ -17,7 +17,26 @@ inputs:
       gene-to-transcript identifier mapping file (tab-delimited,
       gene_id<tab>trans_id<return>)
   - id: geneticCode
-    type: 'genetic_codes[]?'
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - Euplotes
+          - Tetrahymena
+          - Candida
+          - Acetabularia
+          - Mitochondrial-Canonical
+          - Mitochondrial-Vertebrates
+          - Mitochondrial-Arthropods
+          - Mitochondrial-Echinoderms
+          - Mitochondrial-Molluscs
+          - Mitochondrial-Ascidians
+          - Mitochondrial-Nematodes
+          - Mitochondrial-Platyhelminths
+          - Mitochondrial-Yeasts
+          - Mitochondrial-Euascomycetes
+          - Mitochondrial-Protozoans
+        name: geneticCode
     inputBinding:
       position: 0
       prefix: '-G'
@@ -65,11 +84,11 @@ doc: >-
         + the above coding score is greatest when the ORF is scored in the 1st reading frame
         as compared to scores in the other 2 forward reading frames.
         + if a candidate ORF is found fully encapsulated by the coordinates of another candidate ORF,
-        the longer one is reported. However, a single transcript can report multiple ORFs 
+        the longer one is reported. However, a single transcript can report multiple ORFs
         (allowing for operons, chimeras, etc).
         + a PSSM is built/trained/used to refine the start codon prediction.
         + optional the putative peptide has a match to a Pfam domain above the noise cutoff score.
-        
+
   Please visit https://github.com/TransDecoder/TransDecoder/wiki for full
   documentation.
 
@@ -80,36 +99,38 @@ label: >-
   TransDecoder.LongOrfs: Perl script, which extracts the long open reading
   frames
 requirements:
-  - class: SchemaDefRequirement
-    types:
-      - name: genetic_codes
-        symbols:
-          - universal
-          - Euplotes
-          - Tetrahymena
-          - Candida
-          - Acetabularia
-          - Mitochondrial-Canonical
-          - Mitochondrial-Vertebrates
-          - Mitochondrial-Arthropods
-          - Mitochondrial-Echinoderms
-          - Mitochondrial-Molluscs
-          - Mitochondrial-Ascidians
-          - Mitochondrial-Nematodes
-          - Mitochondrial-Platyhelminths
-          - Mitochondrial-Yeasts
-          - Mitochondrial-Euascomycetes
-          - Mitochondrial-Protozoans
-        type: enum
+# TODO: The following type definitions are not accepted by CWLEXEC
+# TODO: CWLEXEC exits with "The field [SchemaType] is required by [type]."
+#  - class: SchemaDefRequirement
+#    types:
+#      - name: genetic_codes
+#        symbols:
+#          - universal
+#          - Euplotes
+#          - Tetrahymena
+#          - Candida
+#          - Acetabularia
+#          - Mitochondrial-Canonical
+#          - Mitochondrial-Vertebrates
+#          - Mitochondrial-Arthropods
+#          - Mitochondrial-Echinoderms
+#          - Mitochondrial-Molluscs
+#          - Mitochondrial-Ascidians
+#          - Mitochondrial-Nematodes
+#          - Mitochondrial-Platyhelminths
+#          - Mitochondrial-Yeasts
+#          - Mitochondrial-Euascomycetes
+#          - Mitochondrial-Protozoans
+#        type: enum
   - class: ResourceRequirement
     ramMin: 1024
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: greatfireball/ime_transdecoder:5.0.2
+    dockerPull: 'greatfireball/ime_transdecoder:5.0.2'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
+'s:author': Maxim Scheremetjew
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'s:author': Maxim Scheremetjew
