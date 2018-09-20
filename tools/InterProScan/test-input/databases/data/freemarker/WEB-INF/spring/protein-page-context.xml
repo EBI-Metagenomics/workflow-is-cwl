@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+    <!-- Configures View resolver -->
+    <import resource="freemarker-config.xml"/>
+
+    <bean name="i5Version" class="java.lang.String">
+        <constructor-arg value="5.28-67.0"/>
+    </bean>
+
+    <!-- Entry hierarchy properties files (locations set in Maven properties for profile)-->
+    <bean name="entryHierarchy" class="uk.ac.ebi.interpro.scan.web.io.EntryHierarchy" init-method="init"
+          scope="singleton" lazy-init="false">
+        <property name="entryColourPropertiesFile">
+            <util:properties location="classpath:entry_colours.properties"/>
+        </property>
+        <property name="entryHierarchyDataResource" ref="entryHierarchyDataClassPathResourceId"/>
+        <property name="entryHierarchyDataResourceReader">
+            <bean class="uk.ac.ebi.interpro.scan.web.io.EntryHierarchyDataResourceReader"/>
+        </property>
+        <property name="entryToGoDataResourceReader">
+            <bean class="uk.ac.ebi.interpro.scan.web.io.EntryToGoDataResourceReader"/>
+        </property>
+        <property name="entryToGoDataResource" ref="entryToGoDataClassPathResourceId"/>
+    </bean>
+
+
+    <!-- AnalyseMatchDataResult -->
+    <bean id="matchAnalyser" class="uk.ac.ebi.interpro.scan.web.io.AnalyseMatchDataResult">
+        <constructor-arg>
+            <bean class="uk.ac.ebi.interpro.scan.web.io.MatchDataResourceReader"/>
+        </constructor-arg>
+        <constructor-arg ref="entryHierarchy"/>
+    </bean>
+
+    <!-- AnalyseStructuralMatchDataResult -->
+    <bean id="structuralMatchAnalyser" class="uk.ac.ebi.interpro.scan.web.io.AnalyseStructuralMatchDataResult">
+        <constructor-arg>
+            <bean class="uk.ac.ebi.interpro.scan.web.io.StructuralMatchDataResourceReader"/>
+        </constructor-arg>
+    </bean>
+
+    <bean class="uk.ac.ebi.interpro.scan.web.model.PageResources">
+        <property name="javaScriptResources">
+            <bean class="uk.ac.ebi.interpro.scan.web.model.JavaScriptResources">
+                <property name="resources">
+                    <map>
+                        <entry key="js_resource_jquery171"
+                               value="/resources/javascript/jquery/jquery-1.7.1.min.js"/>
+                        <entry key="js_resource_jquery_qtip2"
+                               value="/resources/javascript/qtip2/jquery.qtip.min.js"/>
+                        <entry key="js_resource_protein" value="/resources/javascript/protein.js"/>
+                        <entry key="js_resource_jquery_jscroll"
+                               value="/resources/javascript/jquery/jquery.jscroll.min.js"/>
+                        <entry key="js_resource_common" value="/resources/javascript/common.js"/>
+                        <entry key="js_resource_protein_popups" value="/resources/javascript/protein-popups.js"/>
+                        <entry key="js_resource_jquery_ui1817_custom" value="/resources/javascript/jquery/jquery-ui-1.8.17.custom.min.js"/>
+                        <entry key="js_resource_protein_jquery_cookie" value="/resources/javascript/jquery/jquery.cookie.js"/>
+                    </map>
+                </property>
+            </bean>
+        </property>
+        <property name="cssResources">
+            <bean class="uk.ac.ebi.interpro.scan.web.model.CSSResources">
+                <property name="resources">
+                    <map>
+                        <entry key="css_resource_jquery_qtip2"
+                               value="/resources/javascript/qtip2/jquery.qtip.css"/>
+                        <entry key="css_resource_protein" value="/resources/css/protein.css"/>
+                        <entry key="css_resource_type_colours" value="/resources/css/type_colours.css"/>
+                        <entry key="css_resource_database" value="/resources/css/database.css"/>
+                    </map>
+                </property>
+            </bean>
+        </property>
+        <property name="imageResources">
+            <bean class="uk.ac.ebi.interpro.scan.web.model.ImageResources">
+                <property name="resources">
+                    <map>
+                        <entry key="img_resource_path"
+                               value="/interpro"/>
+                    </map>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- ######################## Dependencies ############################  -->
+    <bean id="entryHierarchyDataURLResourceId" class="org.springframework.core.io.UrlResource">
+        <constructor-arg value="file:/nfs/production/seqdb2/production/interpro/programmers/nuka/i5/build/release-5.28-67.0/feb28b/64-bit/core/web/src/main/resources/entry_hierarchy.csv"/>
+    </bean>
+
+    <bean id="entryHierarchyDataClassPathResourceId" class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="entry_hierarchy.csv"/>
+    </bean>
+
+    <bean id="entryToGoDataURLResourceId" class="org.springframework.core.io.UrlResource">
+        <constructor-arg value="file:/nfs/production/seqdb2/production/interpro/programmers/nuka/i5/build/release-5.28-67.0/feb28b/64-bit/core/web/src/main/resources/entry_to_go.psv"/>
+    </bean>
+
+    <bean id="entryToGoDataClassPathResourceId" class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="entry_to_go.psv"/>
+    </bean>
+
+</beans>
