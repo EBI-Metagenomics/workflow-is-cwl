@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-export PATH="$HOME/interproscan5:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
 cd tools/InterProScan
-CMD="cwltool --validate InterProScan-v5.cwl"
+CMD="cwl-runner InterProScan-v5-ola.cwl InterProScan-v5-ola.test.job.yaml"
 echo $CMD
 $CMD

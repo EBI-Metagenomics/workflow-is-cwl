@@ -4,7 +4,11 @@ matrix:
     - language: java
       jdk: openjdk8
       env: TOOL=InterProScan-v5
-      install: travis/install-interproscan5.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-interproscan5.sh
 

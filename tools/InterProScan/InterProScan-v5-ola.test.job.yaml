@@ -1,0 +1,12 @@
+applications:
+  - PfamA
+  - TIGRFAM
+proteinFile:
+  class: File
+  format: 'edam:format_1929'
+  path: test-input/test_single_protein.fasta
+outputFormats:
+  - TSV
+databases:
+  class: Directory
+  path: test-input/databases
