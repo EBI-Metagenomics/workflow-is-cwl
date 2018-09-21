@@ -4,7 +4,7 @@ $namespaces:
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
+  sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - run_BUSCO.py
 inputs:

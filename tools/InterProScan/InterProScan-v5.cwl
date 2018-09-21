@@ -3,7 +3,7 @@ cwlVersion: v1.0
 $namespaces:
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
+  sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - interproscan.sh
 inputs:

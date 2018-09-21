@@ -2,7 +2,7 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
+  sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - cat
 inputs:

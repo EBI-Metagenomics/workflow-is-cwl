@@ -3,7 +3,7 @@ cwlVersion: v1.0
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
+  sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - diamond
   - makedb
