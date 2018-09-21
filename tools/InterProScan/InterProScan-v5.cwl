@@ -4,6 +4,7 @@ $namespaces:
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
+  sbg: 'https://www.sevenbridges.com'
 id: i5
 baseCommand: []
 inputs:
@@ -11,7 +12,7 @@ inputs:
     id: inputFile
     type: File?
     inputBinding:
-      position: 9
+      position: 3
       prefix: '--input'
     label: Input file path
     doc: >-
@@ -47,7 +48,7 @@ inputs:
             - TMHMM
             - SignalP_GRAM_NEGATIVE
     inputBinding:
-      position: 10
+      position: 3
       prefix: '--applications'
       itemSeparator: ','
     label: Analysis
@@ -69,7 +70,7 @@ inputs:
             - HTML
             - SVG
     inputBinding:
-      position: 11
+      position: 3
       prefix: '--formats'
       itemSeparator: ','
     label: output formats
@@ -80,6 +81,28 @@ inputs:
       and XML.
   - id: databases
     type: Directory?
+  - id: disableResidueAnnotation
+    type: boolean?
+    inputBinding:
+      position: 3
+      prefix: '--disable-residue-annot'
+    label: Disables residue annotation
+    doc: 'Optional, excludes sites from the XML, JSON output.'
+  - id: seqtype
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - p
+          - 'n'
+        name: seqtype
+    inputBinding:
+      position: 3
+      prefix: '--seqtype'
+    label: Sequence type
+    doc: >-
+      Optional, the type of the input sequences (dna/rna (n) or protein (p)).
+      The default sequence type is protein.
 outputs:
   - id: i5Annotations
     type: File
@@ -101,24 +124,29 @@ doc: >-
 label: 'InterProScan: protein sequence classifier'
 arguments:
   - position: 0
+    shellQuote: false
     valueFrom: cp -r /opt/interproscan $(runtime.outdir)/interproscan;
   - position: 1
-    valueFrom: rm -rf $(runtime.outdir)/interproscan/data;
+    shellQuote: false
+    valueFrom: >-
+      cp -rs $(inputs.databases.path)/data/*
+      $(runtime.outdir)/interproscan/data;
   - position: 2
-    valueFrom: cp -rs $(inputs.databases.path)/data $(runtime.outdir)/interproscan/;
+    shellQuote: false
+    valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
   - position: 3
-    valueFrom: bash $(runtime.outdir)/interproscan/interproscan.sh
-  - position: 4
     prefix: '--outfile'
-    valueFrom: |
-      $(runtime.outdir)/$(inputs.inputFile.nameroot).i5_annotations
-  - position: 5
+    valueFrom: $(runtime.outdir)/$(inputs.inputFile.basename).i5_annotations
+  - position: 3
+    prefix: '--formats'
+    valueFrom: TSV
+  - position: 3
     prefix: '--disable-precalc'
-  - position: 6
+  - position: 3
     prefix: '--goterms'
-  - position: 7
+  - position: 3
     prefix: '--pathways'
-  - position: 8
+  - position: 3
     prefix: '--tempdir'
     valueFrom: $(runtime.tmpdir)
 requirements:
