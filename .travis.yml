@@ -83,7 +83,11 @@ matrix:
     - language: c
       compiler: clang
       env: TOOL=cmsearch-v1.1.2
-      install: travis/install-cmsearch-v1.1.2.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-cmsearch-v1.1.2.sh
 
