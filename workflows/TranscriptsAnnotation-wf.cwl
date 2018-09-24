@@ -111,7 +111,7 @@ steps:
 
   calculate_phmmer_matches:
     label: Calculates phmmer matches
-    run: ../tools/HMMER/phmmer-v3.1b2.cwl
+    run: ../tools/HMMER/phmmer-v3.2.cwl
     in:
       seqFile: identify_coding_regions/peptide_sequences
       seqdb: phmmerSeqdb

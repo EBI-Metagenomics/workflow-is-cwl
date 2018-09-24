@@ -1,8 +1,10 @@
 bitscoreThreshold: null
-cpu: null
+cpu: 8
 seqFile:
   class: File
+  format: 'edam:format_1929'
   path: test-input/globins45.fa
 seqdb:
   class: File
+  format: 'edam:format_1929'
   path: test-input/HBB_HUMAN

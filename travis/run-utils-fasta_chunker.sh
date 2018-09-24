@@ -3,7 +3,7 @@
 export PATH="$HOME/miniconda/bin:$PATH"
 source activate cwl-environment
 
-cd tools/TransDecoder
-CMD="cwl-runner TransDecoder.Predict-v5.cwl TransDecoder.Predict-v5.test.job.yaml"
+cd utils/
+CMD="cwl-runner fasta_chunker.cwl fasta_chunker.test.job.yaml"
 echo $CMD
 $CMD
