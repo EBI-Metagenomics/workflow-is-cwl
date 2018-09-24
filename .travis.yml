@@ -105,9 +105,11 @@ matrix:
     - language: c
       compiler: clang
       env: TOOL=cmsearch-multimodel-Workflow
+      services:
+        - docker
       install:
-        - travis/install-cmsearch-v1.1.2.sh
-        - travis/install-cmsearch-deoverlap-v0.02.sh
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-cmsearch.multimodel-wf.sh
 
