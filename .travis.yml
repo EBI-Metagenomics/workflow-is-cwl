@@ -94,7 +94,11 @@ matrix:
     - language: perl
       perl: 5.24
       env: TOOL=cmsearch-deoverlap
-      install: travis/install-cmsearch-deoverlap-v0.02.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-cmsearch-deoverlap-v0.02.sh
 
