@@ -13,7 +13,7 @@ symbols:
  - PRINTS
  - PIRSF
  - ProSitePatterns
- - Pfam
+ - PfamA
  - ProDom
  - MobiDBLite
  - SignalP_GRAM_POSITIVE

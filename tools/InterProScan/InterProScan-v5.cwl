@@ -4,7 +4,6 @@ $namespaces:
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 id: i5
 baseCommand: []
 inputs:
@@ -12,65 +11,52 @@ inputs:
     id: inputFile
     type: File?
     inputBinding:
-      position: 3
+      position: 8
       prefix: '--input'
     label: Input file path
     doc: >-
       Optional, path to fasta file that should be loaded on Master startup.
       Alternatively, in CONVERT mode, the InterProScan 5 XML file to convert.
   - id: applications
-    type:
-      - 'null'
-      - type: array
-        items:
-          type: enum
-          name: applications
-          symbols:
-            - TIGRFAM
-            - SFLD
-            - ProDom
-            - Hamap
-            - SMART
-            - CDD
-            - ProSiteProfiles
-            - ProSitePatterns
-            - SUPERFAMILY
-            - PRINTS
-            - PANTHER
-            - Gene3D
-            - PIRSF
-            - Pfam
-            - Coils
-            - MobiDBLite
-            - SignalP_GRAM_POSITIVE
-            - SignalP_EUK
-            - Phobius
-            - TMHMM
-            - SignalP_GRAM_NEGATIVE
+    type: 'string[]?'
+    # TODO: Looks like cwlexec does not like types of Array<enum>; cwlexec exits and prints out the following:
+    # TODO: The variable type of the field [applications] is not valid, "a CWLType" is required.
+    # TODO: This might also refer 2: https://github.com/common-workflow-language/cwltool/issues/576
+    #    type:
+    #      type: array
+    #      items: string?
+    #        type: enum
+    #        name: appl
+    #        symbols:
+    #          - PfamA
+    #          - TIGRFAM
     inputBinding:
-      position: 3
+      position: 9
       prefix: '--applications'
-      itemSeparator: ','
     label: Analysis
     doc: >-
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormats
-    type:
-      - 'null'
-      - type: array
-        items:
-          type: enum
-          name: outputFormats
-          symbols:
-            - TSV
-            - XML
-            - JSON
-            - GFF3
-            - HTML
-            - SVG
+    type: 'string[]?'
+    # TODO: Looks like cwlexec does not like types of Array<enum>; cwlexec exits and prints out the following:
+    # TODO: The variable type of the field [applications] is not valid, "a CWLType" is required.
+    # TODO: This might also refer 2: https://github.com/common-workflow-language/cwltool/issues/576
+    #    type:
+    #      - 'null'
+    #      - type: array
+    #        items:
+    #          type: enum
+    #          name: outputFormats
+    #          symbols:
+    #            - TSV
+    #            - XML
+    #            - JSON
+    #            - GFF3
+    #            - HTML
+    #            - SVG
     inputBinding:
-      position: 3
+      position: 10
       prefix: '--formats'
       itemSeparator: ','
     label: output formats
@@ -84,7 +70,7 @@ inputs:
   - id: disableResidueAnnotation
     type: boolean?
     inputBinding:
-      position: 3
+      position: 11
       prefix: '--disable-residue-annot'
     label: Disables residue annotation
     doc: 'Optional, excludes sites from the XML, JSON output.'
@@ -97,7 +83,7 @@ inputs:
           - 'n'
         name: seqtype
     inputBinding:
-      position: 3
+      position: 12
       prefix: '--seqtype'
     label: Sequence type
     doc: >-
@@ -136,17 +122,14 @@ arguments:
     valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
   - position: 3
     prefix: '--outfile'
-    valueFrom: $(runtime.outdir)/$(inputs.inputFile.basename).i5_annotations
-  - position: 3
-    prefix: '--formats'
-    valueFrom: TSV
-  - position: 3
-    prefix: '--disable-precalc'
-  - position: 3
-    prefix: '--goterms'
-  - position: 3
-    prefix: '--pathways'
-  - position: 3
+    valueFrom: $(runtime.outdir)/$(inputs.inputFile.nameroot).i5_annotations
+  - position: 4
+    valueFrom: '--disable-precalc'
+  - position: 5
+    valueFrom: '--goterms'
+  - position: 6
+    valueFrom: '--pathways'
+  - position: 7
     prefix: '--tempdir'
     valueFrom: $(runtime.tmpdir)
 requirements:
