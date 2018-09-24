@@ -106,7 +106,7 @@ steps:
         (Pfam, TIGRFAM, PRINTS, PROSITE patterns, Gene3d) from InterPro.
     run: ../tools/InterProScan/InterProScan-v5.cwl
     in:
-      proteinFile: remove_asterisks_and_reformat/reformatted_sequences
+      inputFile: remove_asterisks_and_reformat/reformatted_sequences
     out: [ i5Annotations ]
 
   calculate_phmmer_matches:
