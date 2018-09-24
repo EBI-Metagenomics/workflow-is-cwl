@@ -61,7 +61,11 @@ matrix:
     - language: cpp
       compiler: clang
       env: TOOL=Diamond.makedb-v0.9.21
-      install: travis/install-diamond-v0.9.21.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-diamond.makedb-v0.9.21.sh
 
