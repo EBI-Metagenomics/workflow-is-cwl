@@ -1,6 +1,5 @@
 applications:
   - PfamA
-  - TIGRFAM
 inputFile:
   class: File
   format: 'edam:format_1929'
