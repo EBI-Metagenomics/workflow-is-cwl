@@ -37,7 +37,7 @@ inputs:
     doc: >-
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
-  - id: outputFormats
+  - id: outputFormat
       type:
         type: enum
         symbols:
@@ -45,7 +45,7 @@ inputs:
           - XML
           - JSON
           - GFF3
-        name: outputFormats
+        name: outputFormat
     inputBinding:
       position: 10
       prefix: '--formats'
