@@ -9,7 +9,7 @@ baseCommand: []
 inputs:
   - format: 'edam:format_1929'
     id: inputFile
-    type: File?
+    type: File
     inputBinding:
       position: 8
       prefix: '--input'
@@ -66,7 +66,7 @@ inputs:
       protein sequences are TSV, XML and GFF3, or for nucleotide sequences GFF3
       and XML.
   - id: databases
-    type: Directory?
+    type: Directory
   - id: disableResidueAnnotation
     type: boolean?
     inputBinding:
@@ -80,7 +80,7 @@ inputs:
       - type: enum
         symbols:
           - p
-          - 'n'
+          - n
         name: seqtype
     inputBinding:
       position: 12
