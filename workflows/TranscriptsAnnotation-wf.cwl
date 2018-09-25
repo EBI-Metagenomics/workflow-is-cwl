@@ -12,15 +12,14 @@ requirements:
 inputs:
   transcriptsFile:
     type: File
-#   TODO: Resolve: Missing required 'format' for File at runtime
-#    format: edam:format_1929  # FASTA
+    format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
   replace: ../utils/esl-reformat-replace.yaml#replace?
   phmmerSeqdb:
     type: File
-#   TODO: Resolve: Missing required 'format' for File at runtime
-#    format: edam:format_1929  # FASTA
+    format: edam:format_1929  # FASTA
   diamondSeqdb: File
+  interproscanDatabases: Directory
   blockSize: float?
   covariance_models: File[]
   clanInfoFile: File
@@ -107,6 +106,7 @@ steps:
     run: ../tools/InterProScan/InterProScan-v5.cwl
     in:
       inputFile: remove_asterisks_and_reformat/reformatted_sequences
+      databases: interproscanDatabases
     out: [ i5Annotations ]
 
   calculate_phmmer_matches:
