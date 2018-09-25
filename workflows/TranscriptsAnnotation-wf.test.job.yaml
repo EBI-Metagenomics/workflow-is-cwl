@@ -1,5 +1,6 @@
 transcriptsFile:
   class: File
+  format: 'edam:format_1929'
   path: ../tools/TransDecoder/test-input/test_transcripts.fasta
 singleBestOnly: true
 replace:
