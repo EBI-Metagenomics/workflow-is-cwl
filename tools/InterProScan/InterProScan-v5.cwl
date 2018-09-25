@@ -115,8 +115,8 @@ arguments:
   - position: 1
     shellQuote: false
     valueFrom: >-
-      cp -rs $(inputs.databases.path)/data/*
-      $(runtime.outdir)/interproscan/data;
+      find $(inputs.databases.path)/data/ -maxdepth 1 -mindepth 1
+      -type d -not -iname '*freemarker' -exec cp -rs '{}' '$(runtime.outdir)/interproscan/data' \\;;
   - position: 2
     shellQuote: false
     valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
