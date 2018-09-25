@@ -13,9 +13,12 @@ phmmerSeqdb:
 diamondSeqdb:
   class: File
   path: ../tools/Diamond/test-input/uniref90_subset.dmnd
-interproscanDatabases:
+i5Databases:
   class: Directory
   path: ../tools/InterProScan/test-input/databases
+i5OutputFormat: TSV
+i5Applications:
+  - PfamA
 blockSize: 1.0
 covariance_models:
   - class: File

@@ -19,7 +19,9 @@ inputs:
     type: File
     format: edam:format_1929  # FASTA
   diamondSeqdb: File
-  interproscanDatabases: Directory
+  i5Databases: Directory
+  i5Applications: string[]?
+  i5OutputFormat: string
   blockSize: float?
   covariance_models: File[]
   clanInfoFile: File
@@ -106,7 +108,9 @@ steps:
     run: ../tools/InterProScan/InterProScan-v5.cwl
     in:
       inputFile: remove_asterisks_and_reformat/reformatted_sequences
-      databases: interproscanDatabases
+      databases: i5Databases
+      applications: i5Applications
+      outputFormat: i5OutputFormat
     out: [ i5Annotations ]
 
   calculate_phmmer_matches:
