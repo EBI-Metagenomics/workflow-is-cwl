@@ -8,6 +8,7 @@ replace:
   replace: X
 phmmerSeqdb:
   class: File
+  format: 'edam:format_1929'
   path: ../tools/HMMER/test-input/globins45.fa
 diamondSeqdb:
   class: File
