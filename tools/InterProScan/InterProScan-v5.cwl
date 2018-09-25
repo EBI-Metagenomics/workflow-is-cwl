@@ -38,19 +38,18 @@ inputs:
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-      type:
-        type: enum
-        symbols:
-          - TSV
-          - XML
-          - JSON
-          - GFF3
-        name: outputFormat
+    type:
+      type: enum
+      symbols:
+        - TSV
+        - XML
+        - JSON
+        - GFF3
+      name: outputFormat
     inputBinding:
       position: 10
       prefix: '--formats'
-      itemSeparator: ','
-    label: output formats
+    label: output format
     doc: >-
       Optional, case-insensitive, comma separated list of output formats.
       Supported formats are TSV, XML, JSON, GFF3, HTML and SVG. Default for
