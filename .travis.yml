@@ -4,7 +4,11 @@ matrix:
     - language: java
       jdk: openjdk8
       env: TOOL=InterProScan-v5
-      install: travis/install-interproscan5.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-interproscan5.sh
 
@@ -19,75 +23,101 @@ matrix:
     - language: perl
       perl: 5.24
       env: TOOL=TransDecoder.Longorfs-v5.0.2
-      install: travis/install-transdecoder-v5.0.2.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-transdecoder.longorfs-v5.0.2.sh
 
     - language: perl
       perl: 5.24
       env: TOOL=TransDecoder.Predict-v5.0.2
-      before_install:
-        - sudo apt-get -qq update
-        - sudo apt-get install libdb6.0-dev libdb6.0
+      services:
+        - docker
       install:
-            - cpanm DB_File
-            - travis/install-transdecoder-v5.0.2.sh
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-transdecoder.predict-v5.0.2.sh
 
     - language: perl
       perl: 5.24
       env: TOOL=TransDecoder-Workflow-v5.0.2
-      before_install:
-        - sudo apt-get -qq update
-        - sudo apt-get install libdb6.0-dev libdb6.0
+      services:
+        - docker
       install:
-        - cpanm DB_File
-        - travis/install-transdecoder-v5.0.2.sh
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-transdecoder-v5.0.2.sub-workflow.sh
 
     - language: cpp
       compiler: clang
       env: TOOL=Diamond.blastx-v0.9.21
-      install: travis/install-diamond-v0.9.21.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-diamond.blastx-v0.9.21.sh
+        - if ! [ -e tools/Diamond/test_transcripts.fasta.diamond_matches ]; then exit 1; fi
+        - if ! diff -q tools/Diamond/test_transcripts.fasta.diamond_matches tools/Diamond/expected_output/test_transcripts.fasta.diamond_matches &>/dev/null; then exit 1; fi
 
     - language: cpp
       compiler: clang
       env: TOOL=Diamond.makedb-v0.9.21
-      install: travis/install-diamond-v0.9.21.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-diamond.makedb-v0.9.21.sh
 
     - language: c
       compiler: clang
-      env: TOOL=phmmer
-      install: travis/install-phmmer-v3.2.1.sh
+      env: TOOL=phmmer-v3.2.1
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-phmmer-v3.2.1.sh
 
     - language: c
       compiler: clang
       env: TOOL=cmsearch-v1.1.2
-      install: travis/install-cmsearch-v1.1.2.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-cmsearch-v1.1.2.sh
 
     - language: perl
       perl: 5.24
       env: TOOL=cmsearch-deoverlap
-      install: travis/install-cmsearch-deoverlap-v0.02.sh
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-cmsearch-deoverlap-v0.02.sh
 
     - language: c
       compiler: clang
       env: TOOL=cmsearch-multimodel-Workflow
+      services:
+        - docker
       install:
-        - travis/install-cmsearch-v1.1.2.sh
-        - travis/install-cmsearch-deoverlap-v0.02.sh
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
       script:
         - bash travis/run-cmsearch.multimodel-wf.sh
 
@@ -100,8 +130,22 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/run-utils-fasta_chunker.sh
-        - if ! diff -q test_01_test_01.fasta expected_output/fasta_chunker/test_01_test_01.fasta &>/dev/null; then exit 1; fi
-        - if ! diff -q test_02_test_02.fasta expected_output/fasta_chunker/test_02_test_02.fasta &>/dev/null; then exit 1; fi
+        - if ! [ -e utils/test_01_test_01.fasta ]; then exit 1; fi
+        - if ! diff -q utils/test_01_test_01.fasta utils/expected_output/fasta_chunker/test_01_test_01.fasta &>/dev/null; then exit 1; fi
+        - if ! diff -q utils/test_02_test_02.fasta utils/expected_output/fasta_chunker/test_02_test_02.fasta &>/dev/null; then exit 1; fi
+
+    - language: python
+      env: TOOL=BUSCO v3
+      services:
+        - docker
+      install:
+        - travis/install-nodejs.sh
+        - travis/install-cwl-runner.sh
+      script:
+        - bash travis/run-BUSCO-v3.0.2.sh
+        - if ! [ -e tools/BUSCO/missing_busco_list_TEST.tsv ]; then exit 1; fi
+        - if ! [ -e tools/BUSCO/short_summary_TEST.txt ]; then exit 1; fi
+        - if ! [ -e tools/BUSCO/translated_proteins/sample.faa ]; then exit 1; fi
 
     - language: python
       env: TOOL=Workflow validation tests
@@ -126,4 +170,3 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/utils-validation-tests.sh
-

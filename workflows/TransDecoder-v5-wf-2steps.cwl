@@ -6,7 +6,6 @@ label: >-
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 inputs:
   - id: singleBestOnly
     type: boolean?
@@ -60,4 +59,4 @@ $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-#'sbg:wrapperLicense': Maxim Scheremtjew
+'s:author': Maxim Scheremetjew
