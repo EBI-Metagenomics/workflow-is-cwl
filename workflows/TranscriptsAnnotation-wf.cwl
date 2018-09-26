@@ -104,15 +104,14 @@ steps:
     run: ../utils/esl-reformat.cwl
     in:
       sequences: identify_coding_regions/peptide_sequences
-#      TODO: Check with Michael how to resolve Type property error "['null', 'replace']" not a valid Avro schema
       replace: replace
     out: [ reformatted_sequences ]
 
   functional_analysis:
     doc: |
         Matches are generated against predicted CDS, using a sub set of databases
-        (Pfam, TIGRFAM, PRINTS, PROSITE patterns, Gene3d) from InterPro.
-    run: ../tools/InterProScan/InterProScan-v5.cwl
+        from InterPro.
+    run: InterProScan-v5-chunked-wf.cwl
     in:
       inputFile: remove_asterisks_and_reformat/reformatted_sequences
       databases: i5Databases
