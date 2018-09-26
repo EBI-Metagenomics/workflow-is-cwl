@@ -1,0 +1,10 @@
+applications:
+  - PfamA
+inputFile:
+  class: File
+  format: 'edam:format_1929'
+  path: ../tools/InterProScan/test-input/test_single_protein.fasta
+outputFormat: TSV
+databases:
+  class: Directory
+  path: ../tools/InterProScan/test-input/databases
