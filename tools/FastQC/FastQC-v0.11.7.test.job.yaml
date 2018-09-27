@@ -1,6 +1,10 @@
 in_fastq:
   - class: File
-    path: test-input/A1_left.fq.gz
+    path: /path/to/A1_left_ok.fq.gz
   - class: File
-    path: test-input/A1_right.fq.gz
-n_threads: 5
+    path: /path/to/A1_right_ok.fq.gz
+  - class: File
+    path: /path/to/A2_left_ok.fq.gz
+  - class: File
+    path: /path/to/A2_right_ok.fq.gz
+n_threads: 4

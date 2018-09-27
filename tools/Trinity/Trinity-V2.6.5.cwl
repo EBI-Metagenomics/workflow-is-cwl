@@ -27,16 +27,20 @@ inputs:
       Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
   - id: left_fastq
-    type: File
+    type: File[]
     inputBinding:
       position: 3
       prefix: '--left'
+      #itemSeparator: ","
+      #separate: true
     label: 'left reads, one or more file names'
   - id: right_fastq
-    type: File
+    type: File[]
     inputBinding:
       position: 4
       prefix: '--right'
+      #itemSeparator: ","
+      #separate: true
     label: 'right reads, one or more file names'
   - id: ss_lib_type
     type:
@@ -59,12 +63,14 @@ inputs:
       position: 6
       prefix: '--CPU'
     label: 'number of CPUs to use, default: 2'
+
 outputs:
   - id: assembly_dir
     label: Assembly directory containing assembly results
     type: Directory
     outputBinding:
       glob: .
+
 doc: >
   Trinity, developed at the Broad Institute and the Hebrew University of
   Jerusalem,  represents a novel method for the efficient and robust de novo
@@ -74,6 +80,7 @@ doc: >
 
   Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki
 label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
+
 hints:
   - class: SoftwareRequirement
     packages:
@@ -82,6 +89,7 @@ hints:
           - 2.6.5
   - class: DockerRequirement
     dockerPull: 'trinityrnaseq/trinityrnaseq:2.6.5'
+
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
