@@ -84,7 +84,7 @@ steps:
   combine_interproscan_results:
     run: ../utils/concatenate.cwl
     in:
-      files: run_interprosca/i5Annotations
+      files: run_interproscan/i5Annotations
     out: [ result ]
 
 $schemas:
