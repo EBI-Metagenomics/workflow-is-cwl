@@ -1,0 +1,30 @@
+transcriptsFile:
+  class: File
+  format: 'edam:format_1929'
+  path: ../tools/TransDecoder/test-input/test_transcripts.fasta
+singleBestOnly: true
+replace:
+  find: '*'
+  replace: X
+diamondSeqdb:
+  class: File
+  path: ../tools/Diamond/test-input/uniref90_subset.dmnd
+i5Databases:
+  class: Directory
+  path: ../tools/InterProScan/test-input/databases
+i5OutputFormat: TSV
+i5Applications:
+  - PfamA
+blockSize: 1.0
+covariance_models:
+  - class: File
+    path: ../tools/Infernal/cmsearch/test-input/tRNA5.c.cm
+clanInfoFile:
+  class: File
+  path: ../tools/cmsearch-deoverlap/test-input/ribo.claninfo
+cmsearchCores: 2
+buscoLineage:
+  class: Directory
+  path: ../tools/BUSCO/test-input/example
+buscoOutputName: TEST
+buscoMode: tran
