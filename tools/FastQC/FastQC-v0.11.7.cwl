@@ -20,6 +20,7 @@ inputs:
       available memory will cope with, and not more than
       6 threads on a 32 bit machine.
   - id: in_fastq
+    format: 'edam:format_1930'
     type: File[]
     inputBinding:
       position: 3
@@ -58,14 +59,8 @@ hints:
 # TODOs: From looking into the result files
 # received from the container tag as latest (22/08/2018) we deal with version 0.11.5 here
     dockerPull: 'quay.io/biocontainers/fastqc:0.11.7--4'
-  - class: SoftwareRequirement
-    packages:
-      FastQC:
-        version:
-        - 0.11.7
-
-#$schemas:
-#  - 'http://edamontology.org/EDAM_1.16.owl'
-#  - 'https://schema.org/docs/schema_org_rdfa.html'
-#'s:copyrightHolder': EMBL - European Bioinformatics Institute
-#'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
+$schemas:
+  - 'http://edamontology.org/EDAM_1.20.owl'
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
+'s:author': Arnaud Meng, Maxim Scheremetjew
