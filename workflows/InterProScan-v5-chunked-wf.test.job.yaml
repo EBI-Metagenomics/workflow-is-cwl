@@ -3,8 +3,8 @@ applications:
 inputFile:
   class: File
   format: 'edam:format_1929'
-  path: test-input/test_single_protein.fasta
+  path: ../tools/InterProScan/test-input/test_single_protein.fasta
 outputFormat: TSV
 databases:
   class: Directory
-  path: test-input/databases
+  path: ../tools/InterProScan/test-input/databases
