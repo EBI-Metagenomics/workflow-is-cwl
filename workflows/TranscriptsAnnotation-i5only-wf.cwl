@@ -15,9 +15,6 @@ inputs:
     format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
   replace: ../utils/esl-reformat-replace.yaml#replace?
-  phmmerSeqdb:
-    type: File
-    format: edam:format_1929  # FASTA
   diamondSeqdb: File
   i5Databases: Directory
   i5Applications: string[]?
@@ -62,9 +59,6 @@ outputs:
   i5Annotations:
     type: File
     outputSource: functional_analysis/i5Annotations
-  phmmer_matches:
-    type: File
-    outputSource: calculate_phmmer_matches/matches
   diamond_matches:
     type: File
     outputSource: calculate_diamond_matches/matches
@@ -118,14 +112,6 @@ steps:
       applications: i5Applications
       outputFormat: i5OutputFormat
     out: [ i5Annotations ]
-
-  calculate_phmmer_matches:
-    label: Calculates phmmer matches
-    run: ../tools/HMMER/phmmer-v3.2.cwl
-    in:
-      seqFile: identify_coding_regions/peptide_sequences
-      seqdb: phmmerSeqdb
-    out: [ matches, programOutput ]
 
   calculate_diamond_matches:
     label: Calculates Diamond matches
