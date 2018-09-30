@@ -148,7 +148,7 @@ steps:
     run: ../tools/BUSCO/BUSCO-v3.cwl
     in:
       mode: buscoMode
-      sequenceFile: clean_fasta_header/cleaned_transcripts_file
+      sequenceFile: clean_fasta_header/sequences_with_cleaned_headers
       outputName: buscoOutputName
       lineage: buscoLineage
     out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
