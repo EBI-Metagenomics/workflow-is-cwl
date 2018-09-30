@@ -91,7 +91,7 @@ outputs:
 steps:
   clean_fasta_header:
     label: Replaces problematic characters from FASTA headers with dashes
-    run: ../utils/clean_fasta_header.cwl
+    run: ../utils/clean_fasta_headers.cwl
     in:
       sequences: transcriptsFile
     out: [ sequences_with_cleaned_headers ]
