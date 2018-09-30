@@ -94,7 +94,7 @@ steps:
     run: ../utils/clean_fasta_header.cwl
     in:
       sequences: transcriptsFile
-    out: [ cleaned_transcripts_file ]
+    out: [ sequences_with_cleaned_headers ]
 
   identify_coding_regions:
     label: Identifies candidate coding regions within transcript sequences
