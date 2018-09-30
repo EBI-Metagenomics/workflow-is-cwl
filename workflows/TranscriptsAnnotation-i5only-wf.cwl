@@ -41,6 +41,10 @@ inputs:
   buscoLineage: Directory
 
 outputs:
+  cleaned_transcripts_file:
+    type: File
+    format: edam:format_1929
+    outputSource: clean_fasta_header/sequences_with_cleaned_headers
   peptide_sequences:
     type: File
     outputSource: identify_coding_regions/peptide_sequences
@@ -85,6 +89,13 @@ outputs:
     outputSource: run_transcriptome_assessment/blastOutput
 
 steps:
+  clean_fasta_header:
+    label: Replaces problematic characters from FASTA headers with dashes
+    run: ../utils/clean_fasta_header.cwl
+    in:
+      sequences: transcriptsFile
+    out: [ cleaned_transcripts_file ]
+
   identify_coding_regions:
     label: Identifies candidate coding regions within transcript sequences
     run: TransDecoder-v5-wf-2steps.cwl
@@ -137,7 +148,7 @@ steps:
     run: ../tools/BUSCO/BUSCO-v3.cwl
     in:
       mode: buscoMode
-      sequenceFile: transcriptsFile
+      sequenceFile: clean_fasta_header/cleaned_transcripts_file
       outputName: buscoOutputName
       lineage: buscoLineage
     out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
