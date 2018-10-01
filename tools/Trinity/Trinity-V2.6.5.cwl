@@ -77,7 +77,9 @@ outputs:
     label: Assembly directory containing assembly results
     type: Directory
     outputBinding:
-      glob: .
+      glob: $(runtime.outdir)/trinity_out_dir
+  - id: assembled_contigs
+    label: Generated contigs
 
 doc: >
   Trinity, developed at the Broad Institute and the Hebrew University of
@@ -88,6 +90,11 @@ doc: >
 
   Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki
 label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
+arguments:
+  - position: 0
+    prefix: '--output'
+    separate: false
+    valueFrom: $(runtime.outdir)/trinity_out_dir
 
 hints:
   - class: SoftwareRequirement
