@@ -27,21 +27,29 @@ inputs:
       Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
   - id: left_fastq
-    type: File[]
+    type: File[]?
     inputBinding:
       position: 3
       prefix: '--left'
-      #itemSeparator: ","
+      itemSeparator: ","
       #separate: true
     label: 'left reads, one or more file names'
   - id: right_fastq
-    type: File[]
+    type: File[]?
     inputBinding:
       position: 4
       prefix: '--right'
-      #itemSeparator: ","
+      itemSeparator: ","
       #separate: true
     label: 'right reads, one or more file names'
+  - id: single reads
+    type: File[]?
+    inputBinding:
+      position: 4
+      prefix: '--right'
+      itemSeparator: ","
+      #separate: true
+    label: 'Single reads, one or more file names'
   - id: ss_lib_type
     type:
       type: enum

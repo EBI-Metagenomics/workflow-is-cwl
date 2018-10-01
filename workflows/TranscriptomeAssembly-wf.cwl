@@ -48,12 +48,25 @@ outputs:
     type: File
     format: edam:format_2331
     outputSource: generate_filtered_stats/filtered_html_report
+  trimmomatic_log_file:
+      type: File?
+      outputSource: filter_reads/log_file
   forward_reads_paired:
     type: File
     format: edam:format_1930
-  reverse_reads_paired:
-    type: File
+    outputSource: filter_reads/reads1_trimmed
+  forward_reads_unpaired:
+    type: File?
     format: edam:format_1930
+    outputSource: filter_reads/reads1_trimmed_unpaired
+  reverse_reads_paired:
+    type: File?
+    format: edam:format_1930
+    outputSource: filter_reads/reads2_trimmed_paired
+  reverse_reads_paired:
+    type: File?
+    format: edam:format_1930
+    outputSource: filter_reads/reads2_trimmed_unpaired
   assembly_output_dir:
     type: Directory
     outputSource: run_assembly/assembly_output_dir
@@ -98,14 +111,15 @@ steps:
         default:
           windowSize: 4
           requiredQuality: 15
-    out: [reads1_trimmed, output_log, reads1_trimmed_unpaired, reads2_trimmed_paired, reads2_trimmed_unpaired]
+    out: [log_file, reads1_trimmed, reads1_trimmed_unpaired, reads2_trimmed_paired, reads2_trimmed_unpaired]
 
   run_assembly:
     label: Runs the actual assembly
     run: ../tools/Trinity/Trinity-V2.6.5.cwl
     in:
-      forward_reads: filter_reads/forward_reads_paired
-      reads_reverse: filter_reads/reverse_reads_paired
+      forward_reads: [ filter_reads/reads1_trimmed ]
+      reads_reverse: [ filter_reads/reads2_trimmed_paired ]
+      single reads: [ filter_reads/reads1_trimmed ]
       library_type: trinity_library_type
       max_mem: trinity_max_mem
       cpu: trinity_cpu
