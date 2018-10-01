@@ -1,0 +1,94 @@
+transcriptsFile:
+  class: File
+  format: 'edam:format_1929'
+  path: MMETSP0795.trinity_out_2.2.0.Trinity.fasta
+singleBestOnly: true
+replace:
+  find: '*'
+  replace: X
+diamondSeqdb:
+  class: File
+  path: seq-databases/uniref90.dmnd
+#  location: ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/uniref90.fasta.gz
+i5Databases:
+  class: Directory
+  path: tools/interproscan-5.28-67.0
+#  location: ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.30-69.0/alt/interproscan-data-5.30-69.0.tar.gz
+i5OutputFormat: TSV
+blockSize: 1.0
+covariance_models:
+  - class: File
+    location: http://rfam.org/family/RF00002/cm
+  - class: File
+    location: http://rfam.org/family/RF00177/cm
+  - class: File
+    location: http://rfam.org/family/RF01959/cm
+  - class: File
+    location: http://rfam.org/family/RF01960/cm
+  - class: File
+    location: http://rfam.org/family/RF02540/cm
+  - class: File
+    location: http://rfam.org/family/RF02541/cm
+  - class: File
+    location: http://rfam.org/family/RF02542/cm
+  - class: File
+    location: http://rfam.org/family/RF02543/cm
+  - class: File
+    location: http://rfam.org/family/RF02546/cm
+  - class: File
+    location: http://rfam.org/family/RF02547/cm
+  - class: File
+    location: http://rfam.org/family/RF01849/cm
+  - class: File
+    location: http://rfam.org/family/RF01854/cm
+  - class: File
+    location: http://rfam.org/family/RF01850/cm
+  - class: File
+    location: http://rfam.org/family/RF01570/cm
+  - class: File
+    location: http://rfam.org/family/RF00017/cm
+  - class: File
+    location: http://rfam.org/family/RF01855/cm
+  - class: File
+    location: http://rfam.org/family/RF00030/cm
+  - class: File
+    location: http://rfam.org/family/RNaseP_bact_a/cm
+  - class: File
+    location: http://rfam.org/family/RNase_P/cm
+  - class: File
+    location: http://rfam.org/family/tmRNA/cm
+  - class: File
+    location: http://rfam.org/family/tRNA-Sec/cm
+  - class: File
+    location: http://rfam.org/family/Archaea_SRP/cm
+  - class: File
+    location: http://rfam.org/family/Bacteria_small_SRP/cm
+  - class: File
+    location: http://rfam.org/family/cyano_tmRNA/cm
+  - class: File
+    location: http://rfam.org/family/Fungi_SRP/cm
+  - class: File
+    location: http://rfam.org/family/mt-tmRNA/cm
+  - class: File
+    location: http://rfam.org/family/Protozoa_SRP/cm
+  - class: File
+    location: http://rfam.org/family/RNaseP_arch/cm
+  - class: File
+    location: http://rfam.org/family/RNaseP_bact_b/cm
+  - class: File
+    location: http://rfam.org/family/RNaseP_nuc/cm
+  - class: File
+    location: http://rfam.org/family/tRNA/cm
+#    The following file contains all Rfam models:
+#  - class: File
+#    path: databases/Rfam/14.0/Rfam.cm
+clanInfoFile:
+  class: File
+  path: databases/Rfam/14.0/Rfam.clanin
+cmsearchCores: 2
+buscoLineage:
+  class: Directory
+  path: databases/BUSCO/eukaryota_odb9
+#  location: https://busco.ezlab.org/datasets/eukaryota_odb9.tar.gz
+buscoOutputName: MMETSP0795
+buscoMode: tran

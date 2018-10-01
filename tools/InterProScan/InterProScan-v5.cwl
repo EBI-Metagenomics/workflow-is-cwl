@@ -9,7 +9,7 @@ baseCommand: []
 inputs:
   - format: 'edam:format_1929'
     id: inputFile
-    type: File?
+    type: File
     inputBinding:
       position: 8
       prefix: '--input'
@@ -37,36 +37,26 @@ inputs:
     doc: >-
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
-  - id: outputFormats
-    type: 'string[]?'
-    # TODO: Looks like cwlexec does not like types of Array<enum>; cwlexec exits and prints out the following:
-    # TODO: The variable type of the field [applications] is not valid, "a CWLType" is required.
-    # TODO: This might also refer 2: https://github.com/common-workflow-language/cwltool/issues/576
-    #    type:
-    #      - 'null'
-    #      - type: array
-    #        items:
-    #          type: enum
-    #          name: outputFormats
-    #          symbols:
-    #            - TSV
-    #            - XML
-    #            - JSON
-    #            - GFF3
-    #            - HTML
-    #            - SVG
+  - id: outputFormat
+    type:
+      type: enum
+      symbols:
+        - TSV
+        - XML
+        - JSON
+        - GFF3
+      name: outputFormat
     inputBinding:
       position: 10
       prefix: '--formats'
-      itemSeparator: ','
-    label: output formats
+    label: output format
     doc: >-
       Optional, case-insensitive, comma separated list of output formats.
       Supported formats are TSV, XML, JSON, GFF3, HTML and SVG. Default for
       protein sequences are TSV, XML and GFF3, or for nucleotide sequences GFF3
       and XML.
   - id: databases
-    type: Directory?
+    type: Directory
   - id: disableResidueAnnotation
     type: boolean?
     inputBinding:
@@ -80,7 +70,7 @@ inputs:
       - type: enum
         symbols:
           - p
-          - 'n'
+          - n
         name: seqtype
     inputBinding:
       position: 12
@@ -112,11 +102,20 @@ arguments:
   - position: 0
     shellQuote: false
     valueFrom: cp -r /opt/interproscan $(runtime.outdir)/interproscan;
+#  TODO: Works for cwl-runner & cwlexec
+#  This solution will cause symbolic link creating warnings for the freemarker files
   - position: 1
     shellQuote: false
     valueFrom: >-
       cp -rs $(inputs.databases.path)/data/*
       $(runtime.outdir)/interproscan/data;
+#  TODO: The following solution will work for cwl-runner but not for cwlexec
+#  This solution avoids the symbolic link creating warnings for the freemarker files
+#  - position: 1
+#    shellQuote: false
+#    valueFrom: >-
+#      find $(inputs.databases.path)/data/ -maxdepth 1 -mindepth 1
+#      -type d -not -iname '*freemarker' -exec cp -rs '{}' '$(runtime.outdir)/interproscan/data' \\;;
   - position: 2
     shellQuote: false
     valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
