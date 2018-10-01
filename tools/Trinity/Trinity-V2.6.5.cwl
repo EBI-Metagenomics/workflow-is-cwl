@@ -27,7 +27,7 @@ inputs:
       Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
   - id: left_reads
-    type: File[]?
+    type: File?
     inputBinding:
       position: 3
       prefix: '--left'
@@ -35,7 +35,7 @@ inputs:
       #separate: true
     label: 'left reads, one or more file names'
   - id: right_reads
-    type: File[]?
+    type: File?
     inputBinding:
       position: 4
       prefix: '--right'

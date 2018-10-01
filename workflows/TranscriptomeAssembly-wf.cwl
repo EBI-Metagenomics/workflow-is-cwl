@@ -46,18 +46,18 @@ inputs:
 
 outputs:
   raw_qc_report:
-    type: File
+    type: File[]
 #    format: TODO: Zip format not found in edam ontology
     outputSource: generate_raw_stats/zipped_report
   raw_html_report:
-    type: File
+    type: File[]
     format: edam:format_2331
     outputSource: generate_raw_stats/html_report
   filtered_qc_report:
-    type: File
+    type: File[]
     outputSource: generate_filtered_stats/zipped_report
   filtered_html_report:
-    type: File
+    type: File[]
     format: edam:format_2331
     outputSource: generate_filtered_stats/html_report
   trimmomatic_log_file:
@@ -129,9 +129,10 @@ steps:
     label: Runs the actual assembly
     run: ../tools/Trinity/Trinity-V2.6.5.cwl
     in:
-      left_reads: [ filter_reads/reads1_trimmed ]
-      right_reads: [ filter_reads/reads2_trimmed_paired ]
-      single reads: [ filter_reads/reads1_trimmed ]
+      left_reads: filter_reads/reads1_trimmed
+      right_reads: filter_reads/reads2_trimmed_paired
+      single reads:
+        - filter_reads/reads1_trimmed
       max_mem: trinity_max_mem
       cpu: trinity_cpu
       seq_type: trinity_seq_type
@@ -154,7 +155,6 @@ steps:
       in_fasta: run_assembly/assembled_contigs
       left_fastq: forward_reads
       right_fastq: reverse_reads
-      assembled_contigs: run_assembly/assembled_contigs
     out: [ transrate_output_dir ]
 
 $namespaces:
