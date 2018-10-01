@@ -122,7 +122,7 @@ doc: |
   Please visit https://github.com/bbuchfink/diamond for full documentation.
 
   Releases can be downloaded from https://github.com/bbuchfink/diamond/releases
-label: 'diamond blastx: Align DNA query sequences against a protein reference database'
+label: 'Aligns DNA query sequences against a protein reference database'
 arguments:
   - position: 0
     prefix: '--out'
