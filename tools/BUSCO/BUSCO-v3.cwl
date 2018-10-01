@@ -221,7 +221,7 @@ doc: >
   BUSCO is written for Python 3.x and Python 2.7+. It runs with the standard
   packages. We recommend using Python3 when available.
 label: >-
-  BUSCO: assessing genome assembly and annotation completeness with single-copy
+  Assesses genome assembly and annotation completeness with single-copy
   orthologs
 requirements:
   - class: ResourceRequirement

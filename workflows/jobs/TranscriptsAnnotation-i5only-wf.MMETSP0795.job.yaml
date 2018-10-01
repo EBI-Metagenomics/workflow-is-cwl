@@ -85,6 +85,7 @@ covariance_models:
 clanInfoFile:
   class: File
   path: databases/Rfam/14.0/Rfam.clanin
+#  location: ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.0/Rfam.clanin
 cmsearchCores: 2
 buscoLineage:
   class: Directory

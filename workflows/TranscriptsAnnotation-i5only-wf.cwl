@@ -16,6 +16,9 @@ inputs:
   singleBestOnly: boolean?
   replace: ../utils/esl-reformat-replace.yaml#replace?
   diamondSeqdb: File
+  i5_chunk_size:
+    type: int?
+    default: 10000
   i5Databases: Directory
   i5Applications: string[]?
   i5OutputFormat:
@@ -41,6 +44,10 @@ inputs:
   buscoLineage: Directory
 
 outputs:
+  cleaned_transcripts_file:
+    type: File
+    format: edam:format_1929
+    outputSource: clean_fasta_header/sequences_with_cleaned_headers
   peptide_sequences:
     type: File
     outputSource: identify_coding_regions/peptide_sequences
@@ -85,11 +92,18 @@ outputs:
     outputSource: run_transcriptome_assessment/blastOutput
 
 steps:
+  clean_fasta_header:
+    label: Replaces problematic characters from FASTA headers with dashes
+    run: ../utils/clean_fasta_headers.cwl
+    in:
+      sequences: transcriptsFile
+    out: [ sequences_with_cleaned_headers ]
+
   identify_coding_regions:
     label: Identifies candidate coding regions within transcript sequences
     run: TransDecoder-v5-wf-2steps.cwl
     in:
-      transcriptsFile: transcriptsFile
+      transcriptsFile: clean_fasta_header/sequences_with_cleaned_headers
       singleBestOnly: singleBestOnly
     out: [ peptide_sequences, coding_regions, gff3_output, bed_output ]
 
@@ -108,6 +122,7 @@ steps:
     run: InterProScan-v5-chunked-wf.cwl
     in:
       inputFile: remove_asterisks_and_reformat/reformatted_sequences
+      chunk_size: i5_chunk_size
       databases: i5Databases
       applications: i5Applications
       outputFormat: i5OutputFormat
@@ -117,7 +132,7 @@ steps:
     label: Calculates Diamond matches
     run: ../tools/Diamond/Diamon.blastx-v0.9.21.cwl
     in:
-      queryInputFile: transcriptsFile
+      queryInputFile: clean_fasta_header/sequences_with_cleaned_headers
       databaseFile: diamondSeqdb
       blockSize: blockSize
     out: [ matches ]
@@ -126,7 +141,7 @@ steps:
     label: Identifies non-coding RNAs using Rfams covariance models
     run: cmsearch-multimodel-wf.cwl
     in:
-      query_sequences: transcriptsFile
+      query_sequences: clean_fasta_header/sequences_with_cleaned_headers
       covariance_models: covariance_models
       clan_info: clanInfoFile
       cores: cmsearchCores
@@ -137,7 +152,7 @@ steps:
     run: ../tools/BUSCO/BUSCO-v3.cwl
     in:
       mode: buscoMode
-      sequenceFile: transcriptsFile
+      sequenceFile: clean_fasta_header/sequences_with_cleaned_headers
       outputName: buscoOutputName
       lineage: buscoLineage
     out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
