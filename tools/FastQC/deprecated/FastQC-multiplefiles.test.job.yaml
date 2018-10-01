@@ -1,9 +1,0 @@
-in_fastq:
-  - class: File
-    path: /home/vagrant/vagrant_sync/A1_left_ok.fq
-  - class: File
-    path: /home/vagrant/vagrant_sync/A1_right_ok.fq
-  - class: File
-    path: /home/vagrant/vagrant_sync/A2_left_ok.fq
-  - class: File
-    path: /home/vagrant/vagrant_sync/A2_right_ok.fq
