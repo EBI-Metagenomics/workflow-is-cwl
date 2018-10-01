@@ -10,8 +10,7 @@ requirements:
     - $import: ../tools/Trimmomatic/trimmomatic-phred.yaml
     - $import: ../tools/Trimmomatic/trimmomatic-illumina_clipping.yaml
     - $import: ../tools/Trimmomatic/trimmomatic-max_info.yaml
- InlineJavascriptRequirement: {}
- ShellCommandRequirement: {}
+ MultipleInputFeatureRequirement: {}
 
 inputs:
   read_files:
@@ -145,7 +144,8 @@ steps:
     run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
       in_fastq:
-        - filter_reads/reads1_trimmed
+        source: [filter_reads/reads1_trimmed]
+        linkMerge: merge_flattened
     out: [ zipped_report, html_report ]
 
   evaluate_contigs:
