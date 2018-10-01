@@ -2,7 +2,7 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: replace problem characters from FASTA headers with dashes
+label: Replaces problematic characters from FASTA headers with dashes
 
 requirements:
   ResourceRequirement:

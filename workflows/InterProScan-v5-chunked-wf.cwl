@@ -3,7 +3,7 @@ class: Workflow
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-label: Chunked version of InterProScan-v5.cwl
+label: Runs InterProScan on batches of sequences to retrieve functional annotations.
 
 requirements:
  ScatterFeatureRequirement: {}

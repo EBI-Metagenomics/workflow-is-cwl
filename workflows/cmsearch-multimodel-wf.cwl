@@ -3,6 +3,7 @@ cwlVersion: v1.0
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
+label: Identifies non-coding RNAs using Rfams covariance models
 inputs:
   - id: clan_info
     type: File
