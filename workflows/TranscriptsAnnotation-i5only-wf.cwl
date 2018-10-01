@@ -122,7 +122,7 @@ steps:
     run: InterProScan-v5-chunked-wf.cwl
     in:
       inputFile: remove_asterisks_and_reformat/reformatted_sequences
-      chunk_size: chunk_size
+      chunk_size: i5_chunk_size
       databases: i5Databases
       applications: i5Applications
       outputFormat: i5OutputFormat
