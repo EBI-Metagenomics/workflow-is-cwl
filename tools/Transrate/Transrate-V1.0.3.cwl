@@ -44,7 +44,16 @@ inputs:
       prefix: '--loglevel='
       separate: false
     label: 'Log level. One of [error, info, warn, debug] (default: info)'
-outputs: []
+outputs:
+  - id: transrate_output_dir
+    type: Directory
+    outputBinding:
+      glob: $(runtime.outdir)
+# TODO: Find out the name of the evaluation_matrix file
+#  - id: evaluation_matrix
+#    type: File
+#    outputBinding:
+#      glob: $(runtime.outdir)/matrix
 doc: >
   Analyse a de-novo transcriptome assembly using three kinds of metrics: 1.
   sequence based (if --assembly is given) 2. read mapping based (if --left and

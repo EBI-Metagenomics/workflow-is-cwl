@@ -8,10 +8,10 @@ inputs:
     format: edam:format_1930  # Zipped fastq
     doc: FASTQ file of reverse reads in Paired End mode
   forward_reads:
-    type: File?
+    type: File
     format: edam:format_1930  # Zipped fastq
   reverse_reads:
-    type: File?
+    type: File
     format: edam:format_1930  # Zipped fastq
   end_mode:
     type:
@@ -61,10 +61,11 @@ outputs:
     type: File
     format: edam:format_1929 # FASTA
     outputSource: run_assembly/assembled_contigs
-  evaluation_matrix:
-    type: File
-    format: edam:format_3752 # CSV
-    outputSource: evaluate_contigs/evaluation_matrix
+#    TODO: Get this back in
+#  evaluation_matrix:
+#    type: File
+#    format: edam:format_3752 # CSV
+#    outputSource: evaluate_contigs/evaluation_matrix
   transrate_output_dir:
     type: Directory
     outputSource: evaluate_contigs/transrate_output_dir
@@ -84,7 +85,7 @@ steps:
     doc: |
         Low quality trimming (low quality ends and sequences with < quality scores
         less than 15 over a 4 nucleotide wide window are removed)
-    run: ../tools/trimmomatic-v0.36.cwl
+    run: ../tools/Trimmomatic/trimmomatic.cwl
     in:
       reads1: forward_reads
       reads2: reverse_reads
@@ -97,11 +98,11 @@ steps:
         default:
           windowSize: 4
           requiredQuality: 15
-    out: [forward_reads_paired, reverse_reads_paired]
+    out: [reads1_trimmed, output_log, reads1_trimmed_unpaired, reads2_trimmed_paired, reads2_trimmed_unpaired]
 
   run_assembly:
     label: Runs the actual assembly
-    run: ../tools/Trinity-v2.6.5.cwl
+    run: ../tools/Trinity/Trinity-V2.6.5.cwl
     in:
       forward_reads: filter_reads/forward_reads_paired
       reads_reverse: filter_reads/reverse_reads_paired
@@ -115,17 +116,20 @@ steps:
     label: Generates a QC for the filtered read file(s).
     doc: |
          Provide filtered read files
-    run: ../tools/FASTQC-multi-read-files.cwl
+    run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
-      read_files: [ filter_reads/forward_reads_paired, filter_reads/reverse_reads_paired ]
+      in_fastq: [ filter_reads/forward_reads_paired, filter_reads/reverse_reads_paired ]
     out: [ filtered_qc_report, filtered_html_report ]
 
   evaluate_contigs:
     label: Evaluates the contig quality.
-    run: ../tools/Transrate-v1.0.2.cwl
+    run: ../tools/Transrate/Transrate-V1.0.3.cwl
     in:
+      in_fasta: run_assembly/assembled_contigs
+      left_fastq: forward_reads
+      right_fastq: reverse_reads
       assembled_contigs: run_assembly/assembled_contigs
-    out: [ transrate_output_dir, evaluation_matrix ]
+    out: [ transrate_output_dir ]
 
 $namespaces:
  edam: http://edamontology.org/
