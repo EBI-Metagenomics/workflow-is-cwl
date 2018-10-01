@@ -100,7 +100,7 @@ steps:
     label: Identifies candidate coding regions within transcript sequences
     run: TransDecoder-v5-wf-2steps.cwl
     in:
-      transcriptsFile: transcriptsFile
+      transcriptsFile: clean_fasta_header/sequences_with_cleaned_headers
       singleBestOnly: singleBestOnly
     out: [ peptide_sequences, coding_regions, gff3_output, bed_output ]
 
@@ -128,7 +128,7 @@ steps:
     label: Calculates Diamond matches
     run: ../tools/Diamond/Diamon.blastx-v0.9.21.cwl
     in:
-      queryInputFile: transcriptsFile
+      queryInputFile: clean_fasta_header/sequences_with_cleaned_headers
       databaseFile: diamondSeqdb
       blockSize: blockSize
     out: [ matches ]
@@ -137,7 +137,7 @@ steps:
     label: Identifies non-coding RNAs using Rfams covariance models
     run: cmsearch-multimodel-wf.cwl
     in:
-      query_sequences: transcriptsFile
+      query_sequences: clean_fasta_header/sequences_with_cleaned_headers
       covariance_models: covariance_models
       clan_info: clanInfoFile
       cores: cmsearchCores
