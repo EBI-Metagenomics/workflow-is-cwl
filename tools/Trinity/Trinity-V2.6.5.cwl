@@ -80,6 +80,7 @@ outputs:
       glob: $(runtime.outdir)/trinity_out_dir
   - id: assembled_contigs
     label: Generated contigs
+    type: File
 
 doc: >
   Trinity, developed at the Broad Institute and the Hebrew University of
