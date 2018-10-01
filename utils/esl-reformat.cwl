@@ -22,9 +22,9 @@ outputs:
     type: stdout
     format: 'edam:format_1929'
 doc: |
-  normalizes input sequeces to FASTA with fixed number of sequence characters
+  Normalizes input sequences to FASTA with fixed number of sequence characters
   per line using esl-reformat from https://github.com/EddyRivasLab/easel
-label: normalize to fasta
+label: Normalizes input sequences to FASTA using esl-reformat
 arguments:
   - position: 2
     valueFrom: fasta

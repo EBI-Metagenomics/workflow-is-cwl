@@ -130,8 +130,8 @@ matrix:
         - travis/install-cwl-runner.sh
       script:
         - bash travis/run-utils-fasta_chunker.sh
-        - if ! [ -e utils/test_01_test_01.fasta ]; then exit 1; fi
-        - if ! diff -q utils/test_01_test_01.fasta utils/expected_output/fasta_chunker/test_01_test_01.fasta &>/dev/null; then exit 1; fi
+        - if ! [ -e utils/test_01_b_test_01_b.fasta ]; then exit 1; fi
+        - if ! diff -q utils/test_01_b_test_01_b.fasta utils/expected_output/fasta_chunker/test_01_b_test_01_b.fasta &>/dev/null; then exit 1; fi
         - if ! diff -q utils/test_02_test_02.fasta utils/expected_output/fasta_chunker/test_02_test_02.fasta &>/dev/null; then exit 1; fi
 
     - language: python
