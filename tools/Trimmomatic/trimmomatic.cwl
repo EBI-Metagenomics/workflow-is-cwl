@@ -218,11 +218,11 @@ outputs:
     outputBinding:
       glob: $(inputs.reads1.nameroot).trimmed.fastq
 
-  output_log:
+  log_file:
     type: File
     outputBinding:
       glob: trim.log
-    label: Trimmomatic log
+    label: Log file
     doc: |
       log of all read trimmings, indicating the following details:
         the read name
