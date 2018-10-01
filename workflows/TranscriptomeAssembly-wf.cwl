@@ -2,6 +2,17 @@ cwlVersion: v1.0
 class: Workflow
 label: Transcriptome assembly workflow
 
+requirements:
+ SchemaDefRequirement:
+   types:
+    - $import: ../tools/Trimmomatic/trimmomatic-end_mode.yaml
+    - $import: ../tools/Trimmomatic/trimmomatic-sliding_window.yaml
+    - $import: ../tools/Trimmomatic/trimmomatic-phred.yaml
+    - $import: ../tools/Trimmomatic/trimmomatic-illumina_clipping.yaml
+    - $import: ../tools/Trimmomatic/trimmomatic-max_info.yaml
+ InlineJavascriptRequirement: {}
+ ShellCommandRequirement: {}
+
 inputs:
   read_files:
     type: File[]
@@ -11,26 +22,13 @@ inputs:
     type: File
     format: edam:format_1930  # Zipped fastq
   reverse_reads:
-    type: File
+    type: File?
     format: edam:format_1930  # Zipped fastq
-  end_mode:
-    type:
-      type: enum
-      symbols:
-        - SE
-        - PE
-  trinity_library_type:
-    type:
-      type: enum
-      symbols:
-        - FR
-        - RF
+  end_mode: ../tools/Trimmomatic/trimmomatic-end_mode.yaml#end_mode
   trinity_max_mem:
-    type: int
+    type: string
   trinity_cpu:
     type: int?
-  trinity_normalized_reads:
-    type: boolean?
   trinity_seq_type:
     type:
       type: enum
@@ -131,13 +129,11 @@ steps:
     label: Runs the actual assembly
     run: ../tools/Trinity/Trinity-V2.6.5.cwl
     in:
-      forward_reads: [ filter_reads/reads1_trimmed ]
-      reads_reverse: [ filter_reads/reads2_trimmed_paired ]
+      left_reads: [ filter_reads/reads1_trimmed ]
+      right_reads: [ filter_reads/reads2_trimmed_paired ]
       single reads: [ filter_reads/reads1_trimmed ]
-      library_type: trinity_library_type
       max_mem: trinity_max_mem
       cpu: trinity_cpu
-      normalized_reads: trinity_normalized_reads
       seq_type: trinity_seq_type
       ss_lib_type: trinity_ss_lib_type
     out: [ assembly_dir, assembled_contigs ]

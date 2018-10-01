@@ -26,7 +26,7 @@ inputs:
     label: >-
       Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
-  - id: left_fastq
+  - id: left_reads
     type: File[]?
     inputBinding:
       position: 3
@@ -34,7 +34,7 @@ inputs:
       itemSeparator: ","
       #separate: true
     label: 'left reads, one or more file names'
-  - id: right_fastq
+  - id: right_reads
     type: File[]?
     inputBinding:
       position: 4
@@ -91,10 +91,11 @@ doc: >
   Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki
 label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 arguments:
-  - position: 0
-    prefix: '--output'
+  - prefix: '--output'
     separate: false
     valueFrom: $(runtime.outdir)/trinity_out_dir
+  - valueFrom: '--normalize_by_read_set'
+  - valueFrom: '--no_normalize_reads'
 
 hints:
   - class: SoftwareRequirement
