@@ -43,7 +43,7 @@ inputs:
       #separate: true
     label: 'right reads, one or more file names'
   - id: single reads
-    type: File[]?
+    type: File?
     inputBinding:
       position: 4
       prefix: '--right'

@@ -131,8 +131,7 @@ steps:
     in:
       left_reads: filter_reads/reads1_trimmed
       right_reads: filter_reads/reads2_trimmed_paired
-      single reads:
-        - filter_reads/reads1_trimmed
+      single reads: filter_reads/reads1_trimmed
       max_mem: trinity_max_mem
       cpu: trinity_cpu
       seq_type: trinity_seq_type
@@ -145,7 +144,8 @@ steps:
          Provide filtered read files
     run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
-      in_fastq: [ filter_reads/reads1_trimmed, filter_reads/reads2_trimmed_paired ]
+      in_fastq:
+        - filter_reads/reads1_trimmed
     out: [ zipped_report, html_report ]
 
   evaluate_contigs:

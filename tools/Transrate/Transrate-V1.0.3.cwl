@@ -24,7 +24,7 @@ inputs:
     label: Left reads file(s) in FASTQ format
   - id: right_fastq
     format: 'edam:format_1930'
-    type: File
+    type: File?
     inputBinding:
       position: 3
       prefix: '--right='
