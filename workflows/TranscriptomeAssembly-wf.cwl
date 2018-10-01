@@ -31,23 +31,37 @@ inputs:
     type: int?
   trinity_normalized_reads:
     type: boolean?
+  trinity_seq_type:
+    type:
+      type: enum
+      symbols:
+        - fa
+        - fq
+  trinity_ss_lib_type:
+    type:
+      type: enum
+      symbols:
+        - FR
+        - RF
+        - F
+        - R
 
 outputs:
   raw_qc_report:
     type: File
 #    format: TODO: Zip format not found in edam ontology
-    outputSource: generate_raw_stats/raw_qc_report
+    outputSource: generate_raw_stats/zipped_report
   raw_html_report:
     type: File
     format: edam:format_2331
-    outputSource: generate_raw_stats/raw_html_report
+    outputSource: generate_raw_stats/html_report
   filtered_qc_report:
     type: File
-    outputSource: generate_filtered_stats/filtered_qc_report
+    outputSource: generate_filtered_stats/zipped_report
   filtered_html_report:
     type: File
     format: edam:format_2331
-    outputSource: generate_filtered_stats/filtered_html_report
+    outputSource: generate_filtered_stats/html_report
   trimmomatic_log_file:
       type: File?
       outputSource: filter_reads/log_file
@@ -63,13 +77,13 @@ outputs:
     type: File?
     format: edam:format_1930
     outputSource: filter_reads/reads2_trimmed_paired
-  reverse_reads_paired:
+  reverse_reads_unpaired:
     type: File?
     format: edam:format_1930
     outputSource: filter_reads/reads2_trimmed_unpaired
   assembly_output_dir:
     type: Directory
-    outputSource: run_assembly/assembly_output_dir
+    outputSource: run_assembly/assembly_dir
   assembled_contigs:
     type: File
     format: edam:format_1929 # FASTA
@@ -92,7 +106,7 @@ steps:
     run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
       in_fastq: read_files
-    out: [ raw_qc_report, raw_html_report ]
+    out: [ zipped_report, html_report ]
 
   filter_reads:
     doc: |
@@ -124,7 +138,9 @@ steps:
       max_mem: trinity_max_mem
       cpu: trinity_cpu
       normalized_reads: trinity_normalized_reads
-    out: [ assembly_output_dir, assembled_contigs ]
+      seq_type: trinity_seq_type
+      ss_lib_type: trinity_ss_lib_type
+    out: [ assembly_dir, assembled_contigs ]
 
   generate_filtered_stats:
     label: Generates a QC for the filtered read file(s).
@@ -132,8 +148,8 @@ steps:
          Provide filtered read files
     run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
-      in_fastq: [ filter_reads/forward_reads_paired, filter_reads/reverse_reads_paired ]
-    out: [ filtered_qc_report, filtered_html_report ]
+      in_fastq: [ filter_reads/reads1_trimmed, filter_reads/reads2_trimmed_paired ]
+    out: [ zipped_report, html_report ]
 
   evaluate_contigs:
     label: Evaluates the contig quality.
