@@ -16,6 +16,9 @@ inputs:
   singleBestOnly: boolean?
   replace: ../utils/esl-reformat-replace.yaml#replace?
   diamondSeqdb: File
+  i5_chunk_size:
+    type: int?
+    default: 10000
   i5Databases: Directory
   i5Applications: string[]?
   i5OutputFormat:
@@ -119,6 +122,7 @@ steps:
     run: InterProScan-v5-chunked-wf.cwl
     in:
       inputFile: remove_asterisks_and_reformat/reformatted_sequences
+      chunk_size: chunk_size
       databases: i5Databases
       applications: i5Applications
       outputFormat: i5OutputFormat

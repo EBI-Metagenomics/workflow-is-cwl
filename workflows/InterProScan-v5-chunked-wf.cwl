@@ -39,6 +39,9 @@ inputs:
       and XML.
   - id: databases
     type: Directory
+  - id: chunk_size
+    type: int?
+    default: 10000
   - id: disableResidueAnnotation
     type: boolean?
     label: Disables residue annotation
@@ -66,7 +69,7 @@ steps:
     run: ../utils/fasta_chunker.cwl
     in:
       seqs: inputFile
-      chunk_size: { default: 1000 }
+      chunk_size: chunk_size
     out: [ chunks ]
 
   run_interproscan:

@@ -8,3 +8,4 @@ outputFormat: TSV
 databases:
   class: Directory
   path: ../tools/InterProScan/test-input/databases
+chunk_size: 10000
