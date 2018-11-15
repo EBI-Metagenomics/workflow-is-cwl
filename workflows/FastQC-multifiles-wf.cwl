@@ -23,7 +23,7 @@ steps:
     out:
       - id: zipped_report
       - id: html_report
-    run: ../tools/FastQC/FastQC-v0.11.5.cwl
+    run: ../tools/FastQC/FastQC-v0.11.7.cwl
     label: Generates QC for a single read file
     scatter:
       - read_file
