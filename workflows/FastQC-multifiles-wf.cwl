@@ -19,10 +19,10 @@ steps:
   fastqc:
     label: Generates QC for a single read file
     run: ../tools/FastQC/FastQC-v0.11.7.cwl
-      in:
-        in_fastq: read_files
-      scatter: in_fastq
-      out: [ zipped_report, html_report ]
+    in:
+      in_fastq: read_files
+    scatter: in_fastq
+    out: [ zipped_report, html_report ]
 requirements:
   - class: ScatterFeatureRequirement
 $schemas:
