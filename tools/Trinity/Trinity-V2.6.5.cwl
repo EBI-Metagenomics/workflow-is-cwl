@@ -42,7 +42,7 @@ inputs:
       itemSeparator: ","
       #separate: true
     label: 'right reads, one or more file names'
-  - id: single reads
+  - id: single_reads
     type: File?
     inputBinding:
       position: 4
