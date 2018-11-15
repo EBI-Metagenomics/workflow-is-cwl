@@ -24,7 +24,9 @@ inputs:
     type: File[]
     inputBinding:
       position: 3
-    label: Input FASTQ file(s). If multiple files are provided then use space separated
+    label: 'Input FASTQ file(s)'
+    doc: >
+      Input FASTQ file(s). If multiple files are provided then use space separated
 
 outputs:
   - id: zipped_report

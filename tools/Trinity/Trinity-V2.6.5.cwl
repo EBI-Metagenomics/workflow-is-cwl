@@ -23,7 +23,8 @@ inputs:
     inputBinding:
       position: 2
       prefix: '--max_memory'
-    label: >-
+    label: 'maximum memory allocated'
+    doc: >
       Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
   - id: left_reads
@@ -33,7 +34,9 @@ inputs:
       prefix: '--left'
       itemSeparator: ","
       #separate: true
-    label: 'left reads, one or more file names'
+    label: 'left read(s)'
+    doc: >
+      left reads, one or more file names (separated by commas, no spaces)
   - id: right_reads
     type: File?
     inputBinding:
@@ -41,7 +44,9 @@ inputs:
       prefix: '--right'
       itemSeparator: ","
       #separate: true
-    label: 'right reads, one or more file names'
+    label: 'right read(s)'
+    doc: >
+      right reads, one or more file names (separated by commas, no spaces)
   - id: single_reads
     type: File?
     inputBinding:
@@ -49,7 +54,10 @@ inputs:
       prefix: '--right'
       itemSeparator: ","
       #separate: true
-    label: 'Single reads, one or more file names'
+    label: 'Single read(s)'
+    doc: >
+      single reads, one or more file names, comma-delimited 
+      (note, if single file contains pairs, can use flag: --run_as_paired)
   - id: ss_lib_type
     type:
       type: enum
@@ -62,7 +70,8 @@ inputs:
     inputBinding:
       position: 5
       prefix: '--SS_lib_type'
-    label: >-
+    label: 'Strand-specific RNA-Seq read orientation'
+    doc: >
       Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
       F or R. (dUTP method = RF). See web documentation
   - id: cpu
@@ -70,7 +79,9 @@ inputs:
     inputBinding:
       position: 6
       prefix: '--CPU'
-    label: 'number of CPUs to use, default: 2'
+    label: 'number of CPUs to use'
+    doc: > 
+      number of CPUs to use, default: 2
 
 outputs:
   - id: assembly_dir
@@ -90,7 +101,9 @@ doc: >
   sequentially to process large volumes of RNA-seq reads.
 
   Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki
+
 label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
+
 arguments:
   - prefix: '--output'
     separate: false
