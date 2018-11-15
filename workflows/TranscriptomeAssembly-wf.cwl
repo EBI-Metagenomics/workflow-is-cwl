@@ -130,7 +130,7 @@ steps:
     in:
       left_reads: filter_reads/reads1_trimmed
       right_reads: filter_reads/reads2_trimmed_paired
-      single reads: filter_reads/reads1_trimmed
+      single_reads: filter_reads/reads1_trimmed
       max_mem: trinity_max_mem
       cpu: trinity_cpu
       seq_type: trinity_seq_type
