@@ -17,7 +17,9 @@ inputs:
     inputBinding:
       position: 1
       prefix: '--seqType'
-    label: 'type of reads: (fa or fq)'
+    label: 'read file(s) format'
+    doc: >
+      type of reads: (fa or fq)
   - id: max_mem
     type: string
     inputBinding:
@@ -79,9 +81,9 @@ inputs:
     inputBinding:
       position: 6
       prefix: '--CPU'
-    label: 'number of CPUs to use'
+    label: 'number of CPUs allocated'
     doc: > 
-      number of CPUs to use, default: 2
+      number of CPUs to use by Trinity
 
 outputs:
   - id: assembly_dir
