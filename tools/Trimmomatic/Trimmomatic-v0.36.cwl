@@ -4,11 +4,13 @@ cwlVersion: v1.0
 class: CommandLineTool
 
 hints:
-  SoftwareRequirement:
+  - class: SoftwareRequirement
     packages:
       trimmomatic:
-        specs: [ "https://identifiers.org/rrid/RRID:SCR_011848" ]
-        version: [ "0.32", "0.35", "0.36" ]
+        version:
+          - 0.36--6
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/trimmomatic:0.36--6'
 
 requirements:
  ResourceRequirement:
@@ -241,7 +243,7 @@ outputs:
   log_file:
     type: File
     outputBinding:
-      glob: trim.log
+      glob: 'trim.log'
     label: Log file
     doc: |
       log of all read trimmings, indicating the following details:
@@ -255,7 +257,7 @@ outputs:
     type: File?
     format: edam:format_1930  # fastq
     outputBinding:
-      glob: $(inputs.reads1.nameroot).unpaired.trimmed.fastq
+      glob: $(inputs.reads1.nameroot).trimmed.unpaired.fastq
 
   reads2_trimmed_paired:
     type: File?
@@ -275,13 +277,13 @@ outputs:
     outputBinding:
       glob: |
         ${ if (inputs.reads2 ) {
-             return inputs.reads2.nameroot + '.unpaired.trimmed.fastq';
+             return inputs.reads2.nameroot + '.trimmed.unpaired.fastq';
            } else {
              return null;
            }
          }
 
-baseCommand: [ java, org.usadellab.trimmomatic.Trimmomatic ]
+baseCommand: [ trimmomatic ]
 
 arguments:
 - valueFrom: trim.log
