@@ -31,7 +31,8 @@ inputs:
     label: 'Paired-end read file 2'
     doc: >
       Read file 2 in FASTQ format
-  end_mode: ../tools/Trimmomatic/trimmomatic-end_mode.yaml#end_mode
+  end_mode: 
+    type: ../tools/Trimmomatic/trimmomatic-end_mode.yaml#end_mode
     label: 'read -end mode format'
     doc: >
       Read -end mode format to be specify to Trimmomatic
