@@ -16,24 +16,46 @@ inputs:
   read_files:
     type: File[]
     format: edam:format_1930  # Zipped fastq
-    doc: FASTQ file of reverse reads in Paired End mode
+    label: 'FASTQ read file(s)'
+    doc: >
+      FASTQ file of reverse reads in Paired End mode
   forward_reads:
     type: File
     format: edam:format_1930  # Zipped fastq
+    label: 'Paired-end read file 1'
+    doc: >
+      Read file 1 in FASTQ format 
   reverse_reads:
     type: File?
     format: edam:format_1930  # Zipped fastq
-  end_mode: ../tools/Trimmomatic/trimmomatic-end_mode.yaml#end_mode
+    label: 'Paired-end read file 2'
+    doc: >
+      Read file 2 in FASTQ format
+  end_mode: 
+    type: ../tools/Trimmomatic/trimmomatic-end_mode.yaml#end_mode
+    label: 'read -end mode format'
+    doc: >
+      Read -end mode format to be specify to Trimmomatic
   trinity_max_mem:
     type: string
+    label: 'maximum memory allocated to Trinity'
+    doc: >
+      Suggested max memory to use by Trinity where limiting can be enabled.
+      (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
   trinity_cpu:
     type: int?
+    label: 'number of CPUs allocated'
+    doc: > 
+      number of CPUs to use, default: 2
   trinity_seq_type:
     type:
       type: enum
       symbols:
         - fa
         - fq
+    label: 'read file(s) format'
+    doc: >
+      type of reads: (fa or fq)
   trinity_ss_lib_type:
     type:
       type: enum
@@ -42,6 +64,10 @@ inputs:
         - RF
         - F
         - R
+    label: 'Strand-specific RNA-Seq read orientation'
+    doc: >
+      Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
+      F or R. (dUTP method = RF). See web documentation
 
 outputs:
   raw_qc_report:
@@ -98,18 +124,19 @@ steps:
   generate_raw_stats:
     label: Generates a QC for the provided read file(s).
     doc: |
-       Provide reverse and forward read files for paired-end (PE)
-       or a single read file for single-end (SE).
+      Provide reverse and forward read files for paired-end (PE)
+      or a single read file for single-end (SE).
     run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
       in_fastq: read_files
     out: [ zipped_report, html_report ]
 
   filter_reads:
+    label: Filtering and trimmming read file(s)
     doc: |
-        Low quality trimming (low quality ends and sequences with < quality scores
-        less than 15 over a 4 nucleotide wide window are removed)
-    run: ../tools/Trimmomatic/trimmomatic.cwl
+      Low quality trimming (low quality ends and sequences with < quality scores
+      less than 15 over a 4 nucleotide wide window are removed)
+    run: ../tools/Trimmomatic/Trimmomatic-v0.36.cwl
     in:
       reads1: forward_reads
       reads2: reverse_reads
@@ -126,11 +153,13 @@ steps:
 
   run_assembly:
     label: Runs the actual assembly
+    doc: |
+      provide filtered/trimmed read file(s)
     run: ../tools/Trinity/Trinity-V2.6.5.cwl
     in:
       left_reads: filter_reads/reads1_trimmed
       right_reads: filter_reads/reads2_trimmed_paired
-      single reads: filter_reads/reads1_trimmed
+      single_reads: filter_reads/reads1_trimmed
       max_mem: trinity_max_mem
       cpu: trinity_cpu
       seq_type: trinity_seq_type
@@ -140,7 +169,7 @@ steps:
   generate_filtered_stats:
     label: Generates a QC for the filtered read file(s).
     doc: |
-         Provide filtered read files
+      Provide filtered/trimmed read file(s)
     run: ../tools/FastQC/FastQC-v0.11.7.cwl
     in:
       in_fastq:
@@ -150,6 +179,8 @@ steps:
 
   evaluate_contigs:
     label: Evaluates the contig quality.
+    doc: |
+      Provide the assembled contigs (FASTA file)
     run: ../tools/Transrate/Transrate-V1.0.3.cwl
     in:
       in_fasta: run_assembly/assembled_contigs

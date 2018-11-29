@@ -4,11 +4,13 @@ cwlVersion: v1.0
 class: CommandLineTool
 
 hints:
-  SoftwareRequirement:
+  - class: SoftwareRequirement
     packages:
       trimmomatic:
-        specs: [ "https://identifiers.org/rrid/RRID:SCR_011848" ]
-        version: [ "0.32", "0.35", "0.36" ]
+        version:
+          - 0.36--6
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/trimmomatic:0.36--6'
 
 requirements:
  ResourceRequirement:
@@ -34,8 +36,9 @@ inputs:
       prefix: -phred
       separate: false
       position: 4
-    doc: |
-      "33" or "64" specifies the base quality encoding. Default: 64
+    label: 'quality score format'
+    doc: >
+      Either PHRED "33" or "64" specifies the base quality encoding. Default: 64
 
   tophred64:
     type: boolean?
@@ -43,7 +46,9 @@ inputs:
       position: 12
       prefix: TOPHRED64
       separate: false
-    doc: This (re)encodes the quality part of the FASTQ file to base 64.
+    label: 'quality score conversion to phred64'
+    doc: >
+      This (re)encodes the quality part of the FASTQ file to base 64.
 
   headcrop:
     type: int?
@@ -51,7 +56,8 @@ inputs:
       position: 13
       prefix: 'HEADCROP:'
       separate: false
-    doc: |
+    label: 'read head trimming'
+    doc: >
       Removes the specified number of bases, regardless of quality, from the
       beginning of the read.
       The numbser specified is the number of bases to keep, from the start of
@@ -63,7 +69,9 @@ inputs:
       position: 12
       prefix: TOPHRED33
       separate: false
-    doc: This (re)encodes the quality part of the FASTQ file to base 33.
+    label: 'quality score conversion to phred33'
+    doc: >
+      This (re)encodes the quality part of the FASTQ file to base 33.
 
   minlen:
     type: int?
@@ -71,7 +79,8 @@ inputs:
       position: 100
       prefix: 'MINLEN:'
       separate: false
-    doc: |
+    label: 'minimum length read filter'
+    doc: >
       This module removes reads that fall below the specified minimal length.
       If required, it should normally be after all other processing steps.
       Reads removed by this step will be counted and included in the "dropped
@@ -82,7 +91,7 @@ inputs:
     inputBinding:
       position: 1
       shellQuote: false
-    doc: |
+    doc: >
       JVM arguments should be a quoted, space separated list
       (e.g. "-Xms128m -Xmx512m")
 
@@ -92,7 +101,8 @@ inputs:
       position: 14
       prefix: 'LEADING:'
       separate: false
-    doc: |
+    label: 'read tail trimming'
+    doc: >
       Remove low quality bases from the beginning. As long as a base has a
       value below this threshold the base is removed and the next base will be
       investigated.
@@ -109,7 +119,8 @@ inputs:
              return self;
            }
          }
-    doc: |
+    label: 'read filtering sliding window'
+    doc: >
       Perform a sliding window trimming, cutting once the average quality
       within the window falls below a threshold. By considering multiple
       bases, a single poor quality base will not cause the removal of high
@@ -131,7 +142,9 @@ inputs:
            }
          }
       position: 11
-    doc: Cut adapter and other illumina-specific sequences from the read.
+    label: 'sequencing adaptater removing'
+    doc: >
+      Cut adapter and other illumina-specific sequences from the read.
 
   crop:
     type: int?
@@ -139,7 +152,8 @@ inputs:
       position: 13
       prefix: 'CROP:'
       separate: false
-    doc: |
+    label: 'read cropping'
+    doc: >
       Removes bases regardless of quality from the end of the read, so that the
       read has maximally the specified length after this step has been
       performed. Steps performed after CROP might of course further shorten the
@@ -150,14 +164,18 @@ inputs:
     format: edam:format_1930  # fastq
     inputBinding:
       position: 6
-    doc: FASTQ file of R2 reads in Paired End mode
+    label: 'FASTQ read file 2'
+    doc: >
+      FASTQ file of R2 reads in Paired End mode
 
   reads1:
     type: File
     format: edam:format_1930  # fastq
     inputBinding:
       position: 5
-    doc: FASTQ file of reads (R1 reads in Paired End mode)
+    label: 'FASTQ read file 1'
+    doc: >
+      FASTQ file of reads (R1 reads in Paired End mode)
 
   avgqual:
     type: int?
@@ -165,7 +183,8 @@ inputs:
       position: 101
       prefix: 'AVGQUAL:'
       separate: false
-    doc: |
+    label: 'minimum average quality required'
+    doc: >
       Drop the read if the average quality is below the specified level
 
   trailing:
@@ -174,7 +193,8 @@ inputs:
       position: 14
       prefix: 'TRAILING:'
       separate: false
-    doc: |
+    label: 'read tail quality filtering'
+    doc: >
       Remove low quality bases from the end. As long as a base has a value
       below this threshold the base is removed and the next base (which as
       trimmomatic is starting from the 3' prime end would be base preceding
@@ -194,7 +214,8 @@ inputs:
              return self;
            }
          }
-    doc: |
+    label: 'maxinfo: read score quality filtering'
+    doc: >
       Performs an adaptive quality trim, balancing the benefits of retaining
       longer reads against the costs of retaining bases with errors.
       <targetLength>: This specifies the read length which is likely to allow
@@ -208,7 +229,8 @@ inputs:
     type: trimmomatic-end_mode.yaml#end_mode
     inputBinding:
       position: 3
-    doc: |
+    label: 'read -end mode format'
+    doc: >
       Single End (SE) or Paired End (PE) mode
 
 outputs:
@@ -221,7 +243,7 @@ outputs:
   log_file:
     type: File
     outputBinding:
-      glob: trim.log
+      glob: 'trim.log'
     label: Log file
     doc: |
       log of all read trimmings, indicating the following details:
@@ -235,7 +257,7 @@ outputs:
     type: File?
     format: edam:format_1930  # fastq
     outputBinding:
-      glob: $(inputs.reads1.nameroot).unpaired.trimmed.fastq
+      glob: $(inputs.reads1.nameroot).trimmed.unpaired.fastq
 
   reads2_trimmed_paired:
     type: File?
@@ -255,13 +277,13 @@ outputs:
     outputBinding:
       glob: |
         ${ if (inputs.reads2 ) {
-             return inputs.reads2.nameroot + '.unpaired.trimmed.fastq';
+             return inputs.reads2.nameroot + '.trimmed.unpaired.fastq';
            } else {
              return null;
            }
          }
 
-baseCommand: [ java, org.usadellab.trimmomatic.Trimmomatic ]
+baseCommand: [ trimmomatic ]
 
 arguments:
 - valueFrom: trim.log
@@ -300,7 +322,7 @@ arguments:
     }
   position: 10
 
-doc: |
+doc: >
   Trimmomatic is a fast, multithreaded command line tool that can be used to trim and crop
   Illumina (FASTQ) data as well as to remove adapters. These adapters can pose a real problem
   depending on the library preparation and downstream application.
@@ -310,6 +332,8 @@ doc: |
   introduced by the library preparation process.
   Trimmomatic works with FASTQ files (using phred + 33 or phred + 64 quality scores,
   depending on the Illumina pipeline used).
+
+label: Trimmomatic - A flexible read trimming tool for Illumina NGS data
 
 $namespaces:
  edam: http://edamontology.org/

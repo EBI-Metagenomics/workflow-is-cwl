@@ -16,17 +16,13 @@ outputs:
       - fastqc/html_report
     type: File
 steps:
-  - id: fastqc
-    in:
-      - id: read_file
-        source: read_files
-    out:
-      - id: zipped_report
-      - id: html_report
-    run: ../tools/FastQC/FastQC-v0.11.5.cwl
+  fastqc:
     label: Generates QC for a single read file
-    scatter:
-      - read_file
+    run: ../tools/FastQC/FastQC-v0.11.7.cwl
+    in:
+      in_fastq: read_files
+    scatter: in_fastq
+    out: [ zipped_report, html_report ]
 requirements:
   - class: ScatterFeatureRequirement
 $schemas:
@@ -34,4 +30,4 @@ $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': EMBL - European Bioinformatics Institute
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'sbg:wrapperAuthor': Maxim Scheremetjew
+'s:author': Maxim Scheremetjew
