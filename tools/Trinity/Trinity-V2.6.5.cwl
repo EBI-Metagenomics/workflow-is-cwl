@@ -4,16 +4,17 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 
+requirements:
+ SchemaDefRequirement:
+   types:
+    - $import: trinity-ss_lib_type.yaml
+    - $import: trinity-seq_type.yaml
+
 baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
 
 inputs:
   - id: seq_type
-    type:
-      type: enum
-      symbols:
-        - fa
-        - fq
-      name: seq_type
+    type: trinity-seq_type.yaml#seq_type
     inputBinding:
       position: 1
       prefix: '--seqType'
@@ -45,22 +46,15 @@ inputs:
   - id: single reads
     type: File?
     inputBinding:
-      position: 4
+      position: 5
       prefix: '--right'
       itemSeparator: ","
       #separate: true
     label: 'Single reads, one or more file names'
   - id: ss_lib_type
-    type:
-      type: enum
-      symbols:
-        - FR
-        - RF
-        - F
-        - R
-      name: ss_lib_type
+    type: trinity-ss_lib_type.yaml#ss_lib_type
     inputBinding:
-      position: 5
+      position: 6
       prefix: '--SS_lib_type'
     label: >-
       Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
@@ -68,9 +62,21 @@ inputs:
   - id: cpu
     type: int?
     inputBinding:
-      position: 6
+      position: 7
       prefix: '--CPU'
     label: 'number of CPUs to use, default: 2'
+  - id: no_normalize_reads
+    type: boolean?
+    inputBinding:
+      position: 8
+      prefix: '--no_normalize_reads'
+    label: 'Do *not* run in silico normalization of reads. default: normalize reads'
+  - id: normalize_by_read_set
+    type: boolean?
+    inputBinding:
+      position: 9
+      prefix: '--normalize_by_read_set'
+    label: 'Run normalization separate for each pair of fastq files'
 
 outputs:
   - id: assembly_dir
@@ -95,8 +101,6 @@ arguments:
   - prefix: '--output'
     separate: false
     valueFrom: $(runtime.outdir)/trinity_out_dir
-  - valueFrom: '--normalize_by_read_set'
-  - valueFrom: '--no_normalize_reads'
 
 hints:
   - class: SoftwareRequirement

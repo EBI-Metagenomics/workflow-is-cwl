@@ -10,7 +10,7 @@ requirements:
     - $import: ../tools/Trimmomatic/trimmomatic-phred.yaml
     - $import: ../tools/Trimmomatic/trimmomatic-illumina_clipping.yaml
     - $import: ../tools/Trimmomatic/trimmomatic-max_info.yaml
- MultipleInputFeatureRequirement: {}
+     MultipleInputFeatureRequirement: {}
 
 inputs:
   read_files:
