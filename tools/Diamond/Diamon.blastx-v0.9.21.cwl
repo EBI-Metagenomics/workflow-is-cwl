@@ -112,13 +112,13 @@ arguments:
     prefix: '--out'
     valueFrom: $(inputs.queryInputFile.basename).diamond_matches
 requirements:
-  - class: ResourceRequirement
-    ramMin: 1024
-  - class: InlineJavascriptRequirement
   - class: SchemaDefRequirement
     types:
       - $import: Diamond-output_formats.yaml
       - $import: Diamond-strand_values.yaml
+  - class: ResourceRequirement
+    ramMin: 1024
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 'buchfink/diamond:version0.9.21'
