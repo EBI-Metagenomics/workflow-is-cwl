@@ -17,26 +17,7 @@ inputs:
       gene-to-transcript identifier mapping file (tab-delimited,
       gene_id<tab>trans_id<return>)
   - id: geneticCode
-    type:
-      - 'null'
-      - type: enum
-        symbols:
-          - Euplotes
-          - Tetrahymena
-          - Candida
-          - Acetabularia
-          - Mitochondrial-Canonical
-          - Mitochondrial-Vertebrates
-          - Mitochondrial-Arthropods
-          - Mitochondrial-Echinoderms
-          - Mitochondrial-Molluscs
-          - Mitochondrial-Ascidians
-          - Mitochondrial-Nematodes
-          - Mitochondrial-Platyhelminths
-          - Mitochondrial-Yeasts
-          - Mitochondrial-Euascomycetes
-          - Mitochondrial-Protozoans
-        name: geneticCode
+    type: TransDecoder-v5-genetic_codes.yaml#genetic_codes?
     inputBinding:
       position: 0
       prefix: '-G'
@@ -99,29 +80,9 @@ label: >-
   TransDecoder.LongOrfs: Perl script, which extracts the long open reading
   frames
 requirements:
-# TODO: The following type definitions are not accepted by CWLEXEC
-# TODO: CWLEXEC exits with "The field [SchemaType] is required by [type]."
-#  - class: SchemaDefRequirement
-#    types:
-#      - name: genetic_codes
-#        symbols:
-#          - universal
-#          - Euplotes
-#          - Tetrahymena
-#          - Candida
-#          - Acetabularia
-#          - Mitochondrial-Canonical
-#          - Mitochondrial-Vertebrates
-#          - Mitochondrial-Arthropods
-#          - Mitochondrial-Echinoderms
-#          - Mitochondrial-Molluscs
-#          - Mitochondrial-Ascidians
-#          - Mitochondrial-Nematodes
-#          - Mitochondrial-Platyhelminths
-#          - Mitochondrial-Yeasts
-#          - Mitochondrial-Euascomycetes
-#          - Mitochondrial-Protozoans
-#        type: enum
+  - class: SchemaDefRequirement
+    types:
+      - $import: TransDecoder-v5-genetic_codes.yaml
   - class: ResourceRequirement
     ramMin: 1024
   - class: InlineJavascriptRequirement
