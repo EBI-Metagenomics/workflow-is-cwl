@@ -21,16 +21,7 @@ inputs:
     label: DIAMOND database input file
     doc: Path to the DIAMOND database file.
   - id: outputFormat
-    type:
-      - 'null'
-      - type: enum
-        symbols:
-          - '0'
-          - '5'
-          - '6'
-          - '100'
-          - '101'
-        name: outputFormat
+    type: Diamond-output_formats.yaml#output_formats
     inputBinding:
       position: 0
       prefix: '--outfmt'
@@ -68,14 +59,7 @@ inputs:
       compressed). If this parameter is omitted, the input will be read from
       stdin
   - id: strand
-    type:
-      - 'null'
-      - type: enum
-        symbols:
-          - both
-          - minus
-          - plus
-        name: strand
+    type: Diamond-strand_values.yaml#strand
     inputBinding:
       position: -3
       prefix: '--strand'
@@ -131,6 +115,10 @@ requirements:
   - class: ResourceRequirement
     ramMin: 1024
   - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: Diamond-output_formats.yaml
+      - $import: Diamond-strand_values.yaml
 hints:
   - class: DockerRequirement
     dockerPull: 'buchfink/diamond:version0.9.21'
