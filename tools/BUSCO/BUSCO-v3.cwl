@@ -64,7 +64,7 @@ inputs:
       Adds substantially to the run time!
       Can improve results for some non-model organisms.
   - id: mode
-    type: ../tools/BUSCO/BUSCO-assessment_modes.yaml#assessment_modes
+    type: BUSCO-assessment_modes.yaml#assessment_modes
     inputBinding:
       position: 0
       prefix: '--mode'
