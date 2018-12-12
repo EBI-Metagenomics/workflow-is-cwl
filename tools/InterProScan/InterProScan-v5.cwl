@@ -18,34 +18,17 @@ inputs:
       Optional, path to fasta file that should be loaded on Master startup.
       Alternatively, in CONVERT mode, the InterProScan 5 XML file to convert.
   - id: applications
-    type: 'string[]?'
-    # TODO: Looks like cwlexec does not like types of Array<enum>; cwlexec exits and prints out the following:
-    # TODO: The variable type of the field [applications] is not valid, "a CWLType" is required.
-    # TODO: This might also refer 2: https://github.com/common-workflow-language/cwltool/issues/576
-    #    type:
-    #      type: array
-    #      items: string?
-    #        type: enum
-    #        name: appl
-    #        symbols:
-    #          - PfamA
-    #          - TIGRFAM
+    type: InterProScan-apps.yaml#apps[]?
     inputBinding:
       position: 9
+      itemSeparator: ','
       prefix: '--applications'
     label: Analysis
     doc: >-
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type:
-      type: enum
-      symbols:
-        - TSV
-        - XML
-        - JSON
-        - GFF3
-      name: outputFormat
+    type: InterProScan-protein_formats.yaml#protein_formats
     inputBinding:
       position: 10
       prefix: '--formats'
@@ -133,6 +116,10 @@ arguments:
     valueFrom: $(runtime.tmpdir)
 requirements:
   - class: ShellCommandRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: InterProScan-apps.yaml
+      - $import: InterProScan-protein_formats.yaml
   - class: ResourceRequirement
     ramMin: 8192
     coresMin: 3
