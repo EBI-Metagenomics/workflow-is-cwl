@@ -85,14 +85,14 @@ arguments:
   - position: 0
     shellQuote: false
     valueFrom: cp -r /opt/interproscan $(runtime.outdir)/interproscan;
-#  TODO: Works for cwl-runner & cwlexec
+# TODO: Works for cwl-runner & cwlexec
 #  This solution will cause symbolic link creating warnings for the freemarker files
   - position: 1
     shellQuote: false
     valueFrom: >-
       cp -rs $(inputs.databases.path)/data/*
       $(runtime.outdir)/interproscan/data;
-#  TODO: The following solution will work for cwl-runner but not for cwlexec
+# TODO: The following solution will work for cwl-runner but not for cwlexec
 #  This solution avoids the symbolic link creating warnings for the freemarker files
 #  - position: 1
 #    shellQuote: false
