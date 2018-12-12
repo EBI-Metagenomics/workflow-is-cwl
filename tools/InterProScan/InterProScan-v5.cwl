@@ -28,9 +28,10 @@ inputs:
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type: InterProScan-protein_formats.yaml#protein_formats
+    type: InterProScan-protein_formats.yaml#protein_formats[]?
     inputBinding:
       position: 10
+      itemSeparator: ','
       prefix: '--formats'
     label: output format
     doc: >-

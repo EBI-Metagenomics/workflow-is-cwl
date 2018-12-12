@@ -27,7 +27,7 @@ inputs:
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats
+    type: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats[]?
     label: output format
     doc: >-
       Optional, case-insensitive, comma separated list of output formats.

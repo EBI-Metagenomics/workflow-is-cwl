@@ -8,6 +8,8 @@ requirements:
    types:
     - $import: ../utils/esl-reformat-replace.yaml
     - $import: ../tools/BUSCO/BUSCO-assessment_modes.yaml
+    - $import: ../tools/InterProScan/InterProScan-apps.yaml
+    - $import: ../tools/InterProScan/InterProScan-protein_formats.yaml
 
 inputs:
   transcriptsFile:
@@ -20,15 +22,8 @@ inputs:
     type: int?
     default: 10000
   i5Databases: Directory
-  i5Applications: string[]?
-  i5OutputFormat:
-    type:
-      type: enum
-      symbols:
-        - TSV
-        - XML
-        - JSON
-        - GFF3
+  i5Applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
+  i5OutputFormat: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats[]?
   blockSize: float?
   covariance_models: File[]
   clanInfoFile: File
