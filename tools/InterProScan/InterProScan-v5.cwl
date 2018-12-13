@@ -29,6 +29,7 @@ inputs:
       analyses will be run.
   - id: outputFormat
     type: InterProScan-protein_formats.yaml#protein_formats[]?
+    default: TSV
     inputBinding:
       position: 10
       itemSeparator: ','
