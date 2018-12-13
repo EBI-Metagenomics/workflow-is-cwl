@@ -21,7 +21,7 @@ inputs:
     label: DIAMOND database input file
     doc: Path to the DIAMOND database file.
   - id: outputFormat
-    type: Diamond-output_formats.yaml#output_formats
+    type: Diamond-output_formats.yaml#output_formats?
     inputBinding:
       position: 0
       prefix: '--outfmt'
@@ -59,7 +59,7 @@ inputs:
       compressed). If this parameter is omitted, the input will be read from
       stdin
   - id: strand
-    type: Diamond-strand_values.yaml#strand
+    type: Diamond-strand_values.yaml#strand?
     inputBinding:
       position: -3
       prefix: '--strand'
