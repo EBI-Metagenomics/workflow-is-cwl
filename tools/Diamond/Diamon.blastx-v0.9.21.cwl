@@ -106,7 +106,7 @@ doc: |
   Please visit https://github.com/bbuchfink/diamond for full documentation.
 
   Releases can be downloaded from https://github.com/bbuchfink/diamond/releases
-label: 'Aligns DNA query sequences against a protein reference database'
+label: Aligns DNA query sequences against a protein reference database
 arguments:
   - position: 0
     prefix: '--out'
@@ -114,10 +114,10 @@ arguments:
 requirements:
   - class: SchemaDefRequirement
     types:
-      - $import: Diamond-output_formats.yaml
       - $import: Diamond-strand_values.yaml
+      - $import: Diamond-output_formats.yaml
   - class: ResourceRequirement
-    ramMin: 1024
+    ramMin: 1000
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
@@ -125,6 +125,6 @@ hints:
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
+'s:author': Maxim Scheremetjews
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'s:author': Maxim Scheremetjews
