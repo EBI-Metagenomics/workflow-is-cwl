@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -89,6 +90,24 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: 'greatfireball/ime_transdecoder:5.0.2'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: geneToTranscriptMap
+        gx:type: data
+        gx:format: 'txt'
+        gx:optional: True
+      - gx:name: geneticCode
+        gx:type: text 
+        gx:optional: True
+      - gx:name: minimumProteinLength
+        gx:type: integer
+        gx:optional: True
+      - gx:name: strandSpecific
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: transcriptsFile
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
