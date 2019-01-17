@@ -8,7 +8,7 @@ baseCommand:
 inputs:
   - id: replace
     type: string?
-    label:
+    label: replace
     doc: must be equal length with "find"
     inputBinding:
       position: 1
