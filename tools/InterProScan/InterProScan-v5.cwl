@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
@@ -128,6 +129,15 @@ requirements:
   - class: DockerRequirement
     dockerPull: 'biocontainers/interproscan:v5.30-69.0_cv1'
   - class: InlineJavascriptRequirement
+hints:
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: applications
+        gx:type: text
+        gx:optional: True
+      - gx:name: proteinFile
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
