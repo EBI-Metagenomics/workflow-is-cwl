@@ -7,7 +7,9 @@ baseCommand:
   - esl-reformat
 inputs:
   - id: replace
-    type: esl-reformat-replace.yaml#replace?
+    type: string?
+    label:
+    doc: must be equal length with "find"
     inputBinding:
       position: 1
       prefix: '--replace'
@@ -29,9 +31,6 @@ arguments:
   - position: 2
     valueFrom: fasta
 requirements:
-  - class: SchemaDefRequirement
-    types:
-      - $import: esl-reformat-replace.yaml
   - class: ResourceRequirement
     ramMin: 100
     coresMax: 1

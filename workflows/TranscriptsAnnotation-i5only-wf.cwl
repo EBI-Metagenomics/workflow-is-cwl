@@ -4,17 +4,13 @@ label: Transcripts annotation workflow
 
 requirements:
  - class: SubworkflowFeatureRequirement
- - class: SchemaDefRequirement
-   types:
-    - $import: ../utils/esl-reformat-replace.yaml
-    - $import: ../tools/BUSCO/BUSCO-assessment_modes.yaml
 
 inputs:
   transcriptsFile:
     type: File
     format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
-  replace: ../utils/esl-reformat-replace.yaml#replace?
+  replace: string?
   diamondSeqdb: File
   i5_chunk_size:
     type: int?
