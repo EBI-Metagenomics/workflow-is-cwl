@@ -14,12 +14,8 @@ baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
 
 inputs:
   - id: seq_type
-    type:
-      type: enum
-      symbols:
-        - fa
-        - fq
-      name: seq_type
+    type: trinity-seq_type.yaml#seq_type
+    default: fa
     inputBinding:
       position: 1
       prefix: '--seqType'
