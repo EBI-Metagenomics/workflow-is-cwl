@@ -1,0 +1,4 @@
+replace: "*: "
+sequences:
+  class: File
+  path: test-input/test_seq.fasta
