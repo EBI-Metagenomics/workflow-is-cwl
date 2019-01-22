@@ -19,7 +19,7 @@ inputs:
   replace: ../utils/esl-reformat-replace.yaml#replace?
   diamondSeqdb: File
   i5_chunk_size:
-    type: int
+    type: int?
     default: 10000
   i5Databases: Directory
   i5Applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
