@@ -74,7 +74,7 @@ steps:
 
   run_interproscan:
     label: Run InterProScan on chunked sequence files
-    run: ../tools/InterProScan/InterProScan-v5.cwl
+    run: ../tools/InterProScan/InterProScan-v5-none_docker.cwl
     in:
       inputFile: split_seqs/chunks
       applications: applications
