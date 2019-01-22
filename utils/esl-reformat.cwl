@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
       prefix: '--replace'
-      valueFrom: '$(self.find):$(self.replace)'
+      valueFrom: '$(self)'
   - format: 'edam:format_1929'
     id: sequences
     type: File
