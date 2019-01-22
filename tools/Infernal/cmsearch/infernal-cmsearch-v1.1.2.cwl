@@ -97,7 +97,7 @@ hints:
         version:
           - 1.1.2
   - class: DockerRequirement
-    dockerPull: 'biocontainers/infernal:v1.1.2-1-deb_cv1'
+    dockerPull: 'quay.io/biocontainers/infernal:1.1.2--h470a237_1'
 requirements:
   - class: InlineJavascriptRequirement
 $schemas:
