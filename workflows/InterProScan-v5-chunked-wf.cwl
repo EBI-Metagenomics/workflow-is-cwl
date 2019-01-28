@@ -37,7 +37,7 @@ inputs:
   - id: databases
     type: Directory
   - id: chunk_size
-    type: int
+    type: int?
     default: 10000
   - id: disableResidueAnnotation
     type: boolean?

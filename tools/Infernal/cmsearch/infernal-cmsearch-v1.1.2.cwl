@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -97,7 +98,31 @@ hints:
         version:
           - 1.1.2
   - class: DockerRequirement
-    dockerPull: 'biocontainers/infernal:v1.1.2-1-deb_cv1'
+    dockerPull: 'quay.io/biocontainers/infernal:1.1.2--h470a237_1'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: covariance_model_database
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: cpu
+        gx:type: integer
+        gx:optional: True
+      - gx:name: cut_ga
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: omit_alignment_section
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: only_hmm
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: query_sequences
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: search_space_size
+        gx:type: integer
+        gx:default_value: 1000
+        gx:optional: True
 requirements:
   - class: InlineJavascriptRequirement
 $schemas:

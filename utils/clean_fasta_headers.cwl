@@ -17,7 +17,7 @@ inputs:
 
 stdin: $(inputs.sequences.path)
 
-baseCommand: [ tr, ' /|<_;#', '-------' ]
+baseCommand: [ tr, '" /|<_;#"', '-------' ]
 
 stdout: $(inputs.sequences.nameroot).cleaned.fasta
 

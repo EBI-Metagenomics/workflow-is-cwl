@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -68,6 +69,20 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmer:3.2--hfc679d8_3
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: bitscoreThreshold
+        gx:type: integer
+        gx:optional: True
+      - gx:name: cpu
+        gx:type: integer
+        gx:optional: True
+      - gx:name: seqFile
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: seqdb
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

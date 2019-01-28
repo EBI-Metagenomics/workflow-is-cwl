@@ -1,14 +1,4 @@
-geneToTranscriptMap: null
-geneticCode: null
-minimumProteinLength: null
-strandSpecific: null
-noRefineStarts: null
-retainBlastpHits: null
-retainLongOrfsLength: null
-retainLongOrfsMode: null
-retainPfamHits: null
 singleBestOnly: true
-train: null
 transcriptsFile:
   class: File
   format: 'edam:format_1929'
