@@ -10,7 +10,8 @@ diamondSeqdb:
 i5Databases:
   class: Directory
   path: ../tools/InterProScan/test-input/databases
-i5OutputFormat: TSV
+i5OutputFormat:
+  - TSV
 i5Applications:
   - PfamA
 blockSize: 1.0

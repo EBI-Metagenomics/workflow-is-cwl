@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -17,26 +18,7 @@ inputs:
       gene-to-transcript identifier mapping file (tab-delimited,
       gene_id<tab>trans_id<return>)
   - id: geneticCode
-    type:
-      - 'null'
-      - type: enum
-        symbols:
-          - Euplotes
-          - Tetrahymena
-          - Candida
-          - Acetabularia
-          - Mitochondrial-Canonical
-          - Mitochondrial-Vertebrates
-          - Mitochondrial-Arthropods
-          - Mitochondrial-Echinoderms
-          - Mitochondrial-Molluscs
-          - Mitochondrial-Ascidians
-          - Mitochondrial-Nematodes
-          - Mitochondrial-Platyhelminths
-          - Mitochondrial-Yeasts
-          - Mitochondrial-Euascomycetes
-          - Mitochondrial-Protozoans
-        name: geneticCode
+    type: TransDecoder-v5-genetic_codes.yaml#genetic_codes?
     inputBinding:
       position: 0
       prefix: '-G'
@@ -99,35 +81,33 @@ label: >-
   TransDecoder.LongOrfs: Perl script, which extracts the long open reading
   frames
 requirements:
-# TODO: The following type definitions are not accepted by CWLEXEC
-# TODO: CWLEXEC exits with "The field [SchemaType] is required by [type]."
-#  - class: SchemaDefRequirement
-#    types:
-#      - name: genetic_codes
-#        symbols:
-#          - universal
-#          - Euplotes
-#          - Tetrahymena
-#          - Candida
-#          - Acetabularia
-#          - Mitochondrial-Canonical
-#          - Mitochondrial-Vertebrates
-#          - Mitochondrial-Arthropods
-#          - Mitochondrial-Echinoderms
-#          - Mitochondrial-Molluscs
-#          - Mitochondrial-Ascidians
-#          - Mitochondrial-Nematodes
-#          - Mitochondrial-Platyhelminths
-#          - Mitochondrial-Yeasts
-#          - Mitochondrial-Euascomycetes
-#          - Mitochondrial-Protozoans
-#        type: enum
+  - class: SchemaDefRequirement
+    types:
+      - $import: TransDecoder-v5-genetic_codes.yaml
   - class: ResourceRequirement
     ramMin: 1024
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 'greatfireball/ime_transdecoder:5.0.2'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: geneToTranscriptMap
+        gx:type: data
+        gx:format: 'txt'
+        gx:optional: True
+      - gx:name: geneticCode
+        gx:type: text 
+        gx:optional: True
+      - gx:name: minimumProteinLength
+        gx:type: integer
+        gx:optional: True
+      - gx:name: strandSpecific
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: transcriptsFile
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

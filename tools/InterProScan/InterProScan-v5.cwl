@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
@@ -18,36 +19,21 @@ inputs:
       Optional, path to fasta file that should be loaded on Master startup.
       Alternatively, in CONVERT mode, the InterProScan 5 XML file to convert.
   - id: applications
-    type: 'string[]?'
-    # TODO: Looks like cwlexec does not like types of Array<enum>; cwlexec exits and prints out the following:
-    # TODO: The variable type of the field [applications] is not valid, "a CWLType" is required.
-    # TODO: This might also refer 2: https://github.com/common-workflow-language/cwltool/issues/576
-    #    type:
-    #      type: array
-    #      items: string?
-    #        type: enum
-    #        name: appl
-    #        symbols:
-    #          - PfamA
-    #          - TIGRFAM
+    type: InterProScan-apps.yaml#apps[]?
     inputBinding:
       position: 9
+      itemSeparator: ','
       prefix: '--applications'
     label: Analysis
     doc: >-
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type:
-      type: enum
-      symbols:
-        - TSV
-        - XML
-        - JSON
-        - GFF3
-      name: outputFormat
+    type: InterProScan-protein_formats.yaml#protein_formats[]?
+    default: TSV
     inputBinding:
       position: 10
+      itemSeparator: ','
       prefix: '--formats'
     label: output format
     doc: >-
@@ -102,14 +88,14 @@ arguments:
   - position: 0
     shellQuote: false
     valueFrom: cp -r /opt/interproscan $(runtime.outdir)/interproscan;
-#  TODO: Works for cwl-runner & cwlexec
+# TODO: Works for cwl-runner & cwlexec
 #  This solution will cause symbolic link creating warnings for the freemarker files
   - position: 1
     shellQuote: false
     valueFrom: >-
       cp -rs $(inputs.databases.path)/data/*
       $(runtime.outdir)/interproscan/data;
-#  TODO: The following solution will work for cwl-runner but not for cwlexec
+# TODO: The following solution will work for cwl-runner but not for cwlexec
 #  This solution avoids the symbolic link creating warnings for the freemarker files
 #  - position: 1
 #    shellQuote: false
@@ -133,12 +119,25 @@ arguments:
     valueFrom: $(runtime.tmpdir)
 requirements:
   - class: ShellCommandRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: InterProScan-apps.yaml
+      - $import: InterProScan-protein_formats.yaml
   - class: ResourceRequirement
     ramMin: 8192
     coresMin: 3
   - class: DockerRequirement
     dockerPull: 'biocontainers/interproscan:v5.30-69.0_cv1'
   - class: InlineJavascriptRequirement
+hints:
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: applications
+        gx:type: text
+        gx:optional: True
+      - gx:name: proteinFile
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
