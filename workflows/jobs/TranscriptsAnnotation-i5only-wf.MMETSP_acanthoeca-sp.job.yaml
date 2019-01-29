@@ -1,19 +1,20 @@
 transcriptsFile:
   class: File
   format: 'edam:format_1929'
-  path: MMETSP0795.trinity_out_2.2.0.Trinity.fasta
+#  path: MMETSP_acanthoeca-sp-10tr_trinity_v2.6.5_elixir.fasta
+  location: ftp://ftp.ebi.ac.uk/pub/databases/metagenomics/cwl/inputs/MMETSP_acanthoeca-sp-10tr_trinity_v2.6.5_elixir.fasta.gz
 singleBestOnly: true
 replace:
   find: '*'
   replace: X
 diamondSeqdb:
   class: File
-  path: seq-databases/uniref90.dmnd
-#  location: ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/uniref90.fasta.gz
+#  path: uniref90_20180124_diamond-v0.9.21.dmnd
+  location: ftp://ftp.ebi.ac.uk/pub/databases/metagenomics/cwl/ref_dbs/uniref90_20180124_diamond-v0.9.21.dmnd.gz
 i5Databases:
   class: Directory
-  path: tools/interproscan-5.28-67.0
-#  location: ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.30-69.0/alt/interproscan-data-5.30-69.0.tar.gz
+  path: interproscan-data-5.30-69.0/data
+  location: ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.30-69.0/alt/interproscan-data-5.30-69.0.tar.gz
 i5OutputFormat: TSV
 blockSize: 1.0
 covariance_models:
@@ -84,12 +85,11 @@ covariance_models:
 #    path: databases/Rfam/14.0/Rfam.cm
 clanInfoFile:
   class: File
-  path: databases/Rfam/14.0/Rfam.clanin
-#  location: ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.0/Rfam.clanin
+  location: ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.0/Rfam.clanin
 cmsearchCores: 2
 buscoLineage:
   class: Directory
-  path: databases/BUSCO/eukaryota_odb9
-#  location: https://busco.ezlab.org/datasets/eukaryota_odb9.tar.gz
-buscoOutputName: MMETSP0795
+#  path: databases/BUSCO/eukaryota_odb9
+  location: https://busco.ezlab.org/datasets/eukaryota_odb9.tar.gz
+buscoOutputName: MMETSP_acanthoeca_sp
 buscoMode: tran
