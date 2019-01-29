@@ -3,14 +3,14 @@ class: Workflow
 label: Transcriptome assembly workflow
 
 requirements:
- SchemaDefRequirement:
+ - class: MultipleInputFeatureRequirement
+ - class: SchemaDefRequirement
    types:
     - $import: ../tools/Trimmomatic/trimmomatic-end_mode.yaml
-    - $import: ../tools/Trimmomatic/trimmomatic-sliding_window.yaml
     - $import: ../tools/Trimmomatic/trimmomatic-phred.yaml
-    - $import: ../tools/Trimmomatic/trimmomatic-illumina_clipping.yaml
-    - $import: ../tools/Trimmomatic/trimmomatic-max_info.yaml
-     MultipleInputFeatureRequirement: {}
+    - $import: ../tools/Trimmomatic/trimmomatic-sliding_window.yaml
+    - $import: ../tools/Trinity/trinity-seq_type.yaml
+    - $import: ../tools/Trinity/trinity-ss_lib_type.yaml
 
 inputs:
   read_files:
@@ -36,6 +36,25 @@ inputs:
     label: 'read -end mode format'
     doc: >
       Read -end mode format to be specify to Trimmomatic
+  trimmomatic_phred:
+    type: ../tools/Trimmomatic/trimmomatic-phred.yaml#phred
+    label: 'quality score format'
+    default: '33'
+    doc: >
+      Either PHRED "33" or "64" specifies the base quality encoding. Default: 64
+  trimmomatic_slidingWindow:
+    type: ../tools/Trimmomatic/trimmomatic-sliding_window.yaml#slidingWindow
+    label: 'read filtering sliding window'
+    default:
+      windowSize: 4
+      requiredQuality: 15
+    doc: >
+      Perform a sliding window trimming, cutting once the average quality
+      within the window falls below a threshold. By considering multiple
+      bases, a single poor quality base will not cause the removal of high
+      quality data later in the read.
+      <windowSize> specifies the number of bases to average across
+      <requiredQuality> specifies the average quality required
   trinity_max_mem:
     type: string
     label: 'maximum memory allocated to Trinity'
@@ -48,22 +67,12 @@ inputs:
     doc: > 
       number of CPUs to use, default: 2
   trinity_seq_type:
-    type:
-      type: enum
-      symbols:
-        - fa
-        - fq
+    type: ../tools/Trinity/trinity-seq_type.yaml#seq_type
     label: 'read file(s) format'
     doc: >
       type of reads: (fa or fq)
   trinity_ss_lib_type:
-    type:
-      type: enum
-      symbols:
-        - FR
-        - RF
-        - F
-        - R
+    type: ../tools/Trinity/trinity-ss_lib_type.yaml#ss_lib_type
     label: 'Strand-specific RNA-Seq read orientation'
     doc: >
       Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
@@ -140,15 +149,12 @@ steps:
     in:
       reads1: forward_reads
       reads2: reverse_reads
-      phred: { default: '33' }
+      phred: trimmomatic_phred
       leading: { default: 3 }
       trailing: { default: 3 }
       end_mode: end_mode
       minlen: { default: 100 }
-      slidingwindow:
-        default:
-          windowSize: 4
-          requiredQuality: 15
+      slidingwindow: trimmomatic_slidingWindow
     out: [log_file, reads1_trimmed, reads1_trimmed_unpaired, reads2_trimmed_paired, reads2_trimmed_unpaired]
 
   run_assembly:
