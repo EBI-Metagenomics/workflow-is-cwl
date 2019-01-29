@@ -16,7 +16,7 @@ outputs:
   - id: chunks
     type: 'File[]'
     outputBinding:
-      glob: '*'
+      glob: '*.fasta'
     format: 'edam:format_1929'
 doc: 'based upon code by developers from EMBL-EBI'
 label: split FASTA by number of records
