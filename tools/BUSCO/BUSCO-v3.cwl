@@ -65,7 +65,13 @@ inputs:
       Adds substantially to the run time!
       Can improve results for some non-model organisms.
   - id: mode
-    type: BUSCO-assessment_modes.yaml#assessment_modes
+    type:
+      type: enum
+      symbols:
+        - geno
+        - prot
+        - tran
+      name: mode
     inputBinding:
       position: 0
       prefix: '--mode'
@@ -222,9 +228,6 @@ requirements:
   - class: ResourceRequirement
     coresMin: 1
   - class: InlineJavascriptRequirement
-  - class: SchemaDefRequirement
-    types:
-      - $import: BUSCO-assessment_modes.yaml
 hints:
   - class: SoftwareRequirement
     packages:

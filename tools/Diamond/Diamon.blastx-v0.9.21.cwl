@@ -21,7 +21,16 @@ inputs:
     label: DIAMOND database input file
     doc: Path to the DIAMOND database file.
   - id: outputFormat
-    type: Diamond-output_formats.yaml#output_formats?
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - '0'
+          - '5'
+          - '6'
+          - '100'
+          - '101'
+        name: outputFormat
     inputBinding:
       position: 0
       prefix: '--outfmt'
@@ -59,7 +68,14 @@ inputs:
       compressed). If this parameter is omitted, the input will be read from
       stdin
   - id: strand
-    type: Diamond-strand_values.yaml#strand?
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - both
+          - minus
+          - plus
+        name: strand
     inputBinding:
       position: -3
       prefix: '--strand'
@@ -106,18 +122,14 @@ doc: |
   Please visit https://github.com/bbuchfink/diamond for full documentation.
 
   Releases can be downloaded from https://github.com/bbuchfink/diamond/releases
-label: Aligns DNA query sequences against a protein reference database
+label: 'Aligns DNA query sequences against a protein reference database'
 arguments:
   - position: 0
     prefix: '--out'
     valueFrom: $(inputs.queryInputFile.basename).diamond_matches
 requirements:
-  - class: SchemaDefRequirement
-    types:
-      - $import: Diamond-strand_values.yaml
-      - $import: Diamond-output_formats.yaml
   - class: ResourceRequirement
-    ramMin: 1000
+    ramMin: 1024
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
@@ -125,6 +137,6 @@ hints:
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
-'s:author': Maxim Scheremetjews
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
+'s:author': Maxim Scheremetjew

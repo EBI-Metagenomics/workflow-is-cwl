@@ -8,8 +8,6 @@ requirements:
    types:
     - $import: ../utils/esl-reformat-replace.yaml
     - $import: ../tools/BUSCO/BUSCO-assessment_modes.yaml
-    - $import: ../tools/InterProScan/InterProScan-apps.yaml
-    - $import: ../tools/InterProScan/InterProScan-protein_formats.yaml
 
 inputs:
   transcriptsFile:
@@ -22,13 +20,26 @@ inputs:
     format: edam:format_1929  # FASTA
   diamondSeqdb: File
   i5Databases: Directory
-  i5Applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
-  i5OutputFormat: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats[]?
+  i5Applications: string[]?
+  i5OutputFormat:
+    type:
+      type: enum
+      symbols:
+        - TSV
+        - XML
+        - JSON
+        - GFF3
   blockSize: float?
   covariance_models: File[]
   clanInfoFile: File
   cmsearchCores: int
-  buscoMode: ../tools/BUSCO/BUSCO-assessment_modes.yaml#assessment_modes
+  buscoMode:
+    type:
+      type: enum
+      symbols:
+        - geno
+        - prot
+        - tran
   buscoOutputName: string
   buscoLineage: Directory
 

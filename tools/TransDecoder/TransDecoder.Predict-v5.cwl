@@ -7,7 +7,26 @@ baseCommand:
   - TransDecoder.Predict
 inputs:
   - id: geneticCode
-    type: TransDecoder-v5-genetic_codes.yaml#genetic_codes?
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - Euplotes
+          - Tetrahymena
+          - Candida
+          - Acetabularia
+          - Mitochondrial-Canonical
+          - Mitochondrial-Vertebrates
+          - Mitochondrial-Arthropods
+          - Mitochondrial-Echinoderms
+          - Mitochondrial-Molluscs
+          - Mitochondrial-Ascidians
+          - Mitochondrial-Nematodes
+          - Mitochondrial-Platyhelminths
+          - Mitochondrial-Yeasts
+          - Mitochondrial-Euascomycetes
+          - Mitochondrial-Protozoans
+        name: geneticCode
     inputBinding:
       position: 0
       prefix: '-G'
@@ -144,9 +163,29 @@ doc: >
   https://github.com/TransDecoder/TransDecoder/releases
 label: 'TransDecoder.Predict: Perl script, which predicts the likely coding regions'
 requirements:
-  - class: SchemaDefRequirement
-    types:
-      - $import: TransDecoder-v5-genetic_codes.yaml
+# TODO: The following type definitions are not accepted by CWLEXEC
+# TODO: CWLEXEC exits with "The field [SchemaType] is required by [type]."
+#  - class: SchemaDefRequirement
+#    types:
+#      - name: genetic_codes
+#        symbols:
+#          - universal
+#          - Euplotes
+#          - Tetrahymena
+#          - Candida
+#          - Acetabularia
+#          - Mitochondrial-Canonical
+#          - Mitochondrial-Vertebrates
+#          - Mitochondrial-Arthropods
+#          - Mitochondrial-Echinoderms
+#          - Mitochondrial-Molluscs
+#          - Mitochondrial-Ascidians
+#          - Mitochondrial-Nematodes
+#          - Mitochondrial-Platyhelminths
+#          - Mitochondrial-Yeasts
+#          - Mitochondrial-Euascomycetes
+#          - Mitochondrial-Protozoans
+#        type: enum
   - class: ResourceRequirement
     ramMin: 1024
   - class: InitialWorkDirRequirement

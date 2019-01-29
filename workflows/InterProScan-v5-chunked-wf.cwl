@@ -6,11 +6,7 @@ $namespaces:
 label: Runs InterProScan on batches of sequences to retrieve functional annotations.
 
 requirements:
-  ScatterFeatureRequirement: {}
-  SchemaDefRequirement:
-    types:
-      - $import: ../tools/InterProScan/InterProScan-apps.yaml
-      - $import: ../tools/InterProScan/InterProScan-protein_formats.yaml
+ ScatterFeatureRequirement: {}
 
 inputs:
   - format: 'edam:format_1929'
@@ -21,13 +17,20 @@ inputs:
       Optional, path to fasta file that should be loaded on Master startup.
       Alternatively, in CONVERT mode, the InterProScan 5 XML file to convert.
   - id: applications
-    type: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
+    type: 'string[]?'
     label: Analysis
     doc: >-
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats[]?
+    type:
+      type: enum
+      symbols:
+        - TSV
+        - XML
+        - JSON
+        - GFF3
+      name: outputFormat
     label: output format
     doc: >-
       Optional, case-insensitive, comma separated list of output formats.
