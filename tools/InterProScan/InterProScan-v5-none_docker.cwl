@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
@@ -21,6 +22,7 @@ inputs:
     type: 'string[]?'
     inputBinding:
       position: 9
+      itemSeparator: ','
       prefix: '--applications'
     label: Analysis
     doc: >-
@@ -37,6 +39,7 @@ inputs:
       name: outputFormat
     inputBinding:
       position: 10
+      itemSeparator: ','
       prefix: '--formats'
     label: output format
     doc: >-
@@ -106,6 +109,15 @@ requirements:
     ramMin: 8192
     coresMin: 3
   - class: InlineJavascriptRequirement
+hints:
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: applications
+        gx:type: text
+        gx:optional: True
+      - gx:name: proteinFile
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
