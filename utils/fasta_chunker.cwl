@@ -7,7 +7,8 @@ baseCommand:
   - python3
 inputs:
   - id: chunk_size
-    type: int
+    type: int?
+    default: 10
   - id: seqs
     type: File
     format: 'edam:format_1929'
@@ -15,7 +16,7 @@ outputs:
   - id: chunks
     type: 'File[]'
     outputBinding:
-      glob: '*'
+      glob: '*.fasta'
     format: 'edam:format_1929'
 doc: 'based upon code by developers from EMBL-EBI'
 label: split FASTA by number of records

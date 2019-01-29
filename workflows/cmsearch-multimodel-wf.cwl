@@ -5,59 +5,51 @@ $namespaces:
   s: 'http://schema.org/'
 label: Identifies non-coding RNAs using Rfams covariance models
 inputs:
-  - id: clan_info
+  clan_info:
     type: File
-  - id: cores
+  cores:
     type: int
-  - id: covariance_models
+  covariance_models:
     type: File[]
-  - id: query_sequences
+  query_sequences:
     type: File
 outputs:
-  - id: deoverlapped_matches
-    outputSource:
-      - remove_overlaps/deoverlapped_matches
+  deoverlapped_matches:
+    outputSource: remove_overlaps/deoverlapped_matches
     type: File
 steps:
-  - id: cmsearch
+  cmsearch:
+    label: Search sequence(s) against a covariance model database
+    run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
+    scatter: [ covariance_model_database ]
+    scatterMethod: dotproduct
     in:
-      - id: covariance_model_database
-        source: covariance_models
-      - id: cpu
-        source: cores
-      - id: omit_alignment_section
+      covariance_model_database: covariance_models
+      cpu: cores
+      omit_alignment_section:
         default: true
-      - id: only_hmm
+      only_hmm:
         default: true
-      - id: query_sequences
-        source: query_sequences
-      - id: search_space_size
+      query_sequences: query_sequences
+      search_space_size:
         default: 1000
     out:
-      - id: matches
-      - id: programOutput
-    run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
-    label: Search sequence(s) against a covariance model database
-    scatter:
-      - covariance_model_database
-  - id: concatenate_matches
-    in:
-      - id: files
-        source:
-          - cmsearch/matches
-    out:
-      - id: result
+      - matches
+      - programOutput
+  concatenate_matches:
     run: ../utils/concatenate.cwl
-  - id: remove_overlaps
     in:
-      - id: clan_information
-        source: clan_info
-      - id: cmsearch_matches
-        source: concatenate_matches/result
+      files: cmsearch/matches
     out:
-      - id: deoverlapped_matches
-    run: ../tools/cmsearch-deoverlap/cmsearch-deoverlap-v0.02.cwl
+      - result
+  remove_overlaps:
     label: Remove lower scoring overlaps from cmsearch --tblout files.
+    run: ../tools/cmsearch-deoverlap/cmsearch-deoverlap-v0.02.cwl
+    in:
+      clan_information: clan_info
+      cmsearch_matches: concatenate_matches/result
+    out:
+      - deoverlapped_matches
 requirements:
   - class: ScatterFeatureRequirement
 $schemas:
