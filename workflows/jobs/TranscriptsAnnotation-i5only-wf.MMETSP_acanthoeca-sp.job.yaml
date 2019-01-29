@@ -6,7 +6,7 @@ transcriptsFile:
 singleBestOnly: true
 replace:
   find: '*'
-  replace: ''
+  replace: X
 diamondSeqdb:
   class: File
 #  path: uniref90_20180124_diamond-v0.9.21.dmnd
@@ -91,5 +91,5 @@ buscoLineage:
   class: Directory
 #  path: databases/BUSCO/eukaryota_odb9
   location: https://busco.ezlab.org/datasets/eukaryota_odb9.tar.gz
-buscoOutputName: MMETSP0795
+buscoOutputName: MMETSP_acanthoeca_sp
 buscoMode: tran
