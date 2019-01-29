@@ -16,7 +16,7 @@ outputs:
   - id: chunks
     type: 'File[]'
     outputBinding:
-      glob: '*.fasta'
+      glob: 'chunks/*_*.fasta'
     format: 'edam:format_1929'
 doc: 'based upon code by developers from EMBL-EBI'
 label: split FASTA by number of records
@@ -25,14 +25,16 @@ arguments:
     prefix: '-c'
     valueFrom: |
       from Bio import SeqIO
+      import os
       currentSequences = []
+      os.mkdir("$(runtime.outdir)/chunks")
       for record in SeqIO.parse("$(inputs.seqs.path)", "fasta"):
           currentSequences.append(record)
           if len(currentSequences) == $(inputs.chunk_size):
               fileName = currentSequences[0].id + "_" + currentSequences[-1].id + ".fasta"
               for char in [ "/", " ", ":" ]:
                   fileName = fileName.replace(char, "_")
-              SeqIO.write(currentSequences, "$(runtime.outdir)/"+fileName, "fasta")
+              SeqIO.write(currentSequences, "$(runtime.outdir)/chunks/"+fileName, "fasta")
               currentSequences = []
 
       # write any remaining sequences
@@ -40,7 +42,7 @@ arguments:
           fileName = currentSequences[0].id + "_" + currentSequences[-1].id + ".fasta"
           for char in [ "/", " ", ":" ]:
               fileName = fileName.replace(char, "_")
-          SeqIO.write(currentSequences, "$(runtime.outdir)/"+fileName, "fasta")
+          SeqIO.write(currentSequences, "$(runtime.outdir)/chunks/"+fileName, "fasta")
 requirements:
   - class: ResourceRequirement
     ramMin: 100
