@@ -56,12 +56,6 @@ inputs:
       position: 0
       prefix: '-Z'
     label: search space size in *Mb* to <x> for E-value calculations
-  - id: tabular_output
-    type: string?
-    inputBinding:
-      position: 0
-      prefix: '-Z'
-    label: Specifies that a tabular output file should be created
 
 outputs:
   - id: matches
@@ -90,6 +84,9 @@ doc: >
   http://eddylab.org/infernal/infernal-1.1.2.tar.gz
 label: Search sequence(s) against a covariance model database
 arguments:
+  - position: 0
+    prefix: '--tblout'
+    valueFrom: $(inputs.query_sequences.basename).cmsearch_matches.tbl
   - position: 0
     prefix: '-o'
     valueFrom: $(inputs.query_sequences.basename).cmsearch.out
