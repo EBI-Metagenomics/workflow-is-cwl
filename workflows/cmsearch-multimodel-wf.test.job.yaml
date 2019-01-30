@@ -3,10 +3,8 @@ clan_info:
   path: ../tools/cmsearch-deoverlap/test-input/ribo.claninfo
 cores: 1
 covariance_models:
-  - class: File
-    path: ../tools/Infernal/cmsearch/test-input/tRNA5.c.cm
-  - class: File
-    path: ../tools/Infernal/cmsearch/test-input/mt-tmRNA.cm
+  - {class: File, path: ../tools/Infernal/cmsearch/test-input/tRNA5.c.cm}
+  - {class: File, path: ../tools/Infernal/cmsearch/test-input/mt-tmRNA.cm}
 query_sequences:
   class: File
   format: 'edam:format_1929'

@@ -13,6 +13,9 @@ inputs:
     type: File[]
   query_sequences:
     type: File
+  catOutputFileName:
+    type: string
+    default: full_cmsearch_output
 outputs:
   deoverlapped_matches:
     outputSource: remove_overlaps/deoverlapped_matches
@@ -21,8 +24,7 @@ steps:
   cmsearch:
     label: Search sequence(s) against a covariance model database
     run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
-    scatter: [ covariance_model_database ]
-    scatterMethod: dotproduct
+    scatter: covariance_model_database
     in:
       covariance_model_database: covariance_models
       cpu: cores
@@ -33,13 +35,12 @@ steps:
       query_sequences: query_sequences
       search_space_size:
         default: 1000
-    out:
-      - matches
-      - programOutput
+    out: [ matches, programOutput ]
   concatenate_matches:
     run: ../utils/concatenate.cwl
     in:
       files: cmsearch/matches
+      outputFileName: catOutputFileName
     out:
       - result
   remove_overlaps:
