@@ -5,6 +5,3 @@ inputFile:
   format: 'edam:format_1929'
   path: test-input/test_single_protein.fasta
 outputFormat: TSV
-databases:
-  class: Directory
-  path: test-input/databases

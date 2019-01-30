@@ -42,7 +42,7 @@ inputs:
       protein sequences are TSV, XML and GFF3, or for nucleotide sequences GFF3
       and XML.
   - id: databases
-    type: Directory
+    type: Directory?
   - id: chunk_size
     type: int?
     default: 10000
