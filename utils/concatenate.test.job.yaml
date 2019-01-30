@@ -1,0 +1,6 @@
+files:
+  - class: File
+    path: test-input/test_single_protein.fasta_1.tsv
+  - class: File
+    path: test-input/test_single_protein.fasta_2.tsv
+outputFileName: full_i5_annotations
