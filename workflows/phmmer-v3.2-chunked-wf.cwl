@@ -31,7 +31,12 @@ inputs:
     inputBinding:
       position: 2
     label: Target database of sequences
-
+  - id: fullPhmmerMatches
+    type: string
+    default: full_phmmer_matches
+  - id: fullPhmmerOutput
+    type: string
+    default: full_phmmer_output
 outputs:
   - id: matches
     type: File
@@ -62,12 +67,14 @@ steps:
     run: ../utils/concatenate.cwl
     in:
       files: calculate_phmmer_matches/matches
+      outputFileName: fullPhmmerMatches
     out: [ result ]
 
   combine_phmmer_output:
     run: ../utils/concatenate.cwl
     in:
       files: calculate_phmmer_matches/programOutput
+      outputFileName: fullPhmmerOutput
     out: [ result ]
 
 $namespaces:
