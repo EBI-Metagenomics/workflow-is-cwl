@@ -29,14 +29,7 @@ inputs:
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type:
-      type: enum
-      symbols:
-        - TSV
-        - XML
-        - JSON
-        - GFF3
-      name: outputFormat
+    type: outputFormats[]
     inputBinding:
       position: 10
       itemSeparator: ','
@@ -106,6 +99,11 @@ requirements:
     ramMin: 8192
     coresMin: 3
   - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - type: enum
+        name: outputFormats
+        symbols: [ TSV, XML, JSON, GFF3 ]
 hints:
   - class: gx:interface
     gx:inputs:

@@ -29,14 +29,7 @@ inputs:
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type:
-      type: enum
-      symbols:
-        - TSV
-        - XML
-        - JSON
-        - GFF3
-      name: outputFormat
+    type: outputFormats[]
     inputBinding:
       position: 10
       itemSeparator: ','
@@ -128,6 +121,11 @@ requirements:
   - class: DockerRequirement
     dockerPull: 'biocontainers/interproscan:v5.30-69.0_cv1'
   - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - type: enum
+        name: outputFormats
+        symbols: [ TSV, XML, JSON, GFF3 ]
 hints:
   - class: gx:interface
     gx:inputs:
