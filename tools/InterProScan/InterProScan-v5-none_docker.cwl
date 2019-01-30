@@ -29,7 +29,14 @@ inputs:
       Optional, comma separated list of analyses. If this option is not set, ALL
       analyses will be run.
   - id: outputFormat
-    type: outputFormats[]
+    type:
+      type: enum
+      symbols:
+        - TSV
+        - XML
+        - JSON
+        - GFF3
+      name: outputFormat
     inputBinding:
       position: 10
       itemSeparator: ','

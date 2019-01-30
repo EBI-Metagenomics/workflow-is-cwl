@@ -6,8 +6,12 @@ $namespaces:
 label: Runs InterProScan on batches of sequences to retrieve functional annotations.
 
 requirements:
- ScatterFeatureRequirement: {}
-
+  - class: ScatterFeatureRequirement
+  - class: SchemaDefRequirement
+    types:
+      - type: enum
+        name: outputFormats
+        symbols: [ TSV, XML, JSON, GFF3 ]
 inputs:
   - format: 'edam:format_1929'
     id: inputFile
