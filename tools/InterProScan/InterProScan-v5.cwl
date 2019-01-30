@@ -69,7 +69,7 @@ outputs:
   - id: i5Annotations
     type: File
     outputBinding:
-      glob: $(inputs.inputFile.nameroot).i5_annotations
+      glob: $(inputs.inputFile.nameroot).fasta.tsv
 doc: >-
   InterProScan is the software package that allows sequences (protein and
   nucleic) to be scanned against InterPro's signatures. Signatures are
@@ -106,15 +106,12 @@ arguments:
     shellQuote: false
     valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
   - position: 3
-    prefix: '--outfile'
-    valueFrom: $(runtime.outdir)/$(inputs.inputFile.nameroot).i5_annotations
-  - position: 4
     valueFrom: '--disable-precalc'
-  - position: 5
+  - position: 4
     valueFrom: '--goterms'
-  - position: 6
+  - position: 5
     valueFrom: '--pathways'
-  - position: 7
+  - position: 6
     prefix: '--tempdir'
     valueFrom: $(runtime.tmpdir)
 requirements:

@@ -55,6 +55,9 @@ inputs:
     doc: >-
       Optional, the type of the input sequences (dna/rna (n) or protein (p)).
       The default sequence type is protein.
+  - id: catOutputFileName
+    type: string
+    default: full_i5_annotations
 
 outputs:
   - id: i5Annotations
@@ -85,6 +88,7 @@ steps:
     run: ../utils/concatenate.cwl
     in:
       files: run_interproscan/i5Annotations
+      outputFileName: catOutputFileName
     out: [ result ]
 
 $schemas:
