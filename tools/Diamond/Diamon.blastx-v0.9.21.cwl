@@ -130,6 +130,7 @@ arguments:
 requirements:
   - class: ResourceRequirement
     ramMin: 50
+    ramMax: 8192
     coresMin: 16
   - class: InlineJavascriptRequirement
 hints:
