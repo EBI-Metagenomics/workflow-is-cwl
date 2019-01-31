@@ -68,24 +68,24 @@ outputs:
 #  deoverlapped_matches:
 #    type: File
 #    outputSource: identify_nc_rna/deoverlapped_matches
-  busco_short_summary:
-    type: File
-    outputSource: run_transcriptome_assessment/shortSummary
-  busco_full_table:
-    type: File
-    outputSource: run_transcriptome_assessment/fullTable
-  busco_missing_buscos:
-    type: File
-    outputSource: run_transcriptome_assessment/missingBUSCOs
-  busco_hmmer_output:
-    type: Directory
-    outputSource: run_transcriptome_assessment/hmmerOutput
-  busco_translated_proteins:
-    type: Directory
-    outputSource: run_transcriptome_assessment/translatedProteins
-  busco_blast_output:
-    type: Directory
-    outputSource: run_transcriptome_assessment/blastOutput
+#  busco_short_summary:
+#    type: File
+#    outputSource: run_transcriptome_assessment/shortSummary
+#  busco_full_table:
+#    type: File
+#    outputSource: run_transcriptome_assessment/fullTable
+#  busco_missing_buscos:
+#    type: File
+#    outputSource: run_transcriptome_assessment/missingBUSCOs
+#  busco_hmmer_output:
+#    type: Directory
+#    outputSource: run_transcriptome_assessment/hmmerOutput
+#  busco_translated_proteins:
+#    type: Directory
+#    outputSource: run_transcriptome_assessment/translatedProteins
+#  busco_blast_output:
+#    type: Directory
+#    outputSource: run_transcriptome_assessment/blastOutput
 
 steps:
   clean_fasta_header:
