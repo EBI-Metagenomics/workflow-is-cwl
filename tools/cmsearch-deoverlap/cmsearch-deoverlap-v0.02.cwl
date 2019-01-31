@@ -1,7 +1,6 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -50,15 +49,6 @@ hints:
           - '0.02'
   - class: DockerRequirement
     dockerPull: biocrusoe/cmsearch-deoverlap
-  - class: gx:interface
-    gx:inputs:
-      - gx:name: clan_information
-        gx:type: data
-        gx:format: 'txt'
-        gx:optional: True
-      - gx:name: cmsearch_matches
-        gx:type: data
-        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

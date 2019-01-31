@@ -1,7 +1,6 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
@@ -238,58 +237,6 @@ hints:
           - 3.0.2
   - class: DockerRequirement
     dockerPull: 'comics/busco:3.0.2'
-  - class: gx:interface
-    gx:inputs:
-      - gx:name: blastSingleCore
-        gx:type: boolean
-        gx:optional: True
-      - gx:name: cpu
-        gx:type: integer
-        gx:optional: True
-      - gx:name: evalue
-        gx:type: float
-        gx:optional: True
-      - gx:name: force
-        gx:type: boolean
-        gx:optional: True
-      - gx:name: help
-        gx:type: boolean
-        gx:optional: True
-      - gx:name: lineage
-        gx:type: data
-      - gx:name: long
-        gx:type: boolean
-        gx:optional: True
-      - gx:name: mode
-        gx:value: tran
-        gx:type: text
-      - gx:name: outputName
-        gx:value: TEST
-        gx:type: text
-      - gx:name: quiet
-        gx:type: boolean
-        gx:optional: True
-      - gx:name: regionLimit
-        gx:type: integer
-        gx:optional: True
-      - gx:name: restart
-        gx:type: boolean
-        gx:optional: True
-      - gx:name: sequenceFile
-        gx:format: 'txt'
-        gx:type: data
-      - gx:name: species
-        gx:type: text
-        gx:optional: True
-      - gx:name: tarzip
-        gx:type: boolean
-        gx:optional: True
-      - gx:name: tempPath
-        gx:type: data
-        gx:optional: True
-      - gx:name: version
-        gx:type: boolean
-        gx:optional: True
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
