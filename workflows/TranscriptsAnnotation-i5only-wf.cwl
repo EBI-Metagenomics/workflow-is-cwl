@@ -26,7 +26,7 @@ inputs:
         - JSON
         - GFF3
   blockSize: float?
-  covariance_models: File[]
+#  covariance_models: File[]
   clanInfoFile: File
   cmsearchCores: int
   buscoMode:
@@ -65,9 +65,9 @@ outputs:
   diamond_matches:
     type: File
     outputSource: calculate_diamond_matches/matches
-  deoverlapped_matches:
-    type: File
-    outputSource: identify_nc_rna/deoverlapped_matches
+#  deoverlapped_matches:
+#    type: File
+#    outputSource: identify_nc_rna/deoverlapped_matches
   busco_short_summary:
     type: File
     outputSource: run_transcriptome_assessment/shortSummary
@@ -133,25 +133,26 @@ steps:
       blockSize: blockSize
     out: [ matches ]
 
-  identify_nc_rna:
-    label: Identifies non-coding RNAs using Rfams covariance models
-    run: cmsearch-multimodel-wf.cwl
-    in:
-      query_sequences: clean_fasta_header/sequences_with_cleaned_headers
-      covariance_models: covariance_models
-      clan_info: clanInfoFile
-      cores: cmsearchCores
-    out: [ deoverlapped_matches ]
+#  identify_nc_rna:
+#    label: Identifies non-coding RNAs using Rfams covariance models
+#    run: cmsearch-multimodel-wf.cwl
+#    in:
+#      query_sequences: clean_fasta_header/sequences_with_cleaned_headers
+#      covariance_models: covariance_models
+#      clan_info: clanInfoFile
+#      cores: cmsearchCores
+#    out: [ deoverlapped_matches ]
 
-  run_transcriptome_assessment:
-    label: Performs transcriptome assessment using BUSCO
-    run: ../tools/BUSCO/BUSCO-v3.cwl
-    in:
-      mode: buscoMode
-      sequenceFile: clean_fasta_header/sequences_with_cleaned_headers
-      outputName: buscoOutputName
-      lineage: buscoLineage
-    out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
+# TODO: Busco fails due to: File names too long
+#  run_transcriptome_assessment:
+#    label: Performs transcriptome assessment using BUSCO
+#    run: ../tools/BUSCO/BUSCO-v3.cwl
+#    in:
+#      mode: buscoMode
+#      sequenceFile: clean_fasta_header/sequences_with_cleaned_headers
+#      outputName: buscoOutputName
+#      lineage: buscoLineage
+#    out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
 
 
 $namespaces:
