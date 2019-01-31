@@ -129,7 +129,8 @@ arguments:
     valueFrom: $(inputs.queryInputFile.basename).diamond_matches
 requirements:
   - class: ResourceRequirement
-    ramMin: 1024
+    ramMin: 50
+    coresMin: 16
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

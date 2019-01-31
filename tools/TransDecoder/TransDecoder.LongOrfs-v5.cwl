@@ -123,7 +123,8 @@ requirements:
 #          - Mitochondrial-Protozoans
 #        type: enum
   - class: ResourceRequirement
-    ramMin: 1024
+    coresMin: 2
+    ramMin: 50
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

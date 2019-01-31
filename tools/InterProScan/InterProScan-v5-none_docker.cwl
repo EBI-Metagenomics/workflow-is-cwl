@@ -103,7 +103,7 @@ requirements:
   - class: ShellCommandRequirement
   - class: ResourceRequirement
     ramMin: 8192
-    coresMin: 3
+    coresMin: 4
   - class: InlineJavascriptRequirement
 #  - class: SchemaDefRequirement
 #    types:
