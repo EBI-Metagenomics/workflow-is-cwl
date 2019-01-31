@@ -10,11 +10,13 @@ inputs:
     inputBinding:
       position: 1
     streamable: true
+  - id: outputFileName
+    type: string
 outputs:
   - id: result
     type: File
     outputBinding:
-      glob: result
+      glob: $(inputs.outputFileName)
       outputEval: |
         ${ self[0].format = inputs.files[0].format;
            return self; }
@@ -32,7 +34,7 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: 'alpine:3.7'
-stdout: result
+stdout: $(inputs.outputFileName)
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': EMBL - European Bioinformatics Institute
