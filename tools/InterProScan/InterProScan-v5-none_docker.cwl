@@ -1,7 +1,6 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
@@ -106,20 +105,11 @@ requirements:
     ramMin: 8192
     coresMin: 3
   - class: InlineJavascriptRequirement
-  - class: SchemaDefRequirement
-    types:
-      - type: enum
-        name: outputFormats
-        symbols: [ TSV, XML, JSON, GFF3 ]
-hints:
-  - class: gx:interface
-    gx:inputs:
-      - gx:name: applications
-        gx:type: text
-        gx:optional: True
-      - gx:name: proteinFile
-        gx:type: data
-        gx:format: 'txt'
+#  - class: SchemaDefRequirement
+#    types:
+#      - type: enum
+#        name: outputFormats
+#        symbols: [ TSV, XML, JSON, GFF3 ]
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

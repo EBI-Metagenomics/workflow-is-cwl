@@ -15,7 +15,7 @@ inputs:
   i5_chunk_size:
     type: int?
     default: 10000
-  i5Databases: Directory
+  i5Databases: Directory?
   i5Applications: string[]?
   i5OutputFormat:
     type:
