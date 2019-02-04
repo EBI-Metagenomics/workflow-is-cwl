@@ -1,0 +1,4 @@
+fastaFile:
+  class: File
+  format: edam:format_1929
+  path: test-input/test_seq_cut_fasta_headers.fasta
