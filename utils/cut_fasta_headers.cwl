@@ -6,7 +6,7 @@ label: Cuts FASTA headers which are too long
 doc: >-
   Cuts away everything after the first whitespace character.
 
-baseCommand: [ cut, -d' ', -f1 ]
+baseCommand: [ cut, -d , '" "', -f1 ]
 
 inputs:
   fastaFile:
