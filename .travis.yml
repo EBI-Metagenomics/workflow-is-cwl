@@ -135,6 +135,8 @@ matrix:
       script:
         - bash travis/run-utils-cut_fasta_headers.sh
         - if ! [ -e utils/test_seq_cut_fasta_headers.cut.fasta ]; then exit 1; fi
+        - diff -q utils/test_seq_cut_fasta_headers.cut.fasta utils/expected_output/fasta_header_cutter/test_seq_cut_fasta_headers.cut.fasta
+        - less utils/expected_output/fasta_header_cutter/test_seq_cut_fasta_headers.cut.fasta
         - if ! diff -q utils/test_seq_cut_fasta_headers.cut.fasta utils/expected_output/fasta_header_cutter/test_seq_cut_fasta_headers.cut.fasta &>/dev/null; then exit 1; fi
 
     - language: python
