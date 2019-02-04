@@ -40,6 +40,10 @@ inputs:
   buscoLineage: Directory
 
 outputs:
+  cutted_transcripts_file:
+    type: File
+    format: edam:format_1929
+    outputSource: cut_fasta_header/sequences_with_cutted_headers
   cleaned_transcripts_file:
     type: File
     format: edam:format_1929
@@ -68,31 +72,38 @@ outputs:
 #  deoverlapped_matches:
 #    type: File
 #    outputSource: identify_nc_rna/deoverlapped_matches
-#  busco_short_summary:
-#    type: File
-#    outputSource: run_transcriptome_assessment/shortSummary
-#  busco_full_table:
-#    type: File
-#    outputSource: run_transcriptome_assessment/fullTable
-#  busco_missing_buscos:
-#    type: File
-#    outputSource: run_transcriptome_assessment/missingBUSCOs
-#  busco_hmmer_output:
-#    type: Directory
-#    outputSource: run_transcriptome_assessment/hmmerOutput
-#  busco_translated_proteins:
-#    type: Directory
-#    outputSource: run_transcriptome_assessment/translatedProteins
-#  busco_blast_output:
-#    type: Directory
-#    outputSource: run_transcriptome_assessment/blastOutput
+  busco_short_summary:
+    type: File
+    outputSource: run_transcriptome_assessment/shortSummary
+  busco_full_table:
+    type: File
+    outputSource: run_transcriptome_assessment/fullTable
+  busco_missing_buscos:
+    type: File
+    outputSource: run_transcriptome_assessment/missingBUSCOs
+  busco_hmmer_output:
+    type: Directory
+    outputSource: run_transcriptome_assessment/hmmerOutput
+  busco_translated_proteins:
+    type: Directory
+    outputSource: run_transcriptome_assessment/translatedProteins
+  busco_blast_output:
+    type: Directory
+    outputSource: run_transcriptome_assessment/blastOutput
 
 steps:
+  cut_fasta_header:
+    label: Cuts FASTA headers which are too long
+    run: ../utils/cut_fasta_headers.cwl
+    in:
+      fastaFile: transcriptsFile
+    out: [ sequences_with_cutted_headers ]
+
   clean_fasta_header:
     label: Replaces problematic characters from FASTA headers with dashes
     run: ../utils/clean_fasta_headers.cwl
     in:
-      sequences: transcriptsFile
+      sequences: cut_fasta_header/sequences_with_cutted_headers
     out: [ sequences_with_cleaned_headers ]
 
   identify_coding_regions:
@@ -143,16 +154,15 @@ steps:
 #      cores: cmsearchCores
 #    out: [ deoverlapped_matches ]
 
-# TODO: Busco fails due to: File names too long
-#  run_transcriptome_assessment:
-#    label: Performs transcriptome assessment using BUSCO
-#    run: ../tools/BUSCO/BUSCO-v3.cwl
-#    in:
-#      mode: buscoMode
-#      sequenceFile: clean_fasta_header/sequences_with_cleaned_headers
-#      outputName: buscoOutputName
-#      lineage: buscoLineage
-#    out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
+  run_transcriptome_assessment:
+    label: Performs transcriptome assessment using BUSCO
+    run: ../tools/BUSCO/BUSCO-v3.cwl
+    in:
+      mode: buscoMode
+      sequenceFile: clean_fasta_header/sequences_with_cleaned_headers
+      outputName: buscoOutputName
+      lineage: buscoLineage
+    out: [ shortSummary, fullTable, missingBUSCOs, hmmerOutput, translatedProteins, blastOutput ]
 
 
 $namespaces:
