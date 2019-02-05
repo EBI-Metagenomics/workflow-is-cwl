@@ -1,7 +1,7 @@
 clan_info:
   class: File
   path: ../tools/cmsearch-deoverlap/test-input/ribo.claninfo
-cores: 1
+cores: 4
 covariance_models:
   - {class: File, path: ../tools/Infernal/cmsearch/test-input/tRNA5.c.cm}
   - {class: File, path: ../tools/Infernal/cmsearch/test-input/mt-tmRNA.cm}

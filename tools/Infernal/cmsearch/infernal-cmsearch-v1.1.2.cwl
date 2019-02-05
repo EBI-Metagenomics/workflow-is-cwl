@@ -125,6 +125,10 @@ hints:
         gx:optional: True
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ResourceRequirement
+    ramMin: 2048
+    ramMax: 8192
+    coresMin: 4
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
