@@ -38,7 +38,7 @@ inputs:
     type: Directory
   - id: chunk_size
     type: int?
-    default: 10000
+    default: 500
   - id: disableResidueAnnotation
     type: boolean?
     label: Disables residue annotation

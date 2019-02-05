@@ -16,6 +16,7 @@ i5OutputFormat:
   - TSV
 i5Applications:
   - PfamA
+i5_chunk_size: 500
 blockSize: 1.0
 covariance_models:
   - class: File
