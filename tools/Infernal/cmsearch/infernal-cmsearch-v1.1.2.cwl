@@ -101,6 +101,10 @@ hints:
     dockerPull: 'quay.io/biocontainers/infernal:1.1.2--h470a237_1'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ResourceRequirement
+    ramMin: 2048
+    ramMax: 8192
+    coresMin: 4
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

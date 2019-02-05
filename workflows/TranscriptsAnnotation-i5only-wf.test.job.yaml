@@ -21,7 +21,7 @@ covariance_models:
 clanInfoFile:
   class: File
   path: ../tools/cmsearch-deoverlap/test-input/ribo.claninfo
-cmsearchCores: 2
+cmsearchCores: 4
 buscoLineage:
   class: Directory
   path: ../tools/BUSCO/test-input/example

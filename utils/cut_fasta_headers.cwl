@@ -6,6 +6,7 @@ label: Cuts FASTA headers which are too long
 doc: >-
   Cuts away everything after the first whitespace character.
 
+# TODO: Base command does not seem to work with cwl-runner
 baseCommand: [ cut, -d , '" "', -f1 ]
 
 inputs:
