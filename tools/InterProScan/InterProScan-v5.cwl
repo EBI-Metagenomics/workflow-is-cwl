@@ -121,8 +121,9 @@ requirements:
       - $import: InterProScan-apps.yaml
       - $import: InterProScan-protein_formats.yaml
   - class: ResourceRequirement
-    ramMin: 8192
-    coresMin: 3
+    ramMin: 2048
+    ramMax: 8192
+    coresMin: 4
   - class: DockerRequirement
     dockerPull: 'biocontainers/interproscan:v5.30-69.0_cv1'
   - class: InlineJavascriptRequirement

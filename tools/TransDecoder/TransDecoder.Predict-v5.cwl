@@ -148,7 +148,8 @@ requirements:
     types:
       - $import: TransDecoder-v5-genetic_codes.yaml
   - class: ResourceRequirement
-    ramMin: 1024
+    coresMin: 2
+    ramMin: 50
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.transcriptsFile)
