@@ -20,7 +20,7 @@ inputs:
   diamondSeqdb: File
   i5_chunk_size:
     type: int?
-    default: 10000
+    default: 500
   i5Databases: Directory
   i5Applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
   i5OutputFormat: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats[]?
