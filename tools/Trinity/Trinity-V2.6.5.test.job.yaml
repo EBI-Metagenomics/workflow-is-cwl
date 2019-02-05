@@ -1,6 +1,8 @@
-seq_type: fq
-max_mem: 4G
-left_fastq: 
+trinity_ss_lib_type: FR
+trinity_seq_type: fq
+trinity_max_mem: 4G
+trinity_cpu: 4
+left_reads: 
   - class: File
     path: test-input/A1_left_ok.fq
   - class: File
@@ -13,7 +15,7 @@ left_fastq:
     path: test-input/B2_left_ok.fq
   - class: File
     path: test-input/A1_left_ok.fq
-right_fastq:
+right_reads:
   - class: File 
     path: test-input/A1_right_ok.fq
   - class: File
@@ -26,5 +28,3 @@ right_fastq:
     path: test-input/B2_right_ok.fq
   - class: File
     path: test-input/A1_right_ok.fq
-ss_lib_type: FR
-cpu: 4

@@ -1,0 +1,12 @@
+Loading index from directory... 0s.  256856 bases, seed size 23
+Aligning.
+Total Reads    Aligned, MAPQ >= 10    Aligned, MAPQ < 10     Unaligned              Too Short/Too Many Ns  Extra Alignments  %Pairs    Reads/s   Time in Aligner (s)
+13,920         1,290 (9.27%)          3,186 (22.89%)         9,444 (67.84%)         0 (0.00%)              1,651             31.39%    47,835    0
+Welcome to SNAP version 1.0dev.96.
+
+sched_setaffinity: Invalid argument
+sched_setaffinity: Invalid argument
+sched_setaffinity: Invalid argument
+sched_setaffinity: Invalid argument
+sched_setaffinity: Invalid argument
+sched_setaffinity: Invalid argument

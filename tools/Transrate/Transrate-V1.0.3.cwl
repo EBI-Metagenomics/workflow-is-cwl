@@ -7,7 +7,7 @@ baseCommand:
   - transrate
 inputs:
   - id: in_fasta
-    format: 'edam:format_1929'
+    # format: 'edam:format_1929'
     type: File
     inputBinding:
       position: 1
@@ -58,7 +58,7 @@ outputs:
   - id: transrate_output_dir
     type: Directory
     outputBinding:
-      glob: $(runtime.outdir)
+      glob: .
 # TODO: Find out the name of the evaluation_matrix file
 #  - id: evaluation_matrix
 #    type: File

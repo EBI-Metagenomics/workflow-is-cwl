@@ -4,17 +4,17 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 
-requirements:
- SchemaDefRequirement:
-   types:
-    - $import: trinity-ss_lib_type.yaml
-    - $import: trinity-seq_type.yaml
+#requirements:
+#  SchemaDefRequirement:
+#    type:
+#      - $import: trinity-ss_lib_type.yaml
+#      - $import: trinity-seq_type
 
 baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
 
 inputs:
-  - id: seq_type
-    type: trinity-seq_type.yaml#seq_type
+  - id: trinity_seq_type
+    type: string
     default: fa
     inputBinding:
       position: 1
@@ -22,8 +22,9 @@ inputs:
     label: 'read file(s) format'
     doc: >
       type of reads: (fa or fq)
-  - id: max_mem
+  - id: trinity_max_mem
     type: string
+    default: 20G
     inputBinding:
       position: 2
       prefix: '--max_memory'
@@ -31,8 +32,8 @@ inputs:
     doc: >
       Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
-  - id: left_reads
-    type: File?
+  - id: left_reads?
+    type: File
     inputBinding:
       position: 3
       prefix: '--left'
@@ -42,7 +43,7 @@ inputs:
     doc: >
       left reads, one or more file names (separated by commas, no spaces)
   - id: right_reads
-    type: File?
+    type: File
     inputBinding:
       position: 4
       prefix: '--right'
@@ -62,8 +63,8 @@ inputs:
     doc: >
       single reads, one or more file names, comma-delimited
       (note, if single file contains pairs, can use flag: --run_as_paired)
-  - id: ss_lib_type
-    type: trinity-ss_lib_type.yaml#ss_lib_type
+  - id: trinity_ss_lib_type
+    type: string
     inputBinding:
       position: 6
       prefix: '--SS_lib_type'
@@ -71,8 +72,9 @@ inputs:
     doc: >
       Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
       F or R. (dUTP method = RF). See web documentation
-  - id: cpu
+  - id: trinity_cpu
     type: int?
+    default: 2
     inputBinding:
       position: 7
       prefix: '--CPU'
@@ -97,10 +99,12 @@ outputs:
     label: Assembly directory containing assembly results
     type: Directory
     outputBinding:
-      glob: $(runtime.outdir)/trinity_out_dir
+      glob: "."
   - id: assembled_contigs
     label: Generated contigs
     type: File
+    outputBinding:
+      glob: "*fasta"
 
 doc: >
   Trinity, developed at the Broad Institute and the Hebrew University of
@@ -115,8 +119,7 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 arguments:
   - prefix: '--output'
-    separate: false
-    valueFrom: $(runtime.outdir)/trinity_out_dir
+    valueFrom: $(runtime.outdir)/trinity_out_dir/
 
 hints:
   - class: SoftwareRequirement

@@ -1,0 +1,14 @@
+{
+    "salmon_version": "0.6.0",
+    "libType": "IU",
+    "alignments": "/var/spool/cwl/trinity_out_dir.Trinity/A1_left_ok.fq.trimmed.fastq.A1_right_ok.fq.trimmed.fastq.trinity_out_dir.Trinity.bam",
+    "targets": "/var/lib/cwl/stg2234babd-d6db-4f21-b8f8-7e4dbeb8e921/trinity_out_dir.Trinity.fasta",
+    "threads": "8",
+    "sampleOut": [],
+    "sampleUnaligned": [],
+    "output": ".",
+    "useErrorModel": [],
+    "biasCorrect": [],
+    "noEffectiveLengthCorrection": [],
+    "useFSPD": []
+}

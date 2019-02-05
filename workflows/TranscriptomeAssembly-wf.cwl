@@ -9,8 +9,6 @@ requirements:
     - $import: ../tools/Trimmomatic/trimmomatic-end_mode.yaml
     - $import: ../tools/Trimmomatic/trimmomatic-phred.yaml
     - $import: ../tools/Trimmomatic/trimmomatic-sliding_window.yaml
-    - $import: ../tools/Trinity/trinity-seq_type.yaml
-    - $import: ../tools/Trinity/trinity-ss_lib_type.yaml
 
 inputs:
   read_files:
@@ -67,12 +65,12 @@ inputs:
     doc: > 
       number of CPUs to use, default: 2
   trinity_seq_type:
-    type: ../tools/Trinity/trinity-seq_type.yaml#seq_type
+    type: string
     label: 'read file(s) format'
     doc: >
       type of reads: (fa or fq)
   trinity_ss_lib_type:
-    type: ../tools/Trinity/trinity-ss_lib_type.yaml#ss_lib_type
+    type: string
     label: 'Strand-specific RNA-Seq read orientation'
     doc: >
       Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
@@ -166,10 +164,10 @@ steps:
       left_reads: filter_reads/reads1_trimmed
       right_reads: filter_reads/reads2_trimmed_paired
       single_reads: filter_reads/reads1_trimmed
-      max_mem: trinity_max_mem
-      cpu: trinity_cpu
-      seq_type: trinity_seq_type
-      ss_lib_type: trinity_ss_lib_type
+      trinity_max_mem: trinity_max_mem
+      trinity_cpu: trinity_cpu
+      trinity_seq_type: trinity_seq_type
+      trinity_ss_lib_type: trinity_ss_lib_type
     out: [ assembly_dir, assembled_contigs ]
 
   generate_filtered_stats:
@@ -190,8 +188,8 @@ steps:
     run: ../tools/Transrate/Transrate-V1.0.3.cwl
     in:
       in_fasta: run_assembly/assembled_contigs
-      left_fastq: forward_reads
-      right_fastq: reverse_reads
+      left_fastq: filter_reads/reads1_trimmed
+      right_fastq: filter_reads/reads2_trimmed_paired
     out: [ transrate_output_dir ]
 
 $namespaces:
@@ -200,5 +198,6 @@ $namespaces:
 $schemas:
  - http://edamontology.org/EDAM_1.16.owl
  - https://schema.org/docs/schema_org_rdfa.html
-
-s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+'s:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
+'s:license: "https://www.apache.org/licenses/LICENSE-2.0'
+'s:author': Arnaud Meng, Maxim Scheremetjew
