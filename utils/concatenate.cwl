@@ -17,9 +17,9 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.outputFileName)
-      outputEval: |
-        ${ self[0].format = inputs.files[0].format;
-           return self; }
+#      outputEval: |
+#        ${ self[0].format = inputs.files[0].format;
+#           return self; }
 
 doc: >
   The cat (short for “concatenate“) command is one of the most frequently used command in
