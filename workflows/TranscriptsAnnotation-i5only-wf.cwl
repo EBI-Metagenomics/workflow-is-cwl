@@ -20,7 +20,7 @@ inputs:
   diamondSeqdb: File
   i5_chunk_size:
     type: int?
-    default: 10000
+    default: 500
   i5Databases: Directory
   i5Applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
   i5OutputFormat: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats[]?
@@ -33,6 +33,10 @@ inputs:
   buscoLineage: Directory
 
 outputs:
+  cutted_transcripts_file:
+    type: File
+    format: edam:format_1929
+    outputSource: cut_fasta_header/sequences_with_cutted_headers
   cleaned_transcripts_file:
     type: File
     format: edam:format_1929
@@ -81,11 +85,18 @@ outputs:
     outputSource: run_transcriptome_assessment/blastOutput
 
 steps:
+  cut_fasta_header:
+    label: Cuts FASTA headers which are too long
+    run: ../utils/cut_fasta_headers.cwl
+    in:
+      fastaFile: transcriptsFile
+    out: [ sequences_with_cutted_headers ]
+
   clean_fasta_header:
     label: Replaces problematic characters from FASTA headers with dashes
     run: ../utils/clean_fasta_headers.cwl
     in:
-      sequences: transcriptsFile
+      sequences: cut_fasta_header/sequences_with_cutted_headers
     out: [ sequences_with_cleaned_headers ]
 
   identify_coding_regions:

@@ -16,6 +16,7 @@ i5OutputFormat:
   - TSV
 i5Applications:
   - PfamA
+i5_chunk_size: 500
 blockSize: 1.0
 covariance_models:
   - class: File
@@ -23,7 +24,7 @@ covariance_models:
 clanInfoFile:
   class: File
   path: ../tools/cmsearch-deoverlap/test-input/ribo.claninfo
-cmsearchCores: 2
+cmsearchCores: 4
 buscoLineage:
   class: Directory
   path: ../tools/BUSCO/test-input/example
