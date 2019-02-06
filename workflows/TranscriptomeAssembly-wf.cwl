@@ -24,7 +24,7 @@ inputs:
     doc: >
       Read file 1 in FASTQ format 
   reverse_reads:
-    type: File?
+    type: File
     format: edam:format_1930  # Zipped fastq
     label: 'Paired-end read file 2'
     doc: >
@@ -163,7 +163,7 @@ steps:
     in:
       left_reads: filter_reads/reads1_trimmed
       right_reads: filter_reads/reads2_trimmed_paired
-      single_reads: filter_reads/reads1_trimmed
+#      single_reads: filter_reads/reads1_trimmed
       trinity_max_mem: trinity_max_mem
       trinity_cpu: trinity_cpu
       trinity_seq_type: trinity_seq_type
@@ -198,6 +198,6 @@ $namespaces:
 $schemas:
  - http://edamontology.org/EDAM_1.16.owl
  - https://schema.org/docs/schema_org_rdfa.html
-'s:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
-'s:license: "https://www.apache.org/licenses/LICENSE-2.0'
-'s:author': Arnaud Meng, Maxim Scheremetjew
+#'s:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
+#'s:license: "https://www.apache.org/licenses/LICENSE-2.0'
+#'s:author: Arnaud Meng, Maxim Scheremetjew'

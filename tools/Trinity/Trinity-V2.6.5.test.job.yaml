@@ -5,26 +5,6 @@ trinity_cpu: 4
 left_reads: 
   - class: File
     path: test-input/A1_left_ok.fq
-  - class: File
-    path: test-input/A2_left_ok.fq
-  - class: File
-    path: test-input/A3_left_ok.fq
-  - class: File
-    path: test-input/B1_left_ok.fq
-  - class: File
-    path: test-input/B2_left_ok.fq
-  - class: File
-    path: test-input/A1_left_ok.fq
 right_reads:
   - class: File 
-    path: test-input/A1_right_ok.fq
-  - class: File
-    path: test-input/A2_right_ok.fq
-  - class: File
-    path: test-input/A3_right_ok.fq
-  - class: File
-    path: test-input/B1_right_ok.fq
-  - class: File
-    path: test-input/B2_right_ok.fq
-  - class: File
     path: test-input/A1_right_ok.fq

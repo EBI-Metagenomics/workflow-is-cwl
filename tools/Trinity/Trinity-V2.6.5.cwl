@@ -4,11 +4,11 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 
-#requirements:
-#  SchemaDefRequirement:
-#    type:
-#      - $import: trinity-ss_lib_type.yaml
-#      - $import: trinity-seq_type
+requirements:
+  SchemaDefRequirement:
+    types:
+      - $import: trinity-ss_lib_type.yaml
+      - $import: trinity-seq_type.yaml
 
 baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
 
@@ -32,8 +32,9 @@ inputs:
     doc: >
       Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
-  - id: left_reads?
+  - id: left_reads
     type: File
+#    type: File[] # for multiple input FASTQ
     inputBinding:
       position: 3
       prefix: '--left'
@@ -44,6 +45,7 @@ inputs:
       left reads, one or more file names (separated by commas, no spaces)
   - id: right_reads
     type: File
+#    type: File[] # for multiple input FASTQ
     inputBinding:
       position: 4
       prefix: '--right'
@@ -52,17 +54,17 @@ inputs:
     label: 'right read(s)'
     doc: >
       right reads, one or more file names (separated by commas, no spaces)
-  - id: single_reads
-    type: File?
-    inputBinding:
-      position: 5
-      prefix: '--right'
-      itemSeparator: ","
-      #separate: true
-    label: 'Single read(s)'
-    doc: >
-      single reads, one or more file names, comma-delimited
-      (note, if single file contains pairs, can use flag: --run_as_paired)
+#  - id: single_reads
+#    type: File?
+#    inputBinding:
+#      position: 5
+#      prefix: '--right'
+#      itemSeparator: ","
+#      #separate: true
+#    label: 'Single read(s)'
+#    doc: >
+#      single reads, one or more file names, comma-delimited
+#      (note, if single file contains pairs, can use flag: --run_as_paired)
   - id: trinity_ss_lib_type
     type: string
     inputBinding:
