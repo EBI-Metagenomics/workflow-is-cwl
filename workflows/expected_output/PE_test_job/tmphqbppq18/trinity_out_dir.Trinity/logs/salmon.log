@@ -1,0 +1,34 @@
+[2019-02-20 07:52:47.613] [fileLog] [info] quantification processed 0 fragments so far
+
+[2019-02-20 07:52:47.613] [fileLog] [info] quantification processed 2026 fragments so far
+
+[2019-02-20 07:52:47.647] [jointLog] [info] 
+
+
+Completed first pass through the alignment file.
+Total # of mapped reads : 2026
+# of uniquely mapped reads : 765
+# ambiguously mapped reads : 1261
+
+
+
+[2019-02-20 07:52:47.651] [jointLog] [info] Computed 226 rich equivalence classes for further processing
+[2019-02-20 07:52:47.651] [jointLog] [info] Counted 2026 total reads in the equivalence classes 
+[2019-02-20 07:52:47.655] [jointLog] [warning] Only 2026 fragments were mapped, but the number of burn-in fragments was set to 5000000.
+The effective lengths have been computed using the observed mappings.
+
+[2019-02-20 07:52:47.655] [jointLog] [warning] Since only 2026 (< 5000000) fragments were observed, modeling of the fragment start position distribution has been disabled
+[2019-02-20 07:52:47.656] [jointLog] [info] starting optimizer
+[2019-02-20 07:52:47.656] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2019-02-20 07:52:47.656] [jointLog] [info] iteration = 0 | max rel diff. = 0.949734
+[2019-02-20 07:52:47.657] [jointLog] [info] iteration 50, recomputing effective lengths
+[2019-02-20 07:52:47.657] [jointLog] [info] iteration = 100 | max rel diff. = 0.0169394
+[2019-02-20 07:52:47.659] [jointLog] [info] iteration = 200 | max rel diff. = 0.0149231
+[2019-02-20 07:52:47.660] [jointLog] [info] iteration = 300 | max rel diff. = 0.0148032
+[2019-02-20 07:52:47.661] [jointLog] [info] iteration = 400 | max rel diff. = 0.0147758
+[2019-02-20 07:52:47.662] [jointLog] [info] iteration 500, recomputing effective lengths
+[2019-02-20 07:52:47.662] [jointLog] [info] iteration = 500 | max rel diff. = 0.0147695
+[2019-02-20 07:52:47.666] [jointLog] [info] iteration = 555 | max rel diff. = 0.00725026
+[2019-02-20 07:52:47.666] [jointLog] [info] finished optimizer
+[2019-02-20 07:52:47.668] [jointLog] [info] Sampling alignments; outputting results to ./postSample.bam
+
