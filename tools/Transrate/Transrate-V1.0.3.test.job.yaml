@@ -1,0 +1,13 @@
+in_fasta:
+  format: 'edam:format_1929'
+  class: File
+  path: test-input/Trinity_Assembled_Transcripts_sub.fasta
+left_fastq:
+  format: 'edam:format_1930'
+  class: File
+  path: test-input/A1_left.fq.gz
+right_fastq:
+  format: 'edam:format_1930'
+  class: File
+  path: test-input/A1_right.fq.gz
+n_threads: 8

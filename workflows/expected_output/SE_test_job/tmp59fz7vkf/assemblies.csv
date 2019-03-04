@@ -1,0 +1,2 @@
+assembly,n_seqs,smallest,largest,n_bases,mean_len,n_under_200,n_over_1k,n_over_10k,n_with_orf,mean_orf_percent,n90,n70,n50,n30,n10,gc,bases_n,proportion_n,score,optimal_score,cutoff,weighted
+/var/lib/cwl/stg414fc812-b69b-4fa8-b997-656667bd431e/trinity_out_dir.Trinity.fasta,81,202,2029,33206,409.95062,0,4,0,10,77.51611,231,307,411,634,1985,0.5081,0,0.0,NA,NA,NA,NA

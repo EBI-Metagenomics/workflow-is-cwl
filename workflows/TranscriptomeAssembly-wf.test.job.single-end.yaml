@@ -1,0 +1,13 @@
+end_mode: SE
+read_files:
+  - class: File
+    format: 'edam:format_1930'
+    path: test-input/A1_left_ok.fq
+forward_reads:
+  class: File
+  format: 'edam:format_1930'
+  path: test-input/A1_left_ok.fq
+trinity_seq_type: fq
+trinity_max_mem: 4G
+trinity_ss_lib_type: F
+trinity_cpu: 4

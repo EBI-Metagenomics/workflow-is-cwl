@@ -1,0 +1,10 @@
+trinity_ss_lib_type: FR
+trinity_seq_type: fq
+trinity_max_mem: 4G
+trinity_cpu: 4
+left_reads: 
+    class: File
+    path: test-input/A1_left_ok.fq
+right_reads:
+    class: File 
+    path: test-input/A1_right_ok.fq

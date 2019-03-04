@@ -1,0 +1,14 @@
+in_fastq:
+  - class: File
+    format: 'edam:format_1930'
+    path: test-input/A1_left_ok.fq.gz
+  - class: File
+    format: 'edam:format_1930'
+    path: test-input/A1_right_ok.fq.gz
+  - class: File
+    format: 'edam:format_1930'
+    path: test-input/A2_left_ok.fq.gz
+  - class: File
+    format: 'edam:format_1930'
+    path: test-input/A2_right_ok.fq.gz
+n_threads: 4
