@@ -104,7 +104,7 @@ outputs:
     format: edam:format_1930
     outputSource: filter_reads/reads1_trimmed_unpaired
   reverse_reads_paired:
-    type: File?
+    type: File
     format: edam:format_1930
     outputSource: filter_reads/reads2_trimmed_paired
   reverse_reads_unpaired:
