@@ -1,0 +1,15 @@
+{
+    "salmon_version": "0.6.0",
+    "samp_type": "none",
+    "frag_dist_length": 801,
+    "bias_correct": true,
+    "num_bias_bins": 4096,
+    "mapping_type": "alignment",
+    "num_targets": 184,
+    "num_bootstraps": 0,
+    "num_processed": 7039,
+    "num_mapped": 2026,
+    "percent_mapped": 28.782497513851403,
+    "call": "quant",
+    "start_time": "Wed Feb 20 07:52:47 2019"
+}
