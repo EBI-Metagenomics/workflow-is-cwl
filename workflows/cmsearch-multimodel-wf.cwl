@@ -33,7 +33,7 @@ outputs:
 steps:
   cmsearch:
     label: Search sequence(s) against a covariance model database
-    run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2-none_docker.cwl
+    run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
     in:
       covariance_model_database: covariance_models
       cpu: cores
