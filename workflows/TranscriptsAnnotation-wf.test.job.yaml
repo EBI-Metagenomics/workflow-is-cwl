@@ -18,6 +18,7 @@ i5Databases:
   path: ../tools/InterProScan/test-input/databases
 i5OutputFormat:
   - TSV
+  - XML
 i5Applications:
   - PfamA
 blockSize: 1.0

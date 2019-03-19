@@ -4,4 +4,6 @@ inputFile:
   class: File
   format: 'edam:format_1929'
   path: test-input/test_single_protein.fasta
-outputFormat: TSV
+outputFormat:
+  - TSV
+  - XML

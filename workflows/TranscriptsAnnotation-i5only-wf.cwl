@@ -17,14 +17,7 @@ inputs:
     default: 10000
   i5Databases: Directory?
   i5Applications: string[]?
-  i5OutputFormat:
-    type:
-      type: enum
-      symbols:
-        - TSV
-        - XML
-        - JSON
-        - GFF3
+  i5OutputFormat: string[]
   blockSize: float?
   covariance_models: File[]
   clanInfoFile: File

@@ -4,7 +4,9 @@ inputFile:
   class: File
   format: 'edam:format_1929'
   path: ../tools/InterProScan/test-input/test_single_protein.fasta
-outputFormat: TSV
+outputFormat:
+  - TSV
+  - XML
 databases:
   class: Directory
   path: ../tools/InterProScan/test-input/databases
