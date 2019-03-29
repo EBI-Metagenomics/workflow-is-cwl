@@ -25,7 +25,7 @@ outputs:
     outputSource: cmsearch/matches
     type: File[]
   concatenate_matches:
-    outputSource: concatenate_matches/result
+    outputSource: run_concatenate_matches/result
     type: File
   deoverlapped_matches:
     outputSource: remove_overlaps/deoverlapped_matches
@@ -47,7 +47,7 @@ steps:
     scatter: covariance_model_database
     out: [ matches, programOutput ]
 
-  concatenate_matches:
+  run_concatenate_matches:
     run: ../utils/concatenate.cwl
     in:
       files: cmsearch/matches
@@ -59,7 +59,7 @@ steps:
     run: ../tools/cmsearch-deoverlap/cmsearch-deoverlap-v0.02.cwl
     in:
       clan_information: clan_info
-      cmsearch_matches: concatenate_matches/result
+      cmsearch_matches: run_concatenate_matches/result
     out: [ deoverlapped_matches ]
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
