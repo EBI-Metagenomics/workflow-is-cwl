@@ -37,6 +37,6 @@ hints:
 stdout: $(inputs.outputFileName)
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
-'s:copyrightHolder': EMBL - European Bioinformatics Institute
-'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'s:author': Michael Crusoe, Maxim Scheremetjew
+s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:author: "Michael Crusoe, Maxim Scheremetjew"

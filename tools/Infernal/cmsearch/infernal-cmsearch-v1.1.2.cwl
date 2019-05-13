@@ -132,6 +132,6 @@ requirements:
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
-'s:copyrightHolder': EMBL - European Bioinformatics Institute
-'s:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'s:author': Michael Crusoe, Maxim Scheremetjew
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
+s:author: "Michael Crusoe, Maxim Scheremetjew"
