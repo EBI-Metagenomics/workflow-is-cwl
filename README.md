@@ -5,8 +5,8 @@ This repository contains CWL descriptions of the various tools ([Trinity](https:
 
 Please have a look at the fully described workflows in the CWLViewer:
 
-[Marine eukaryotic metatranscriptome assembly workflow (paired-end version)](https://view.commonwl.org/workflows/github.com/mscheremetjew/workflow-is-cwl/blob/87799c713ed7aa7b41c2f1b367825d509e47fbd2/workflows/TranscriptomeAssembly-wf.paired-end.cwl)
+[Marine eukaryotic metatranscriptome assembly workflow (paired-end version)](https://w3id.org/cwl/view/git/26dad276bac124f89086268bcbca962a5c0caca6/workflows/TranscriptomeAssembly-wf.paired-end.cwl)
 
-[Marine eukaryotic metatranscriptome assembly workflow (single-end version)](https://view.commonwl.org/workflows/github.com/mscheremetjew/workflow-is-cwl/blob/87799c713ed7aa7b41c2f1b367825d509e47fbd2/workflows/TranscriptomeAssembly-wf.single-end.cwl)
+[Marine eukaryotic metatranscriptome assembly workflow (single-end version)](https://w3id.org/cwl/view/git/26dad276bac124f89086268bcbca962a5c0caca6/workflows/TranscriptomeAssembly-wf.single-end.cwl)
 
-[Annotation workflow](https://view.commonwl.org/workflows/github.com/mscheremetjew/workflow-is-cwl/blob/93c7dee353f887e978ca8c5423a5c975c0796e40/workflows/TranscriptsAnnotation-i5only-wf.cwl)
+[Annotation workflow](https://w3id.org/cwl/view/git/26dad276bac124f89086268bcbca962a5c0caca6/workflows/TranscriptsAnnotation-i5only-wf.cwl)
